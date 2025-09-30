@@ -1,0 +1,36 @@
+// 🎨 Colores
+$color-primary: #8c52ff;   // morado boda
+$color-secondary: #ffb6c1; // rosado suave
+$color-accent: #ffd700;    // dorado
+$color-bg: #ffffff;
+$color-text: #222222;
+$color-muted: #666666;
+
+// 🔠 Tipografía
+$font-heading: "Playfair Display", serif;
+$font-body: "Inter", sans-serif;
+
+// 📏 Espaciado
+$space-xs: 0.25rem; // 4px
+$space-sm: 0.5rem;  // 8px
+$space-md: 1rem;    // 16px
+$space-lg: 2rem;    // 32px
+$space-xl: 4rem;    // 64px
+
+// 🔤 Tamaños de fuente
+$text-sm: 0.875rem; // 14px
+$text-base: 1rem;   // 16px
+$text-lg: 1.25rem;  // 20px
+$text-xl: 2rem;     // 32px
+$text-xxl: 2.75rem; // 44px
+
+// 🖼️ Bordes
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+
+// Breakpoints (min-width)
+$bp-sm: 480px;   // móvil
+$bp-md: 768px;   // tablet
+$bp-lg: 1024px;  // desktop
+$bp-xl: 1280px;  // pantallas grandes
