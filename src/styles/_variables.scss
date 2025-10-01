@@ -6,9 +6,29 @@ $color-bg: #ffffff;
 $color-text: #222222;
 $color-muted: #666666;
 
-// 🔠 Tipografía
-$font-heading: "Playfair Display", serif;
-$font-body: "Inter", sans-serif;
+// 🎨 Font Families
+$font-serif: 'Source Serif Pro', serif;
+$font-sans: 'Lato', sans-serif;
+
+// 🔢 Font Weights Source Serif Pro
+$weight-serif-light: 200;
+$weight-serif-regular: 400;
+$weight-serif-semibold: 600;
+$weight-serif-bold: 700;
+
+// 🔢 Font Weights Lato
+$weight-lato-thin: 100;
+$weight-lato-light: 300;
+$weight-lato-regular: 400;
+$weight-lato-bold: 700;
+$weight-lato-black: 900;
+
+// 📐 Font Sizes (ejemplo, puedes ajustarlo)
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem;   // 16px
+$font-size-lg: 1.25rem;  // 20px
+$font-size-xl: 2rem;     // 32px
+
 
 // 📏 Espaciado
 $space-xs: 0.25rem; // 4px
