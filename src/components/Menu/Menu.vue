@@ -8,7 +8,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import BurgerButton from '../BurgerButton/BurgerButton.vue';
+import BurgerButton from '../atoms/BurgerButton.vue';
 import Sidebar from '../Sidebar/Sidebar.vue';
 
 const open = ref(false);

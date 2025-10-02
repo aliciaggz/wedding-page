@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
+import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +12,12 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false, // evita que "es" aparezca como /es/
     },
+  },
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve('./src')
+      }
+    }
   }
 });

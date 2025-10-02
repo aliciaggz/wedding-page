@@ -18,7 +18,6 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
-@import "../../styles/variables.scss";
 
 .sidebar {
   position: fixed;
@@ -26,7 +25,7 @@ defineProps({
   left: 500px;
   width: 100%;
   height: 100vh;
-  background: $color-primary;
+  background: red;
   color: white;
   transition: left 0.3s ease;
   padding: 2rem;
