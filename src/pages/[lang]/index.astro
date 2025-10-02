@@ -26,12 +26,11 @@ export function getStaticPaths() {
 ---
 
 <Layout>
-	<Welcome />
-	<Menu client:load/>
+	<Welcome  />
 	<p>Idioma actual: {locale}</p>
 	<h1>{t(locale, "home.title")}</h1>
 
-	<LanguagePicker lang={lang} />
+	<LanguagePicker languages={languages} translatePath={translatePath} />
 
 </Layout>
 

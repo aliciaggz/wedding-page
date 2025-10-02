@@ -7,7 +7,7 @@ import path from 'path';
 export default defineConfig({
   integrations: [vue()],
   i18n: {
-    defaultLocale: "es", // idioma por defecto
+    defaultLocale: "es",
     locales: ["es", "en"], // idiomas disponibles
     routing: {
       prefixDefaultLocale: false, // evita que "es" aparezca como /es/
@@ -18,6 +18,17 @@ export default defineConfig({
       alias: {
         '@': path.resolve('./src')
       }
-    }
-  }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+          @use "@/styles/variables" as *;
+          @use "@/styles/mixins" as *;
+        `
+      },
+      },
+    },
+  },
+  
 });

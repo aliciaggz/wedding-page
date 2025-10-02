@@ -1,17 +1,31 @@
+---
+import Header from '@/components/molecules/Header.vue';
+import { getLocale, t , languages, useTranslatedPath, getLangFromUrl } from '@/utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+// const lang = ge∫tLangFromUrl(Astro.url);
+
+const locale = getLocale(lang);
+const translatePath = useTranslatedPath(lang);
+
+
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="" />
+		<link rel="stylesheet" href="/src/styles/global.scss" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>A&M 30.05.2025</title>
 	</head>
 	<body>
+		<Header languages={languages} lang={lang} client:load/>
 		<slot />
 	</body>
 </html>
-
 <style>
 	html,
 	body {
