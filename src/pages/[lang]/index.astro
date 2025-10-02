@@ -1,0 +1,37 @@
+---
+import Menu from '../../components/Menu/Menu.vue';
+import Welcome from '../../components/Welcome.astro';
+import Layout from '../../layouts/Layout.astro';
+import LanguagePicker from '../../components/atoms/LanguagePicker.vue';
+
+import { getLocale, t , languages, useTranslatedPath, getLangFromUrl } from '../../utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
+
+const locale = getLocale(lang);
+const translatePath = useTranslatedPath(lang);
+
+
+//lo tengo que poner si o si para que funcione la generacion de rutas estaticas
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+  ];
+}
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Welcome />
+	<Menu client:load/>
+	<p>Idioma actual: {locale}</p>
+	<h1>{t(locale, "home.title")}</h1>
+
+	<LanguagePicker lang={lang} />
+
+</Layout>
+

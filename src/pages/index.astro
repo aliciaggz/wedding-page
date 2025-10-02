@@ -1,29 +1,7 @@
 ---
-import Menu from '../components/Menu/Menu.vue';
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import { getLocaleByPath } from 'astro:i18n';
-
-import es from "../locales/es.json";
-import en from "../locales/en.json";
-
-interface MyLocals {
-  locale: 'es' | 'en';
-}
-
-const { locale } = Astro.params; // 'en' o 'es'
-const t = locale === "en" ? en : es;
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
-<Layout>
-	<Welcome />
-	<Menu client:load/>
-	<p>Idioma actual: {t}</p>
-	<h1>{t.home.title}</h1>
-
-</Layout>
-
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/es/" />
+  </head>
+</html>
