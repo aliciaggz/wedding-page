@@ -13,9 +13,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .burger {
-  position: fixed;   
-  top: 1rem;
-  right: 1rem;
+  position: relative;   
+  // top: 1rem;
+  // right: 1rem;
   z-index: 1001;
   display: flex;
   flex-direction: column;

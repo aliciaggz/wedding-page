@@ -8,6 +8,7 @@ const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 const translatePath = useTranslatedPath(lang);
 
+import logo from '@/assets/logoam.png' // <-- importar la imagen
 
 ---
 
@@ -22,7 +23,7 @@ const translatePath = useTranslatedPath(lang);
 		<title>A&M 30.05.2025</title>
 	</head>
 	<body>
-		<Header languages={languages} lang={lang} client:load/>
+		<Header languages={languages} lang={lang} logo="/src/assets/logoam.png" client:load/>
 		<slot />
 	</body>
 </html>

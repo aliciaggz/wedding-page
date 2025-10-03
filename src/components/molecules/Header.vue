@@ -8,6 +8,9 @@ defineProps({
   },
   lang: {
     type: String,
+  },
+  logo: {
+    type: String,
   }
 })
 </script>
@@ -19,6 +22,7 @@ defineProps({
         :lang="lang"
         class="header__lang-picker"
       />
+      <img :src="logo" alt="Logo" class="header__logo" />
     	<Menu />
 
     </div>
@@ -26,6 +30,29 @@ defineProps({
 </template>
 <style lang="scss" scoped>
 .header {
+  width: 100%;
   height: 10vh;
-  background-color: red;
+  background-color: rgba(58, 48, 48, 0.373);
+  position: relative;
+
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+  
+  }
+
+  &__logo {
+    position: absolute;  // posición absoluta dentro del header
+    left: 50%;           // centro horizontal del header
+    top: 70%;            // centro vertical
+    transform: translate(-50%, -50%); // ajusta para que el centro del logo quede en el centro del header
+    width: 4rem;
+    height: auto;
+  }
 }</style>
