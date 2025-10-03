@@ -28,7 +28,7 @@ const translatePath = useTranslatedPath(props.lang);
   top: 0;
 
   & a {
-    color: #666;
+    color: $color-white;
     text-decoration: none;
     &.active {
       font-weight: bold;

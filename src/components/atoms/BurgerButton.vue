@@ -14,8 +14,6 @@ defineProps({
 <style lang="scss" scoped>
 .burger {
   position: relative;   
-  // top: 1rem;
-  // right: 1rem;
   z-index: 1001;
   display: flex;
   flex-direction: column;
@@ -28,9 +26,9 @@ defineProps({
   padding: 0;
 
   &__line {
-    height: 0.1rem;
+    height: 0.05rem;
     width: 100%;
-    background-color: #222;
+    background-color: $color-white;
     border-radius: 0.1rem;
     transition: all 0.3s ease;
   }

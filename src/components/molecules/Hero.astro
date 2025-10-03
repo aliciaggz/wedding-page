@@ -1,0 +1,30 @@
+---
+const { title, subtitle, image } = Astro.props;
+---
+<section 
+  class="hero"
+  style={`background-image: url(${image})`}
+>
+  <div class="hero__content">
+    <h1 class="hero__title">{title}</h1>
+    {subtitle && <p class="mt-4 text-xl text-gray-200">{subtitle}</p>}
+    <slot /> 
+  </div>
+</section>
+<style lang="scss" scoped>
+  .hero {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    position: relative; // importante
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+      font-size: $font-serif;
+      color: $color-white;
+    }
+  }
+</style>
