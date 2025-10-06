@@ -35,7 +35,6 @@ defineProps({
   position: fixed;
   background: transparent;
   z-index: 10;         // debe ser mayor que el hero
-  background-color: rgba(58, 48, 48, 0.373); 
 
 
   &__content {

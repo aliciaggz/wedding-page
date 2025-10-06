@@ -7,7 +7,7 @@ const { title, subtitle, image } = Astro.props;
 >
   <div class="hero__content">
     <h1 class="hero__title">{title}</h1>
-    {subtitle && <p class="mt-4 text-xl text-gray-200">{subtitle}</p>}
+    {subtitle && <p class="hero__subtitle">{subtitle}</p>}
     <slot /> 
   </div>
 </section>
@@ -21,10 +21,22 @@ const { title, subtitle, image } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $color-white;
+    text-align: center;
+    
+
 
     &__title {
+      font-size: $font-size-3xl;
+      font-family: $font-serif;
+      font-weight: 300;
+     
+    }
+    &__subtitle {
       font-size: $font-serif;
-      color: $color-white;
+      font-weight: 300;
+      font-size: $font-size-md;
+  
     }
   }
 </style>
