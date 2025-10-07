@@ -3,6 +3,9 @@ import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
 import path from 'path';
 
+const isProd = process.env.NODE_ENV === 'production';
+
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [vue()],
@@ -10,7 +13,7 @@ export default defineConfig({
     defaultLocale: "es",
     locales: ["es", "en"], // idiomas disponibles
     routing: {
-      prefixDefaultLocale: false, // evita que "es" aparezca como /es/
+      prefixDefaultLocale: true,
     },
   },
   vite: {
@@ -30,7 +33,8 @@ export default defineConfig({
       },
     },
   },
-  site: 'https://aliciaggz.github.io/wedding-page/',
-  base: '/wedding-page/',
-  
+  site: isProd
+  ? 'https://aliciaggz.github.io/wedding-page/'
+  : 'http://localhost:4321',
+  base: isProd ? '/wedding-page' : '/',
 });
