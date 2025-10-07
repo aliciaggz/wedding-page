@@ -30,5 +30,7 @@ export default defineConfig({
       },
     },
   },
+  site: 'https://aliciaggz.github.io',
+  base: '/wedding-page',
   
 });
