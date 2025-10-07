@@ -25,13 +25,20 @@ defineProps({
   left: 500px;
   width: 100%;
   height: 100vh;
-  background: red;
+  background: $color-accent;
   color: white;
   transition: left 0.3s ease;
   padding: 2rem;
+  z-index: 1000;
+
 
   &__menu {
+    height: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   &.open {
@@ -43,13 +50,14 @@ defineProps({
     padding: 0;
 
     li {
-      margin: 1rem 0;
+      margin: 2rem 0;
 
       a {
-        color: white;
+        color: $color-white;
         text-decoration: none;
-        font-weight: bold;
-        font-size: 1.2rem;
+        font-family: $font-serif;
+        font-weight: 300;
+        font-size: $font-size-lg;
       }
     }
   }

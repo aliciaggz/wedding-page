@@ -26,6 +26,9 @@ const translatePath = useTranslatedPath(props.lang);
   font-weight: 200;
   text-transform: uppercase;
   top: 0;
+  z-index: 1002;
+  margin-top: 2.5rem;
+
 
   & a {
     color: $color-white;

@@ -34,7 +34,7 @@ defineProps({
   height: 10vh;
   position: fixed;
   background: transparent;
-  z-index: 10;         // debe ser mayor que el hero
+  z-index: 1001;     
 
 
   &__content {
@@ -45,7 +45,6 @@ defineProps({
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
-  
   }
 
   &__logo {
@@ -55,5 +54,7 @@ defineProps({
     transform: translate(-50%, -50%); // ajusta para que el centro del logo quede en el centro del header
     width: 4rem;
     height: auto;
+    z-index: 1002; // asegúrate que el logo esté por encima también
+
   }
 }</style>

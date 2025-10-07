@@ -19,9 +19,10 @@ const toggleMenu = () => {
 <style lang="scss" scoped>
 .menu {
   // position: fixed;
-  // top: 1rem;
-  // right: 1rem;
-  z-index: 1000;
+  top: 1rem;
+  right: 1rem;
+  position: relative;   
+  z-index: 1001;
 }
 
 </style>
