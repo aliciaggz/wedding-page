@@ -3,6 +3,8 @@ import Header from '@/components/molecules/Header.vue';
 import { getLocale, t , languages, useTranslatedPath, getLangFromUrl } from '@/utils/i18n';
 import Hero from '@/components/molecules/Hero.astro';
 import bgImage from "../assets/alex-maria01.jpeg";
+import '../styles/global.scss';
+import logoImage from "../assets/logoam.png";
 
 
 const lang = getLangFromUrl(Astro.url);
@@ -55,7 +57,7 @@ if (path === "/") {
 		<title>A&M 30.05.2025</title>
 	</head>
 	<body>
-		<Header languages={languages} lang={lang} logo="/src/assets/logoam.png" client:load/>
+		<Header client:load languages={languages} lang={lang} logo={logoImage.src}/>
 		<Hero {...heroData} />
 		<main>
 		<slot />
