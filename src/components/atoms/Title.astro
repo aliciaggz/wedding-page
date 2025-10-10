@@ -1,0 +1,19 @@
+---
+const { text = '' } = Astro.props;
+---
+  <h2 class="title">
+   {text}
+  </h2>
+
+
+<style lang="scss" scoped> 
+  .title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: $font-serif;
+    font-style: italic;
+    text-align: center;
+    color: $color-text;
+    margin: 4rem 0;
+  }
+</style>

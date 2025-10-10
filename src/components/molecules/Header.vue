@@ -32,7 +32,7 @@ defineProps({
 .header {
   width: 100%;
   height: 10vh;
-  position: fixed;
+  position: absolute;
   background: transparent;
   z-index: 1001;     
 
