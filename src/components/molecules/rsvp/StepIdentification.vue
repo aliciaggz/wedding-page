@@ -1,44 +1,33 @@
 <script setup>
 import { reactive, computed, ref } from 'vue'
 
-const props = defineProps({
-  guestList: Array,
-  modelValue: Object // { firstName, lastName }
-})
+const emits = defineEmits(['continue']);
 
-const emits = defineEmits(['update:modelValue', 'continue'])
+const PASSWORD = "1234";
+const submitted = ref(false);
 
 // estado local de los inputs
 const local = reactive({
-  firstName: props.modelValue?.firstName || '',
-  lastName: props.modelValue?.lastName || ''
+  password: ''
 })
 
-// estado para controlar si se pulsó el botón
-const submitted = ref(false)
-
-// nombre completo en minúsculas
-const fullName = computed(() =>
-  `${local.firstName.trim()} ${local.lastName.trim()}`.toLowerCase()
-)
-
-// validación insensible a mayúsculas
 const isValid = computed(() =>
-  props.guestList.some(guest => guest.toLowerCase() === fullName.value)
+  local.password.trim().toLowerCase() === PASSWORD.toLowerCase()
 )
 
-function updateParent() {
-  emits('update:modelValue', { ...local })
-}
-
-function onInput() {
-  updateParent()
-}
+// function next() {
+//   submitted.value = true
+//   if (isValid.value) emits('continue')
+// }
 
 function next() {
   submitted.value = true
-  if (isValid.value) emits('continue')
+  if (isValid.value) {
+    localStorage.setItem("rsvp-auth", "true")
+    emits('continue')
+  }
 }
+
 </script>
 
 <template>
@@ -46,26 +35,18 @@ function next() {
     <h2>RSVP – Identification</h2>
 
     <div class="input-group">
-      <label>
-        First Name
-        <input type="text" v-model="local.firstName" @input="onInput" placeholder="John" />
-      </label>
+      <form @submit.prevent="next">
+        <label>Contraseña
+          <input type="password" v-model="local.password" placeholder="Escribe la contraseña" />
+        </label>
+        <p v-if="submitted && !isValid" class="error">
+          Contraseña incorrecta. Por favor vuelve a intentarlo 💌
+        </p>
+        <button type="submit">Continue</button>
+      </form>
 
-      <label>
-        Last Name
-        <input type="text" v-model="local.lastName" @input="onInput" placeholder="Doe" />
-      </label>
     </div>
 
-    <!-- mensaje solo si se pulsó el botón y no es válido -->
-    <p v-if="submitted && !isValid" class="error">
-      Lo sentimos, no te encontramos en la lista de invitados.<br>
-      Por favor revisa la ortografía o contáctanos si crees que es un error 💌
-    </p>
-
-    <button @click="next">
-      Continue
-    </button>
   </div>
 </template>
 

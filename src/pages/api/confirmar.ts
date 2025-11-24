@@ -1,30 +1,42 @@
 // src/pages/api/confirmar.ts
 import type { APIRoute } from "astro";
 import { google } from "googleapis";
+import type { FormData } from "@/types/types.ts";
 
-const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS!); // parse del JSON
+const credentials: any = process.env.GOOGLE_CREDENTIALS;
+// parse del JSON
+// if (!credentials) {
+//   throw new Error("GOOGLE_CREDENTIALS environment variable is not set.");
+// }
+
+// const tempKeyFilePath = join(tmpdir(), "google-credentials.json");
+// writeFileSync(tempKeyFilePath, credentials);
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: credentials,
+  keyFile: "credentials.json",
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
 const spreadsheetId = "1CMW7Glyym4bnOdiGo4HMRlJ-bgz6L8a-Kg9GUD1QjPA";
 
-export const post: APIRoute = async ({ request }) => {
-  try {
-    const body = await request.json();
-    const { nombre, apellido, asistencia } = body;
+export const POST: APIRoute = async ({ request }) => {
+  if (request.headers.get("Content-Type") === "application/json") {
+    const body = (await request.json()) as FormData;
 
-    if (!nombre || !apellido || !asistencia) {
-      return new Response(
-        JSON.stringify({ status: "error", mensaje: "Datos incompletos" }),
-        { status: 400, headers: { "Content-Type": "application/json" } }
-      );
-    }
+    const {
+      name,
+      lastname,
+      email,
+      attending,
+      bus,
+      partnerJoining,
+      partnerName,
+      allergies,
+      comments,
+    } = body;
 
     // Inicializar Google Sheets
-    const client = await auth.getClient();
+    const client = (await auth.getClient()) as any;
     const sheets = google.sheets({ version: "v4", auth: client });
 
     // Append data
@@ -33,25 +45,42 @@ export const post: APIRoute = async ({ request }) => {
       range: "A:D",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [[nombre, apellido, asistencia, new Date().toLocaleString()]],
+        values: [
+          [
+            name,
+            lastname,
+            email,
+            attending,
+            bus,
+            partnerJoining,
+            partnerName,
+            allergies,
+            comments,
+            new Date().toLocaleString(),
+          ],
+        ],
       },
     });
 
     return new Response(
       JSON.stringify({
-        status: "ok",
-        mensaje: "✅ Confirmación guardada en Google Sheets",
+        message: {
+          name,
+          lastname,
+          email,
+          attending,
+          bus,
+          partnerJoining,
+          partnerName,
+          allergies,
+          comments,
+        },
       }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
-    );
-  } catch (error) {
-    console.error("Error al guardar en Sheets:", error);
-    return new Response(
-      JSON.stringify({
-        status: "error",
-        mensaje: "Error al guardar la confirmación",
-      }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      {
+        status: 200,
+      }
     );
   }
+
+  return new Response(null, { status: 400 });
 };

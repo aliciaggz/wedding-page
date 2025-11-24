@@ -6,15 +6,6 @@ import StepFinal from '@/components/molecules/rsvp/StepFinal.vue'
 
 const currentStep = ref(1)
 
-// Estado global del formulario
-const guestList = [
-  "John Doe",
-  "Jane Smith",
-  "Michael Johnson",
-  "Emily Davis",
-  "Robert Brown"
-]
-
 const form = ref({
   guestName: "",
   email: "",
@@ -25,30 +16,35 @@ const form = ref({
   attending: null
 })
 
+// const authenticated = ref(localStorage.getItem("rsvp-auth") === "true")
+
 // Navegación
 function goToStep(step) {
   currentStep.value = step
+
+  // if (step === 2) {
+  //   authenticated.value = true
+  // }
 }
 
-function handleSubmit(details) {
-  // Aquí podrías hacer un fetch() real
-  form.value = { ...form.value, ...details }
+// function handleSubmit(details) {
+//   form.value = { ...form.value, ...details }
 
-  // Regla simple: si ha rellenado el paso 2, está asistiendo
-  form.value.attending = details.attending
+//   // Regla simple: si ha rellenado el paso 2, está asistiendo
+//   form.value.attending = details.attending
 
-  currentStep.value = 3
-}
+//   currentStep.value = 3
+// }
 </script>
 
 <template>
   <div class="rsvp-wrapper">
     <div v-if="currentStep === 1">
-      <StepIdentification :guest-list="guestList" v-model="form.guestName" @continue="goToStep(2)" />
+      <StepIdentification v-if="!authenticated" @continue="goToStep(2)" />
     </div>
 
     <div v-else-if="currentStep === 2">
-      <StepDetails v-model="form" @submit="handleSubmit" />
+      <StepDetails v-model="form" />
     </div>
 
     <div v-else-if="currentStep === 3">
