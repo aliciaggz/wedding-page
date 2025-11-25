@@ -1,10 +1,9 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
-import path from 'path';
+import { defineConfig } from "astro/config";
+import vue from "@astrojs/vue";
+import path from "path";
 
-const isProd = process.env.NODE_ENV === 'production';
-
+const isVercel = process.env.VERCEL === "1";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,8 +18,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@': path.resolve('./src')
-      }
+        "@": path.resolve("./src"),
+      },
     },
     css: {
       preprocessorOptions: {
@@ -28,13 +27,13 @@ export default defineConfig({
           additionalData: `
           @use "@/styles/variables" as *;
           @use "@/styles/mixins" as *;
-        `
-      },
+        `,
+        },
       },
     },
   },
-  site: isProd
-  ? 'https://aliciaggz.github.io/wedding-page/'
-  : 'http://localhost:4321',
-  base: isProd ? '/wedding-page' : '/',
+  base: isVercel ? "/" : "/wedding-page",
+  site: isVercel
+    ? "https://alex-maria-wedding.vercel.app"
+    : "https://aliciaggz.github.io/wedding-page",
 });
