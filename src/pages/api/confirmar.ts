@@ -3,17 +3,26 @@ import type { APIRoute } from "astro";
 import { google } from "googleapis";
 import type { FormData } from "@/types/types.ts";
 
-const credentials: any = process.env.GOOGLE_CREDENTIALS;
+const credentials = process.env.GOOGLE_CREDENTIALS
+  ? JSON.parse(process.env.GOOGLE_CREDENTIALS)
+  : "credentials.json";
+
 // parse del JSON
-// if (!credentials) {
-//   throw new Error("GOOGLE_CREDENTIALS environment variable is not set.");
-// }
+if (!credentials) {
+  throw new Error("GOOGLE_CREDENTIALS environment variable is not set.");
+}
 
 // const tempKeyFilePath = join(tmpdir(), "google-credentials.json");
 // writeFileSync(tempKeyFilePath, credentials);
 
+// if (!raw) {
+//   throw new Error("Missing GOOGLE_CREDENTIALS env");
+// }
+
+console.log("ENV loaded?", process.env.GOOGLE_CREDENTIALS?.length);
+
 const auth = new google.auth.GoogleAuth({
-  keyFile: "credentials.json",
+  keyFile: credentials,
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
@@ -42,7 +51,7 @@ export const POST: APIRoute = async ({ request }) => {
     // Append data
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "A:D",
+      range: "A:J",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
