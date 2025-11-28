@@ -19,6 +19,10 @@ const auth = new google.auth.GoogleAuth({
 
 const spreadsheetId = "1CMW7Glyym4bnOdiGo4HMRlJ-bgz6L8a-Kg9GUD1QjPA";
 
+export const GET: APIRoute = async () => {
+  return new Response(JSON.stringify({ status: "ok", method: "GET" }));
+};
+
 export const POST: APIRoute = async ({ request }) => {
   if (request.headers.get("Content-Type") === "application/json") {
     const body = (await request.json()) as FormData;
