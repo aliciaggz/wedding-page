@@ -1,4 +1,3 @@
-// src/pages/api/confirmar.ts
 import type { APIRoute } from "astro";
 import { google } from "googleapis";
 import type { FormData } from "@/types/types.ts";
@@ -7,17 +6,9 @@ const credentials = process.env.GOOGLE_CREDENTIALS
   ? JSON.parse(process.env.GOOGLE_CREDENTIALS)
   : "credentials.json";
 
-// parse del JSON
 if (!credentials) {
   throw new Error("GOOGLE_CREDENTIALS environment variable is not set.");
 }
-
-// const tempKeyFilePath = join(tmpdir(), "google-credentials.json");
-// writeFileSync(tempKeyFilePath, credentials);
-
-// if (!raw) {
-//   throw new Error("Missing GOOGLE_CREDENTIALS env");
-// }
 
 console.log("ENV loaded?", process.env.GOOGLE_CREDENTIALS?.length);
 

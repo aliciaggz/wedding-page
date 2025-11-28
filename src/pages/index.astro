@@ -1,5 +1,5 @@
 ---
-if (import.meta.env.DEV) {
+if (!import.meta.env.PROD) {
   Astro.redirect('/en/');
 }
 ---
