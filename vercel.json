@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/es/",
+      "destination": "/en/",
       "permanent": false
     }
   ]

@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import vue from "@astrojs/vue";
 import path from "path";
-import node from "@astrojs/node";
+import vercel from "@astrojs/vercel";
 
 const isVercel = process.env.VERCEL === "1";
 
@@ -10,7 +10,7 @@ const isVercel = process.env.VERCEL === "1";
 export default defineConfig({
   integrations: [vue()],
   output: "server",
-  adapter: node({ mode: "standalone" }),
+  adapter: vercel(),
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"], // idiomas disponibles
