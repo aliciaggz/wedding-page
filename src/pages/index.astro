@@ -1,3 +1,5 @@
 ---
-Astro.redirect('/es/');
+if (import.meta.env.DEV) {
+  Astro.redirect('/es/');
+}
 ---
