@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import vue from "@astrojs/vue";
 import path from "path";
+import node from "@astrojs/node";
 
 const isVercel = process.env.VERCEL === "1";
 
