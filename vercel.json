@@ -5,5 +5,11 @@
       "destination": "/en/",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
   ]
 }
