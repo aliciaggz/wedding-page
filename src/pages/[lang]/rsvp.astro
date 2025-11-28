@@ -1,5 +1,5 @@
 ---
-import Home from '../../components/Home.astro';
+import RsvpForm from '@/components/organism/rsvp/RsvpForm.vue';
 import Layout from '../../layouts/Layout.astro';
 
 import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../../utils/i18n';
@@ -19,14 +19,10 @@ export function getStaticPaths() {
   ];
 }
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Home  />
-	<p>Idioma actual: {locale}</p>
-	<h1>{t(locale, "home.title")}</h1>
-  <a href=`/${locale}/rsvp`>RSVP</a>
-</Layout>
+<>
+	<RsvpForm client:load />
+
+</>
 

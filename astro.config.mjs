@@ -8,6 +8,8 @@ const isVercel = process.env.VERCEL === "1";
 // https://astro.build/config
 export default defineConfig({
   integrations: [vue()],
+  output: "server",
+  adapter: node({ mode: "standalone" }),
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"], // idiomas disponibles
