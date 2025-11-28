@@ -13,7 +13,7 @@ if (!credentials) {
 console.log("ENV loaded?", process.env.GOOGLE_CREDENTIALS?.length);
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: credentials,
+  credentials,
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
