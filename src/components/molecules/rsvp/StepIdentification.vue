@@ -50,7 +50,7 @@ function next() {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss">
 .step {
   display: block;
   padding: 1.5rem;

@@ -53,7 +53,7 @@ function goToStep(step) {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss">
 .rsvp-wrapper {
   max-width: 520px;
   margin: 0 auto;

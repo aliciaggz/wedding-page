@@ -169,7 +169,7 @@ async function handleSubmit() {
 
 </template>
 
-<style scoped>
+<style lang="scss">
 .modal {
   position: fixed;
   top: 0;
