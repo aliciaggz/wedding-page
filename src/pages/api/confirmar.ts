@@ -14,6 +14,7 @@ console.log("ENV loaded?", process.env.GOOGLE_CREDENTIALS?.length);
 
 const auth = new google.auth.GoogleAuth({
   credentials,
+  // keyFile: "credentials.json", //probar en local
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
 
