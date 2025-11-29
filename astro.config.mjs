@@ -35,7 +35,7 @@ export default defineConfig({
       },
     },
   },
-  base: isVercel ? "/" : "/wedding-page",
+  base: "/",
   site: isVercel
     ? "https://alex-maria-wedding.vercel.app"
     : "https://aliciaggz.github.io/wedding-page",

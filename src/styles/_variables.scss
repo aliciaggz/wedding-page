@@ -1,14 +1,18 @@
 // 🎨 Colores
-$color-primary: #8c52ff; 
-$color-secondary: #ffb6c1; 
-$color-accent: #F69593;   
-$color-white: #FFF7F0;
+$color-primary: #8c52ff;
+$color-secondary: #ffb6c1;
+$color-accent: #f69593;
+$color-white: #ffffff;
 $color-text: #303030;
 $color-muted: #666666;
+$color-background: #fef8f0;
+$color-red: #c21807;
 
 // 🎨 Font Families
-$font-serif: 'Source Serif Pro', serif;
-$font-lato: 'Lato', sans-serif;
+$font-serif: "Source Serif Pro", serif;
+$font-lato: "Lato", sans-serif;
+$font-dancing: "Dancing Script", cursive;
+$font-cormorant: "Cormorant Garamond Variable", serif;
 
 // 🔢 Font Weights Source Serif Pro
 $weight-serif-light: 200;
@@ -24,28 +28,27 @@ $weight-lato-bold: 700;
 $weight-lato-black: 900;
 
 // 📐 Font Sizes (ejemplo, puedes ajustarlo)
-$font-size-xs: 0.75rem;   // 12px - notas o disclaimers
-$font-size-sm: 0.875rem;  // 14px - texto secundario
-$font-size-base: 1rem;    // 16px - párrafos principales
-$font-size-md: 1.25rem;   // 20px - subtítulos
-$font-size-lg: 1.5rem;    // 24px - títulos de sección
-$font-size-xl: 2rem;      // 32px - encabezados importantes
-$font-size-2xl: 2.75rem;  // 44px - héroe o título destacado
-$font-size-3xl: 3.5rem;   // 56px - encabezado muy grande
-
+$font-size-xs: 0.75rem; // 12px - notas o disclaimers
+$font-size-sm: 0.875rem; // 14px - texto secundario
+$font-size-base: 1rem; // 16px - párrafos principales
+$font-size-md: 1.25rem; // 20px - subtítulos
+$font-size-lg: 1.5rem; // 24px - títulos de sección
+$font-size-xl: 2rem; // 32px - encabezados importantes
+$font-size-2xl: 2.75rem; // 44px - héroe o título destacado
+$font-size-3xl: 3.5rem; // 56px - encabezado muy grande
 
 // 📏 Espaciado
 $space-xs: 0.25rem; // 4px
-$space-sm: 0.5rem;  // 8px
-$space-md: 1rem;    // 16px
-$space-lg: 2rem;    // 32px
-$space-xl: 4rem;    // 64px
+$space-sm: 0.5rem; // 8px
+$space-md: 1rem; // 16px
+$space-lg: 2rem; // 32px
+$space-xl: 4rem; // 64px
 
 // 🔤 Tamaños de fuente
 $text-sm: 0.875rem; // 14px
-$text-base: 1rem;   // 16px
-$text-lg: 1.25rem;  // 20px
-$text-xl: 2rem;     // 32px
+$text-base: 1rem; // 16px
+$text-lg: 1.25rem; // 20px
+$text-xl: 2rem; // 32px
 $text-xxl: 2.75rem; // 44px
 
 // 🖼️ Bordes
@@ -54,7 +57,7 @@ $radius-md: 8px;
 $radius-lg: 16px;
 
 // Breakpoints (min-width)
-$bp-sm: 480px;   // móvil
-$bp-md: 768px;   // tablet
-$bp-lg: 1024px;  // desktop
-$bp-xl: 1280px;  // pantallas grandes
+$bp-sm: 480px; // móvil
+$bp-md: 768px; // tablet
+$bp-lg: 1024px; // desktop
+$bp-xl: 1280px; // pantallas grandes

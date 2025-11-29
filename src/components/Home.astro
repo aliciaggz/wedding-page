@@ -1,6 +1,7 @@
 ---
 import LineTimeline from '../components/atoms/LineTimeline.vue';
 import Title from '../components/atoms/Title.astro';
+import IntroHome from '@/components/organism/IntroHome.astro';
 
 import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../utils/i18n';
 
@@ -11,9 +12,8 @@ const locale = getLocale(lang);
 
 <div id="container">
 	<main>
-	<Title text={t(locale, "ceremony.title")}/>
+	<IntroHome/>	
 	<LineTimeline/>
-
 
 		</section>
 	</main>

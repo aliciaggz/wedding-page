@@ -1,0 +1,58 @@
+---
+import Button from '@/components/atoms/Button.vue';
+import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../../utils/i18n';
+import { Image } from 'astro:assets';
+
+const lang = getLangFromUrl(Astro.url);
+
+---
+
+<div class="intro-home">
+  <div class="intro-home__text">
+    <p class="intro-home__text__p">We are so excited to celebrate our special day with you in beautiful Murcia, Spain!</p>
+    <p class="intro-home__text__p">We are so excited to celebrate our special day with you in beautiful Murcia, Spain! </p>
+    <p class="intro-home__text__p">We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world. </p>
+  </div>
+  <Button extraClass='intro-home__button' href=`/rsvp` label='RSVP'/>
+  <figure class="intro-home__figure">
+    <Image src={'/src/assets/alex-maria02.jpg'} alt="Maria and Alex" width={300} height={400} />
+  </figure>
+</div>
+<style lang="scss">
+.intro-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: $font-size-md;
+    color: $color-red;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+  &__button {
+    margin-bottom: 5rem;
+  }
+
+  &__figure {
+    border: 1rem solid $color-white; border-width: 1rem 1rem 2.5rem 1rem;
+
+    & img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+</style>
