@@ -1,5 +1,7 @@
 ---
 import RsvpForm from '@/components/organism/rsvp/RsvpForm.vue';
+import Empty from "@/layouts/Empty.astro";
+
 import '../../styles/global.scss';
 
 import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../../utils/i18n';
@@ -21,8 +23,7 @@ export function getStaticPaths() {
 
 ---
 
-<>
+<Empty>
 	<RsvpForm client:load />
-
-</>
+<Empty/>
 

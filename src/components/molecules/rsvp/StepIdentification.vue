@@ -46,7 +46,6 @@ function next() {
       </form>
 
     </div>
-
   </div>
 </template>
 
