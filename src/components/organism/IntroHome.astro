@@ -2,6 +2,7 @@
 import Button from '@/components/atoms/Button.vue';
 import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../../utils/i18n';
 import { Image } from 'astro:assets';
+import BlockIcon from '../icons/BlockIcon.vue';
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -14,9 +15,14 @@ const lang = getLangFromUrl(Astro.url);
     <p class="intro-home__text__p">We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world. </p>
   </div>
   <Button extraClass='intro-home__button' href=`/rsvp` label='RSVP'/>
-  <figure class="intro-home__figure">
-    <Image src={'/src/assets/alex-maria02.jpg'} alt="Maria and Alex" width={300} height={400} />
+  <div class="intro-home__figures-container">
+    <Image class={"intro-home__figures-container__marco"} src={'/src/assets/marco1.png'} alt="Marco" width={300} height={400} />
+
+    <figure class="intro-home__figure">
+    <Image src={'/src/assets/alex-maria02.jpg'} alt="Maria and Alex" width={200} height={300} />
   </figure>
+  </div>
+  <!-- <BlockIcon -->
 </div>
 <style lang="scss">
 .intro-home {
@@ -42,15 +48,35 @@ const lang = getLangFromUrl(Astro.url);
 
   &__button {
     margin-bottom: 5rem;
+    width: 9rem;
+  }
+
+  &__figures-container {
+    position: relative;
+    display: flex;
+
+    &__marco {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 1rem;
+      left: 0rem;
+      z-index: -1;
+    }
   }
 
   &__figure {
-    border: 1rem solid $color-white; border-width: 1rem 1rem 2.5rem 1rem;
+    width: 100%;
+    max-width: 32rem;
+    padding-left: 6%;
+    padding-right: 9%;
 
     & img {
       display: block;
       width: 100%;
+      max-width: 100%;
       height: auto;
+      border: 1rem solid $color-white; border-width: 1rem 1rem 2.5rem 1rem;
     }
   }
 }

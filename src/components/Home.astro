@@ -2,7 +2,7 @@
 import LineTimeline from '../components/atoms/LineTimeline.vue';
 import Title from '../components/atoms/Title.astro';
 import IntroHome from '@/components/organism/IntroHome.astro';
-
+import OurStory from '@/components/organism/OurStory.astro';
 import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../utils/i18n';
 
 const lang = getLangFromUrl(Astro.url);
@@ -12,7 +12,9 @@ const locale = getLocale(lang);
 
 <div id="container">
 	<main>
-	<IntroHome/>	
+	<IntroHome/>
+	<OurStory/>
+
 	<LineTimeline/>
 
 		</section>

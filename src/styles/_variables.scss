@@ -11,7 +11,7 @@ $color-red: #c21807;
 // 🎨 Font Families
 $font-serif: "Source Serif Pro", serif;
 $font-lato: "Lato", sans-serif;
-$font-dancing: "Dancing Script", cursive;
+$font-dancing: "Dancing Script Variable", cursive;
 $font-cormorant: "Cormorant Garamond Variable", serif;
 
 // 🔢 Font Weights Source Serif Pro
@@ -61,3 +61,19 @@ $bp-sm: 480px; // móvil
 $bp-md: 768px; // tablet
 $bp-lg: 1024px; // desktop
 $bp-xl: 1280px; // pantallas grandes
+
+.title-cormorant-h2 {
+  font-family: $font-cormorant;
+  font-size: $font-size-lg;
+  font-weight: $weight-serif-light;
+  color: $color-red;
+  text-transform: lowercase;
+}
+
+.subtitle-dancing-h3 {
+  font-family: $font-dancing;
+  font-size: $font-size-base;
+  font-weight: $weight-serif-bold;
+  color: $color-red;
+  text-transform: lowercase;
+}

@@ -3,12 +3,42 @@ import Button from '@/components/atoms/Button.vue';
 
 ---
 <div class="ourstory-home">
-  <h2>Our Story</h2>
+  <h2 class="title-cormorant-h2">Our Story</h2>
+  <h3 class="subtitle-dancing-h3">10 years, forever to go</h3>
   <div class="ourstory-home__text">
     <p>It all started with an unexpected match.
       She was looking for inspiration for her next trip; he was looking for someone who wasn't afraid to sing at the top of their lungs in the car.</p>
     <p>One autumn afternoon, amid laughter, coffee and a playlist that continues to grow, they discovered they shared much more than favourite songs.</p>
   </div>
-  <Button extraClass='ourstory-home__button' href=`/rsvp` label='RSVP'/>
+  <Button extraClass='ourstory-home__button' href=`/rsvp` label='Our Story'/>
 
 </div>
+<style lang="scss" scoped>
+.ourstory-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-base;
+    font-weight: 200;
+    color: $color-text;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+  &__button {
+    margin-bottom: 5rem;
+    width: 9rem;
+  }
+
+}
+</style>
