@@ -1,9 +1,10 @@
 ---
-import LineTimeline from '../components/atoms/LineTimeline.vue';
 import Title from '../components/atoms/Title.astro';
 import IntroHome from '@/components/organism/IntroHome.astro';
 import OurStory from '@/components/organism/OurStory.astro';
 import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../utils/i18n';
+import Schedule from '@/components/organism/Schedule.astro';
+import Travel from '@/components/organism/Travel.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
@@ -12,11 +13,9 @@ const locale = getLocale(lang);
 
 <div id="container">
 	<main>
-	<IntroHome/>
-	<OurStory/>
-
-	<LineTimeline/>
-
-		</section>
+		<IntroHome/>
+		<OurStory/>
+		<Schedule/>
+		<Travel
 	</main>
 </div>

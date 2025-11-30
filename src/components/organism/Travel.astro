@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import Button from '@/components/atoms/Button.vue';
+
+---
+<section class="travel">
+  <h2 class="title-cormorant-h2">Travel & Stay</h2>
+  <h3 class="subtitle-dancing-h3">your travel guide</h3>
+  <p class="travel__text">We know many of you will be traveling to come celebrate, here are some lodging recs & travel tips!</p>
+  <Button extraClass='travel__button' href=`/travel&stay` label='Travel guide' size='large'/>
+</section>
+
+<style lang="scss" scoped>
+.travel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-base;
+    font-weight: 200;
+    color: $color-text;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+  &__button {
+    margin-bottom: 5rem;
+    width: 13rem;
+  }
+
+
+
+
+}
+</style>

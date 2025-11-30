@@ -1,0 +1,80 @@
+---
+import Timeline from '@/components/atoms/Timeline.vue';
+import { Image } from 'astro:assets';
+import Button from '@/components/atoms/Button.vue';
+
+---
+<section class="schedule">
+  <h2 class="title-cormorant-h2">Schedule</h2>
+  <h3 class="subtitle-dancing-h3">what’s Happening</h3>
+  <Timeline/>
+  <Button extraClass='schedule__button' action='calendar' label='add to calendar' size='large'/>
+
+</section>
+  <Image class={"schedule__festin"} src={'/src/assets/festin.svg'} alt="Maria and Alex" width={400} height={600} />
+
+<style lang="scss" scoped>
+.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-base;
+    font-weight: 200;
+    color: $color-text;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+  &__button {
+    margin-bottom: 5rem;
+    width: 9rem;
+  }
+
+  &__marco {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+  }
+
+  &__figure {
+    width: 100%;
+    max-width: 32rem;
+    padding-left: 6%;
+    padding-right: 9%;
+
+    & img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 1rem solid $color-white; border-width: 1rem 1rem 2.5rem 1rem;
+      transform: rotate(5deg);
+      box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.25);;
+
+    }
+  }
+
+  &__festin {
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    margin-bottom: 10rem;
+  }
+
+  &__button{
+    width: 15rem;
+  }
+
+}
+</style>

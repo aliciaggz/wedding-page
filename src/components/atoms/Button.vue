@@ -7,6 +7,7 @@ const props = defineProps<{
   target?: "_self" | "_blank";
   action?: "calendar" | "none";
   extraClass?: string;
+  size?: 'small' | 'large';
   onClick?: (e: Event) => void;
 }>();
 
@@ -39,21 +40,17 @@ function handleClick(e: Event) {
   <component :is="isLink ? 'a' : 'button'" :href="isLink ? props.href : undefined"
     :target="isLink ? props.target : undefined" type="button" class="sketch-btn" :class="extraClass"
     @click="handleClick">
-    <BlockIcon class="sketch-btn__block-icon" />
+    <BlockIcon class="sketch-btn__block-icon" :size="props.size" />
     <span class="sketch-btn__label">{{ label }}</span>
   </component>
 </template>
 
 <style scoped lang="scss">
-/* Wrapper para meter tu SVG “dibujado a mano” */
 .sketch-wrapper {
   position: relative;
   display: inline-block;
-  // /* espacio para que el SVG sobresalga si quieres */
-  // padding: 0.25rem;
 }
 
-/* Botón base */
 .sketch-btn {
   position: relative;
   z-index: 2;
@@ -65,11 +62,9 @@ function handleClick(e: Event) {
   color: $color-red;
   border: none;
   border-radius: 2rem;
-  // background-color: transparent;
+  background-color: transparent;
   cursor: pointer;
   text-decoration: none;
-
-  transition: background 0.3s ease, color 0.3s ease;
 
   &__block-icon {
     display: block;
@@ -83,9 +78,10 @@ function handleClick(e: Event) {
   }
 
   &__label {
+    width: 100%;
     position: absolute;
     top: 45%;
-    left: 55%;
+    left: 54%;
     transform: translate(-50%, -50%);
     /* centra horizontal y vertical */
     font-family: $font-lato;

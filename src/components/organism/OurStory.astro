@@ -1,5 +1,5 @@
 ---
-import Button from '@/components/atoms/Button.vue';
+import { Image } from 'astro:assets';
 
 ---
 <div class="ourstory-home">
@@ -10,9 +10,13 @@ import Button from '@/components/atoms/Button.vue';
       She was looking for inspiration for her next trip; he was looking for someone who wasn't afraid to sing at the top of their lungs in the car.</p>
     <p>One autumn afternoon, amid laughter, coffee and a playlist that continues to grow, they discovered they shared much more than favourite songs.</p>
   </div>
-  <Button extraClass='ourstory-home__button' href=`/rsvp` label='Our Story'/>
-
 </div>
+<Image class={"ourstory-home__marco"} src={'/src/assets/marco2.png'} alt="Maria and Alex" width={400} height={600} />
+<figure class="ourstory-home__figure">
+  <Image src={'/src/assets/alex-maria03.jpg'} alt="Maria and Alex" width={200} height={300} />
+</figure>
+<Image class={"ourstory-home__marco"} src={'/src/assets/marco2-1.png'} alt="Maria and Alex" width={400} height={600} />
+
 <style lang="scss" scoped>
 .ourstory-home {
   display: flex;
@@ -38,6 +42,30 @@ import Button from '@/components/atoms/Button.vue';
   &__button {
     margin-bottom: 5rem;
     width: 9rem;
+  }
+
+  &__marco {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+  }
+
+  &__figure {
+    width: 100%;
+    max-width: 32rem;
+    padding-left: 6%;
+    padding-right: 9%;
+
+    & img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 1rem solid $color-white; border-width: 1rem 1rem 2.5rem 1rem;
+      transform: rotate(5deg);
+      box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.25);;
+
+    }
   }
 
 }
