@@ -3,11 +3,14 @@
     "title": "We’re getting married!",
     "names": "Maria & Alex",
     "date": "30.05.26",
-    "intro": "We are so excited to celebrate our special day with you in beautiful Murcia, Spain! Your presence would mean the world to us. We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world."
+    "intro": "We are so excited to celebrate our special day with you in beautiful Murcia, Spain! Your presence would mean the world to us. We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world.",
+    "intro2": "We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world."
   },
-  "ceremony": {
-    "title": "Ceremony & Reception",
-    "schedule": {
+  "schedule": {
+    "title": "Schedule",
+    "subtitle": "what’s Happening",
+    "buttonLabel": "add to calendar",
+    "timeline": {
       "date": "30th May 2025",
       "place": "Parque de la Marquesa",
       "arrival": "Arrival - 13:30h",
@@ -38,6 +41,12 @@
       "diet": "Any dietary requirements?"
     }
   },
+  "story": {
+    "title": "Our Story",
+    "subtitle": "10 years, forever to go",
+    "text": "It all started with an unexpected match. She was looking for inspiration for her next trip; he was looking for someone who wasn't afraid to sing at the top of their lungs in the car.",
+    "text2": "One autumn afternoon, amid laughter, coffee and a playlist that continues to grow, they discovered they shared much more than favourite songs."
+  },
   "travel": {
     "title": "Travel & Stay",
     "airports": "Murcia is easily reached from the UK, with regular flights. The nearest airport is Región de Murcia International (RMU), about 30 minutes from the city. Alicante (ALC) is also a great option, about an hour away.",
@@ -49,10 +58,7 @@
       "general": "Service is relaxed, tipping is minimal (rounding up or 1-2€ is plenty)."
     }
   },
-  "story": {
-    "title": "Our Story",
-    "content": "Once upon a time..."
-  },
+
   "honeymoon": {
     "title": "Honeymoon Fund",
     "text": "We feel incredibly grateful that so many of you are travelling to Spain to celebrate with us. Please know that we do not expect any gifts — your company on the day is what matters most. If you would still like to give something, a contribution to our honeymoon fund would mean the world to us."

@@ -1,14 +1,17 @@
 ---
 import { Image } from 'astro:assets';
+import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
 
 ---
 <div class="ourstory-home">
-  <h2 class="title-cormorant-h2">Our Story</h2>
-  <h3 class="subtitle-dancing-h3">10 years, forever to go</h3>
+  <h2 class="title-cormorant-h2">{t(locale, "story.title")}</h2>
+  <h3 class="subtitle-dancing-h3">{t(locale, "story.subtitle")}</h3>
   <div class="ourstory-home__text">
-    <p>It all started with an unexpected match.
-      She was looking for inspiration for her next trip; he was looking for someone who wasn't afraid to sing at the top of their lungs in the car.</p>
-    <p>One autumn afternoon, amid laughter, coffee and a playlist that continues to grow, they discovered they shared much more than favourite songs.</p>
+    <p>{t(locale, "story.text")}</p>
+    <p>{t(locale, "story.text2")}</p>
   </div>
 </div>
 <Image class={"ourstory-home__marco"} src={'/src/assets/marco2.png'} alt="Maria and Alex" width={400} height={600} />

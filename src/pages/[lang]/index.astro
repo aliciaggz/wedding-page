@@ -5,11 +5,9 @@ import Layout from '../../layouts/Layout.astro';
 import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../../utils/i18n';
 
 const lang = getLangFromUrl(Astro.url);
-// const lang = getLangFromUrl(Astro.url);
 
 const locale = getLocale(lang);
 const translatePath = useTranslatedPath(lang);
-
 
 //lo tengo que poner si o si para que funcione la generacion de rutas estaticas
 export function getStaticPaths() {
