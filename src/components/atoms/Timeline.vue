@@ -7,7 +7,7 @@
         <h3 class="title">{{ event.title }}</h3>
         <p class="text">{{ event.text }}</p>
       </div>
-      <img class="icon" :src="event.icon" alt="" />
+      <img v-if="event.icon" class="icon" :src="event.icon" alt="" />
       <div class="dot"></div>
     </div>
   </div>
@@ -30,31 +30,31 @@ const events = [
     time: "13:30",
     title: "ARRIVAL",
     text: "Parque de la Marquesa, Carretera B-10, Km 4.3, 30612 Ulea, Murcia",
-    icon: car
+    icon: "/src/assets/car.svg"
   },
   {
     time: "14:00",
     title: "START OF THE CEREMONY",
     text: "Guests may arrive at 1:30 p.m. and the ceremony will begin at 3:00 p.m.",
-    icon: rings
+    icon: "/src/assets/rings.svg"
   },
   {
     time: "15:00",
     title: "FOOD",
     text: "Enjoy drinks, canapés, conversation and dreamy melodies under the oak tree.",
-    icon: cheese
+    icon: "/src/assets/cheese.svg"
   },
   {
     time: "18:00",
     title: "PARTY",
     text: "We danced, toasted and celebrated.",
-    icon: mirrorball
+    icon: "/src/assets/mirrorball.svg"
   },
   {
     time: "00:00",
     title: "END OF THE CEREMONY",
     text: "Thank you all for coming and sharing this special moment with us.",
-    icon: "/img/disco.svg"
+    icon: ""
   },
 ];
 </script>
@@ -64,7 +64,7 @@ const events = [
   width: 100%;
   // padding: 4rem 0;
   display: grid;
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 2.5rem;
   margin-bottom: 4rem;
 }
@@ -109,7 +109,7 @@ const events = [
     }
 
     .icon {
-      grid-column: 1;
+      grid-row: 1;
     }
   }
 }
@@ -129,7 +129,7 @@ const events = [
 
 /* Iconos */
 .icon {
-  width: 70px;
+  min-width: 5rem;
   height: auto;
   justify-self: center;
   object-fit: contain;

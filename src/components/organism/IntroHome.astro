@@ -5,6 +5,7 @@ import { Image } from 'astro:assets';
 import BlockIcon from '../icons/BlockIcon.vue';
 
 const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
 
 ---
 
@@ -14,7 +15,7 @@ const lang = getLangFromUrl(Astro.url);
     <p class="intro-home__text__p">We are so excited to celebrate our special day with you in beautiful Murcia, Spain! </p>
     <p class="intro-home__text__p">We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world. </p>
   </div>
-  <Button extraClass='intro-home__button' href=`/rsvp` label='RSVP'/>
+  <Button extraClass='intro-home__button' href=`/${locale}/rsvp` label='RSVP'/>
   <div class="intro-home__figures-container">
     <Image class={"intro-home__figures-container__marco"} src={'/src/assets/marco1.png'} alt="Marco" width={300} height={400} />
 

@@ -1,0 +1,76 @@
+---
+import Timeline from '@/components/atoms/Timeline.vue';
+import { Image } from 'astro:assets';
+import FaqsBox from '@/components/molecules/FaqsBox.vue';
+
+---
+<section class="faqs">
+  <figure class="faqs__figure">
+    <Image src={'/src/assets/alex-maria04.jpg'} alt="Maria and Alex" width={200} height={300} />
+  </figure>
+  <FaqsBox client:load/>
+</section>
+
+<style lang="scss" scoped>
+.faqs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-base;
+    font-weight: 200;
+    color: $color-text;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+  &__button {
+    margin-bottom: 5rem;
+    width: 9rem;
+  }
+
+  &__marco {
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+  }
+
+  &__figure {
+    width: 100%;
+    max-width: 32rem;
+
+    & img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 1rem solid $color-white; border-width: 1rem 1rem 1.5rem 1rem;
+      transform: rotate(5deg);
+      box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.25);;
+
+    }
+  }
+
+  &__festin {
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 32rem;
+    height: auto;
+    margin-bottom: 7rem;
+  }
+
+  &__button{
+    width: 15rem;
+  }
+
+}
+</style>
