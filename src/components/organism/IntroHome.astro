@@ -2,7 +2,6 @@
 import Button from '@/components/atoms/Button.vue';
 import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
 import { Image } from 'astro:assets';
-import BlockIcon from '../icons/BlockIcon.vue';
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
@@ -23,7 +22,6 @@ const locale = getLocale(lang);
     <Image src={'/src/assets/alex-maria02.jpg'} alt="Maria and Alex" width={200} height={300} />
   </figure>
   </div>
-  <!-- <BlockIcon -->
 </div>
 <style lang="scss">
 .intro-home {

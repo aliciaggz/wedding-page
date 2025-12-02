@@ -1,31 +1,37 @@
-<template>
-  <aside class="sidebar" :class="{ open: isOpen }">
-    <nav class="sidebar__menu">
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/historia">Nuestra Historia</a></li>
-        <li><a href="/guia">Guía de Viaje</a></li>
-        <li><a href="/rsvp">RSVP</a></li>
-      </ul>
-    </nav>
-  </aside>
-</template>
-
 <script setup>
+import { computed } from 'vue';
+import Button from '@/components/atoms/Button.vue';
+import { t } from '@/utils/i18n.js';
+import { locale } from '@/stores/localeStore.js';
+
+const currentLocale = computed(() => locale.value);
+
 defineProps({
   isOpen: Boolean
 })
 </script>
+<template>
+  <aside class="sidebar" :class="{ open: isOpen }">
+    <nav class="sidebar__menu">
+      <ul>
+        <li><a href="/">{{ t(currentLocale, "sidebar.navigation.home") }}</a></li>
+        <li><a href="/guia">{{ t(currentLocale, "sidebar.navigation.travel") }}</a></li>
+        <li><a href="/#schedule">{{ t(currentLocale, "sidebar.navigation.schedule") }}</a></li>
+      </ul>
+      <Button extraClass='sidebar__button' :href="`/${locale}/rsvp`" color="white" :label="t(locale, 'rsvp.title')" />
+
+    </nav>
+  </aside>
+</template>
 
 <style scoped lang="scss">
-
 .sidebar {
   position: fixed;
   top: 0;
   left: 500px;
   width: 100%;
   height: 100vh;
-  background: $color-accent;
+  background: $color-red;
   color: white;
   transition: left 0.3s ease;
   padding: 2rem;
@@ -41,6 +47,11 @@ defineProps({
     text-align: center;
   }
 
+  &__button {
+    margin-bottom: 5rem;
+    width: 9rem;
+  }
+
   &.open {
     left: 0;
   }
@@ -48,16 +59,18 @@ defineProps({
   nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 
     li {
-      margin: 2rem 0;
 
       a {
         color: $color-white;
         text-decoration: none;
-        font-family: $font-serif;
+        font-family: $font-cormorant;
         font-weight: 300;
-        font-size: $font-size-lg;
+        font-size: $font-size-3xl;
       }
     }
   }

@@ -14,11 +14,6 @@
 </template>
 
 <script setup>
-import car from '@/assets/car.svg'
-import rings from '@/assets/rings.svg'
-import mirrorball from '@/assets/mirrorball.svg'
-import cheese from '@/assets/cheese.svg'
-
 const events = [
   {
     time: "30TH MAY 2025",

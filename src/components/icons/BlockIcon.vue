@@ -1,15 +1,23 @@
 <script setup lang="ts">
 import SmallSvg from './BlockSmall.vue';
 import LargeSvg from './BlockLarge.vue';
-const props = defineProps<{ size?: 'small' | 'large' }>();
+const props = withDefaults(defineProps<{
+  size?: 'small' | 'large',
+  color?: 'red' | 'white';
+
+}>(),
+  {
+    color: 'red'
+  }
+);
 </script>
 
 <template>
   <div class="block-container">
-    <component :is="props.size === 'large' ? LargeSvg : SmallSvg" />
+    <component :class="props.color" :is="props.size === 'large' ? LargeSvg : SmallSvg" />
   </div>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 .block-container {
   display: inline-block;
   line-height: 0;
@@ -25,6 +33,14 @@ const props = defineProps<{ size?: 'small' | 'large' }>();
   height: auto;
   transition: transform 0.25s ease;
   transform-origin: center;
+}
+
+.red {
+  color: $color-red;
+}
+
+.white {
+  color: $color-white;
 }
 
 .rsvp-svg:hover {

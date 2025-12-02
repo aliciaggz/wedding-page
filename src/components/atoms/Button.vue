@@ -1,15 +1,21 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import BlockIcon from '@/components/icons/BlockIcon.vue';
-const props = defineProps<{
-  label: string;
-  href?: string;
-  target?: "_self" | "_blank";
-  action?: "calendar" | "none";
-  extraClass?: string;
-  size?: 'small' | 'large';
-  onClick?: (e: Event) => void;
-}>();
+const props = withDefaults(
+  defineProps<{
+    label: string;
+    href?: string;
+    target?: "_self" | "_blank";
+    action?: "calendar" | "none";
+    extraClass?: string;
+    size?: 'small' | 'large';
+    color?: 'red' | 'white';
+    onClick?: (e: Event) => void;
+  }>(),
+  {
+    color: 'red'
+  }
+);
 
 const emit = defineEmits(["click"]);
 
@@ -38,10 +44,10 @@ function handleClick(e: Event) {
 
 <template>
   <component :is="isLink ? 'a' : 'button'" :href="isLink ? props.href : undefined"
-    :target="isLink ? props.target : undefined" type="button" class="sketch-btn" :class="extraClass"
-    @click="handleClick">
-    <BlockIcon class="sketch-btn__block-icon" :size="props.size" />
-    <span class="sketch-btn__label">{{ label }}</span>
+    :target="isLink ? props.target : undefined" type="button" class="sketch-btn"
+    :class="[extraClass, `sketch-btn--${props.color}`]" @click="handleClick">
+    <BlockIcon class="sketch-btn__block-icon" :size="props.size" :color="props.color" />
+    <span class="sketch-btn__label" :class="props.color">{{ label }}</span>
   </component>
 </template>
 
@@ -59,12 +65,20 @@ function handleClick(e: Event) {
   font-family: $font-lato;
   font-weight: 700;
   font-size: $font-size-md;
-  color: $color-red;
+  // color: $color-red;
   border: none;
   border-radius: 2rem;
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
+
+  &--red {
+    color: $color-red;
+  }
+
+  &--white {
+    color: $color-white;
+  }
 
   &__block-icon {
     display: block;
@@ -87,9 +101,15 @@ function handleClick(e: Event) {
     font-family: $font-lato;
     font-weight: 700;
     font-size: $font-size-md;
-    color: $color-red;
     pointer-events: none;
-    /* para que el hover/click pase al SVG/botón */
+
+    &.red {
+      color: $color-red;
+    }
+
+    &.white {
+      color: $color-white;
+    }
   }
 }
 

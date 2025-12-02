@@ -1,5 +1,5 @@
 <script setup>
-import Menu from '@/components/Menu/Menu.vue'
+import Menu from '@/components/molecules/Menu.vue'
 import LanguagePicker from '@/components/atoms/LanguagePicker.vue'
 
 defineProps({
@@ -17,13 +17,9 @@ defineProps({
 <template>
   <header class="header">
     <div class="header__content">
-      <LanguagePicker
-        :languages="languages"
-        :lang="lang"
-        class="header__lang-picker"
-      />
+      <LanguagePicker :languages="languages" :lang="lang" class="header__lang-picker" />
       <img :src="logo" alt="Logo" class="header__logo" />
-    	<Menu />
+      <Menu />
 
     </div>
   </header>
@@ -34,7 +30,7 @@ defineProps({
   height: 10vh;
   position: absolute;
   background: transparent;
-  z-index: 1001;     
+  z-index: 1001;
 
 
   &__content {
@@ -48,13 +44,14 @@ defineProps({
   }
 
   &__logo {
-    position: absolute;  // posición absoluta dentro del header
-    left: 50%;           // centro horizontal del header
-    top: 70%;            // centro vertical
+    position: absolute; // posición absoluta dentro del header
+    left: 50%; // centro horizontal del header
+    top: 70%; // centro vertical
     transform: translate(-50%, -50%); // ajusta para que el centro del logo quede en el centro del header
-    width: 4rem;
+    width: 6rem;
     height: auto;
     z-index: 1002; // asegúrate que el logo esté por encima también
 
   }
-}</style>
+}
+</style>

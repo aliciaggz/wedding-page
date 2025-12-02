@@ -58,9 +58,13 @@
       "general": "Service is relaxed, tipping is minimal (rounding up or 1-2€ is plenty)."
     }
   },
-
-  "honeymoon": {
-    "title": "Honeymoon Fund",
-    "text": "We feel incredibly grateful that so many of you are travelling to Spain to celebrate with us. Please know that we do not expect any gifts — your company on the day is what matters most. If you would still like to give something, a contribution to our honeymoon fund would mean the world to us."
+  "sidebar": {
+    "navigation": {
+      "home": "Home",
+      "schedule": "Schedule",
+      "story": "Our Story",
+      "travel": "Travel & Stay",
+      "rsvp": "RSVP"
+    }
   }
 }
