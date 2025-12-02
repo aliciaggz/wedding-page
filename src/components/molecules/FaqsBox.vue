@@ -21,17 +21,27 @@ import { reactive } from 'vue'
 
 const faqs = reactive([
   {
-    question: "¿Necesito confirmar mi asistencia?",
-    answer: "Sí, por favor confirma antes del 1 de mayo.",
+    question: "Where can I confirm my attendance?",
+    answer: "All RSVPs are done online (scroll up a bit and click the big RSVP button), but if you have trouble with the form, please contact Alex or Maria.",
     open: false
   },
   {
-    question: "¿Hay código de vestimenta?",
-    answer: "Ropa elegante pero cómoda. Evita tacones muy finos.",
+    question: "What date should I RSVP by?",
+    answer: "Please RSVP by April 9th, 2026.",
     open: false
   },
   {
-    question: "¿Puedo llevar acompañante?",
+    question: "What is the weather like in the area?",
+    answer: "The weather during the month of May is usually beautiful! Depending on if summer stays around it may be in the low to mid 70s, but then cool off nicely at night (50s-60s). The average temp is around 65 and sunny. We don't expect rain, but we'll always be prepared!",
+    open: false
+  },
+  {
+    question: "Can children come?",
+    answer: "We love your little ones, but our wedding will be for adults and teenagers only. We kindly ask that young children not attend, partly due to venue rules and partly so that everyone can eat, drink, and dance without worrying about nap times.",
+    open: false
+  },
+  {
+    question: "Dress Code & Outfit Tips",
     answer: "Solo está permitido si tu invitación lo especifica.",
     open: false
   }

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import BlockIcon from '@/components/icons/BlockIcon.vue';
+import { addToCalendar } from '@/utils/calendar.ts';
+
 const props = withDefaults(
   defineProps<{
     label: string;
@@ -21,16 +23,22 @@ const emit = defineEmits(["click"]);
 
 const isLink = computed(() => !!props.href);
 
-// Acción especial para calendario (Google / iOS / Android)
-function handleCalendarAction() {
-  // Aquí tú meterás tu lógica real del calendario
-  console.log("Añadiendo al calendario...");
 
-  // ejemplo mínimo para que veas dónde iría
-  // window.open("https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+María+&+Alex", "_blank");
+
+function handleCalendarAction() {
+  addToCalendar({
+    title: "Boda María & Alex",
+    description: "Nos encantaría que vinieras a nuestra boda",
+    location: "Parque de la Marquesa, Carretera B-10, Km 4.3, 30612 Ulea, Murcia, España",
+    start: new Date("2026-05-30T13:00:00"),
+    end: new Date("2026-05-30T00:00:00")
+  });
 }
 
+
 function handleClick(e: Event) {
+  console.log('handleClick disparado', props.action);
+
   if (props.action === "calendar") {
     e.preventDefault();
     handleCalendarAction();
