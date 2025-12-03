@@ -1,19 +1,9 @@
-<template>
-  <div class="timeline">
-    <div class="timeline-line"></div>
-    <div class="timeline-item" v-for="(event, i) in events" :key="i" :class="i % 2 === 0 ? 'left' : 'right'">
-      <div class="content">
-        <span class="time">{{ event.time }}</span>
-        <h3 class="title">{{ event.title }}</h3>
-        <p class="text">{{ event.text }}</p>
-      </div>
-      <img v-if="event.icon" class="icon" :src="event.icon" alt="" />
-      <div class="dot"></div>
-    </div>
-  </div>
-</template>
-
 <script setup>
+import car from '@/assets/car.svg'
+import rings from '@/assets/rings.svg'
+import cheese from '@/assets/cheese.svg'
+import mirrorball from '@/assets/mirrorball.svg'
+
 const events = [
   {
     time: "30TH MAY 2025",
@@ -25,25 +15,25 @@ const events = [
     time: "13:30",
     title: "ARRIVAL",
     text: "Parque de la Marquesa, Carretera B-10, Km 4.3, 30612 Ulea, Murcia",
-    icon: "/src/assets/car.svg"
+    icon: car
   },
   {
     time: "14:00",
     title: "START OF THE CEREMONY",
     text: "Guests may arrive at 1:30 p.m. and the ceremony will begin at 3:00 p.m.",
-    icon: "/src/assets/rings.svg"
+    icon: rings
   },
   {
     time: "15:00",
     title: "FOOD",
     text: "Enjoy drinks, canapés, conversation and dreamy melodies under the oak tree.",
-    icon: "/src/assets/cheese.svg"
+    icon: cheese
   },
   {
     time: "18:00",
     title: "PARTY",
     text: "We danced, toasted and celebrated.",
-    icon: "/src/assets/mirrorball.svg"
+    icon: mirrorball
   },
   {
     time: "00:00",
@@ -53,6 +43,20 @@ const events = [
   },
 ];
 </script>
+<template>
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    <div class="timeline-item" v-for="(event, i) in events" :key="i" :class="i % 2 === 0 ? 'left' : 'right'">
+      <div class="content">
+        <span class="time">{{ event.time }}</span>
+        <h3 class="title">{{ event.title }}</h3>
+        <p class="text">{{ event.text }}</p>
+      </div>
+      <img v-if="event.icon" class="icon" :src="event.icon.src" alt="" />
+      <div class="dot"></div>
+    </div>
+  </div>
+</template>
 <style lang="scss">
 .timeline {
   position: relative;
