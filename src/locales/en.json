@@ -66,5 +66,8 @@
       "travel": "Travel & Stay",
       "rsvp": "RSVP"
     }
+  },
+  "footer": {
+    "text": "Come hang with us in Murcia!"
   }
 }

@@ -56,7 +56,8 @@ function toggle(index) {
 .faq-box {
   background-color: $color-rose;
   padding: 2rem;
-  max-width: 600px;
+  width: 85%;
+  // max-width: 600px;
   // margin: auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   margin-inline: 1.5rem;

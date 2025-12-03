@@ -55,7 +55,8 @@ function handleClick(e: Event) {
     :target="isLink ? props.target : undefined" type="button" class="sketch-btn"
     :class="[extraClass, `sketch-btn--${props.color}`]" @click="handleClick">
     <BlockIcon class="sketch-btn__block-icon" :size="props.size" :color="props.color" />
-    <span class="sketch-btn__label" :class="props.color">{{ label }}</span>
+    <span class="sketch-btn__label" :style="props.size === 'large' && 'width: 100%;'" :class="props.color">{{ label
+      }}</span>
   </component>
 </template>
 
@@ -100,7 +101,7 @@ function handleClick(e: Event) {
   }
 
   &__label {
-    width: 100%;
+    // width: 100%;
     position: absolute;
     top: 45%;
     left: 54%;

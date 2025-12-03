@@ -1,0 +1,45 @@
+---
+import Button from '@/components/atoms/Button.vue';
+import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
+import PeopleDancing from '@/assets/dancing.svg';
+
+const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
+---
+
+<footer class="footer">
+  <PeopleDancing class="footer__image" />
+  <p class="footer__text">{t(locale, "footer.text")}</p>
+  <Button extraClass='footer__button' href=`/${locale}/rsvp` label={t(locale, "rsvp.title")}/>
+</footer>
+
+<style lang="scss" scoped>
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+
+  &__image { 
+    width: 100%;
+    margin-bottom: 6.5rem;
+  }
+
+  &__text {
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: $font-size-md;
+    color: $color-red;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+  &__button {
+    margin-bottom: 5rem;
+    width: 9rem;
+  }
+}
+</style>
