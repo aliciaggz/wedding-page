@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
-
+import alexMaria03 from '@/assets/alex-maria03.jpg';
+import marco2 from '@/assets/marco2.png';
+import marco2_1 from '@/assets/marco2-1.png';
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 
@@ -14,11 +16,11 @@ const locale = getLocale(lang);
     <p>{t(locale, "story.text2")}</p>
   </div>
 </div>
-<Image class={"ourstory-home__marco"} src={'/src/assets/marco2.png'} alt="Maria and Alex" width={400} height={600} />
+<Image class={"ourstory-home__marco"} src={marco2} alt="linea marco" />
 <figure class="ourstory-home__figure">
-  <Image src={'/src/assets/alex-maria03.jpg'} alt="Maria and Alex" width={200} height={300} />
+  <Image src={alexMaria03} alt="Maria and Alex 03" />
 </figure>
-<Image class={"ourstory-home__marco"} src={'/src/assets/marco2-1.png'} alt="Maria and Alex" width={400} height={600} />
+<Image class={"ourstory-home__marco"} src={marco2_1} alt="linea marco" />
 
 <style lang="scss" scoped>
 .ourstory-home {
@@ -70,6 +72,21 @@ const locale = getLocale(lang);
 
     }
   }
+}
 
+@media (min-width: 1024px) {
+    .ourstory-home {
+    &__marco {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__figure {
+      max-width: 80%;
+      // padding-left: 2%;
+      // padding-right: 2%;
+      margin: auto;
+    }
+  }
 }
 </style>

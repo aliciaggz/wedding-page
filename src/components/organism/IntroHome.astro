@@ -2,6 +2,7 @@
 import Button from '@/components/atoms/Button.vue';
 import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
 import { Image } from 'astro:assets';
+import alexMaria02 from '@/assets/alex-maria02.jpg';
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
@@ -19,7 +20,7 @@ const locale = getLocale(lang);
     <Image class={"intro-home__figures-container__marco"} src={'/src/assets/marco1.png'} alt="Marco" width={300} height={400} />
 
     <figure class="intro-home__figure">
-    <Image src={'/src/assets/alex-maria02.jpg'} alt="Maria and Alex" width={200} height={300} />
+    <Image src={alexMaria02} alt="Maria and Alex" />
   </figure>
   </div>
 </div>

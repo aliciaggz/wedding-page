@@ -2,11 +2,11 @@
 import Timeline from '@/components/atoms/Timeline.vue';
 import { Image } from 'astro:assets';
 import FaqsBox from '@/components/molecules/FaqsBox.vue';
-
+import alexMaria04 from '@/assets/alex-maria04.jpg';
 ---
 <section class="faqs">
   <figure class="faqs__figure">
-    <Image src={'/src/assets/alex-maria04.jpg'} alt="Maria and Alex" width={200} height={300} />
+    <Image src={alexMaria04} alt="Maria and Alex" />
   </figure>
   <FaqsBox client:load/>
 </section>
