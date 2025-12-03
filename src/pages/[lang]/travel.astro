@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/organism/Footer.astro";
+import Faqs from '@/components/organism/Faqs.astro';
+import IntroTravel from '@/components/organism/travel/IntroTravel.astro';
+import Getting from "@/components/organism/travel/Getting.astro";
+import Airports from "@/components/organism/travel/Airports.astro";
+---
+
+<Layout>
+  <div id="container">
+    <main>
+      <IntroTravel/>
+      <Getting/>
+      <Airports/>
+      <Faqs/> 
+      <Footer/>
+    </main>
+  </div>
+</Layout>

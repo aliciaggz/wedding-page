@@ -1,0 +1,75 @@
+---
+import Button from '@/components/atoms/Button.vue';
+import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
+import { Image } from 'astro:assets';
+import Houses from '@/assets/travel1.svg';
+import marco1 from '@/assets/marco1.png';
+const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
+
+---
+
+<div class="intro-travel">
+  <Houses/>
+  <h2 class="title-cormorant-h2">{t(locale, "travel.title")}</h2>
+  <h3 class="subtitle-dancing-h3">{t(locale, "travel.subtitle")}</h3>
+</div>
+<style lang="scss">
+.intro-travel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: $font-size-md;
+    color: $color-red;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+  &__button {
+    margin-bottom: 5rem;
+    width: 9rem;
+  }
+
+  &__figures-container {
+    position: relative;
+    display: flex;
+
+    &__marco {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 1rem;
+      left: 0rem;
+      z-index: -1;
+    }
+  }
+
+  &__figure {
+    width: 100%;
+    max-width: 32rem;
+    padding-left: 6%;
+    padding-right: 9%;
+
+    & img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border: 1rem solid $color-white; border-width: 1rem 1rem 2.5rem 1rem;
+      box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.25);;
+    }
+  }
+}
+
+</style>

@@ -48,8 +48,9 @@ defineProps({
   }
 
   &__button {
-    margin-bottom: 5rem;
     width: 9rem;
+    position: fixed;
+    bottom: 8rem;
   }
 
   &.open {

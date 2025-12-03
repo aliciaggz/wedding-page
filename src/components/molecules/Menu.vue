@@ -1,55 +1,58 @@
-<!-- <template>
-<div class="menu">
-  <BurgerButton :isOpen="open" @toggle="toggleMenu" />
-  <Sidebar :isOpen="open" />
-  
-</div>
-  
-</template> -->
-
-<template>
-  <div class="menu">
-    <!-- Menu responsive: Hamburger + Sidebar en móvil -->
-    <div class="mobile-menu" v-if="!isDesktop">
-      <BurgerButton :isOpen="open" @toggle="toggleMenu" />
-      <Sidebar :isOpen="open" @close="open = false" />
-    </div>
-
-    <!-- Menu horizontal en escritorio -->
-    <nav class="desktop-menu" v-else>
-      <ul class="menu__nav-list">
-        <li><a class="menu__nav-list--link" href="/">{{ t(currentLocale, "sidebar.navigation.home") }}</a></li>
-        <li><a class="menu__nav-list--link" href="/travel">{{ t(currentLocale, "sidebar.navigation.travel") }}</a></li>
-        <li><a class="menu__nav-list--link" href="/#schedule">{{ t(currentLocale, "sidebar.navigation.schedule") }}</a>
-        </li>
-        <li> <Button extraClass='sidebar__button' :href="`/${locale}/rsvp`" color="white"
-            :label="t(locale, 'rsvp.title')" />
-        </li>
-      </ul>
-    </nav>
-  </div>
-</template>
-
-
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import BurgerButton from '../atoms/BurgerButton.vue';
 import Sidebar from '../Sidebar/Sidebar.vue';
 import Button from '@/components/atoms/Button.vue';
+import { locale } from '@/stores/localeStore.js';
+import { t } from '@/utils/i18n.js';
+
+const currentLocale = computed(() => locale.value);
 
 const open = ref(false);
 const toggleMenu = () => {
   open.value = !open.value
 };
 
-const width = ref(0); // inicializamos a 0
-const isDesktop = computed(() => width.value >= 900);
+const width = ref(0);
+const isDesktop = computed(() => width.value >= 1023);
 
 onMounted(() => {
-  width.value = window.innerWidth; // solo se ejecuta en cliente
+  console.log(width.value);
+
+  width.value = window.innerWidth;
   window.addEventListener('resize', () => (width.value = window.innerWidth));
 });
 </script>
+<template>
+  <div class="menu">
+    <!-- Menu responsive: Hamburger + Sidebar en móvil -->
+    <template v-show="!isDesktop">
+      <BurgerButton :isOpen="open" @toggle="toggleMenu" />
+      <Sidebar :isOpen="open" @close="open = false" />
+    </template>
+
+    <!-- Menu horizontal en escritorio -->
+    <nav class="menu__desktop" v-show="isDesktop">
+      <ul class="menu__nav-list">
+        <li>
+          <a class="menu__nav-list--link" href="/">{{ t(currentLocale, "sidebar.navigation.home") }}</a>
+        </li>
+        <li>
+          <a class="menu__nav-list--link" :href="`/${currentLocale}/travel`">
+            {{ t(currentLocale,
+              "sidebar.navigation.travel") }}</a>
+        </li>
+        <li>
+          <a class="menu__nav-list--link" href="/#schedule">{{ t(currentLocale, "sidebar.navigation.schedule") }}</a>
+        </li>
+        <li>
+          <Button extraClass='menu__nav-list__button' :href="`/${locale}/rsvp`" color="white"
+            :label="t(locale, 'rsvp.title')" />
+        </li>
+      </ul>
+    </nav>
+  </div>
+</template>
 <style lang="scss" scoped>
 .menu {
   // position: fixed;
@@ -58,9 +61,15 @@ onMounted(() => {
   position: relative;
   z-index: 1001;
 
+  // &__desktop {
+  //   color: white;
+  // }
+
   &__nav-list {
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
 
     &--link {
@@ -72,8 +81,15 @@ onMounted(() => {
 
       &:hover {
         color: $color-red;
+        // text-decoration: underline;
       }
     }
+
+    &__button {
+      // margin-bottom: 5rem;
+      width: 9rem;
+    }
+
   }
 }
 </style>

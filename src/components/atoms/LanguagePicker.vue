@@ -15,7 +15,8 @@ const props = defineProps({
   lang: {
     type: String,
     default: 'es',
-  }})
+  }
+})
 
 const translatePath = useTranslatedPath(props.lang);
 
@@ -23,6 +24,7 @@ const translatePath = useTranslatedPath(props.lang);
 <style lang="scss" scoped>
 .lang-picker {
   font-family: $font-serif;
+  font-size: $font-size-md;
   font-weight: 200;
   text-transform: uppercase;
   top: 0;
@@ -33,6 +35,7 @@ const translatePath = useTranslatedPath(props.lang);
   & a {
     color: $color-white;
     text-decoration: none;
+
     &.active {
       font-weight: bold;
       color: #000;
@@ -40,6 +43,7 @@ const translatePath = useTranslatedPath(props.lang);
   }
 
   & .separator {
+    color: $color-white;
     opacity: 0.6;
     margin: 0 0.25rem;
   }

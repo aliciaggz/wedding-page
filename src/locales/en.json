@@ -49,7 +49,19 @@
   },
   "travel": {
     "title": "Travel & Stay",
-    "airports": "Murcia is easily reached from the UK, with regular flights. The nearest airport is Región de Murcia International (RMU), about 30 minutes from the city. Alicante (ALC) is also a great option, about an hour away.",
+    "subtitle": "if you want to go directly to each section, click on the stamp you want to explore",
+    "getting": {
+      "title": "Getting to Murcia",
+      "paragraph1": "Murcia is easily reached from the UK, with regular flights from many airports. The nearest airport is Región de Murcia International (RMU), about 30 minutes from the city. Alicante airport (ALC) is also a great option, about an hour away.",
+      "paragraph2": "For those travelling from outside of Europe, the easiest route is to fly to Madrid’s Adolfo Suárez Madrid–Barajas Airport; from here, you can get a train or a flight to Murcia.",
+      "paragraph3": "To check the best combination for you, please have a look at routes on Skyscanner."
+    },
+    "airports": {
+      "title": "airports",
+      "subtitle": "how to get to Murcia from different airports?",
+      "paragraph2": "For those travelling from outside of Europe, the easiest route is to fly to Madrid’s Adolfo Suárez Madrid–Barajas Airport; from here, you can get a train or a flight to Murcia.",
+      "paragraph3": "To check the best combination for you, please have a look at routes on Skyscanner."
+    },
     "accommodation": "We recommend staying near the city centre if possible. We will be running a bus to and from the wedding, so easy access will help you find your way back afterwards.",
     "weather": "Late May in Murcia is warm, with daytime 20-25°C and cooler nights of 12-16°C. Expect sunshine and low humidity. Bring light clothes and SPF.",
     "tips": {

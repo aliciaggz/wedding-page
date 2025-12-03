@@ -46,7 +46,7 @@ defineProps({
   &__logo {
     position: absolute; // posición absoluta dentro del header
     left: 50%; // centro horizontal del header
-    top: 70%; // centro vertical
+    top: 100%; // centro vertical
     transform: translate(-50%, -50%); // ajusta para que el centro del logo quede en el centro del header
     width: 6rem;
     height: auto;
