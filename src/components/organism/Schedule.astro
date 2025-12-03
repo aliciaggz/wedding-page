@@ -1,8 +1,8 @@
 ---
 import Timeline from '@/components/atoms/Timeline.vue';
-import { Image } from 'astro:assets';
 import Button from '@/components/atoms/Button.vue';
 import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
+import Festin from '@/assets/festin.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
@@ -14,15 +14,13 @@ const locale = getLocale(lang);
     <Timeline/>
     <Button extraClass="schedule__button" action="calendar" label={t(locale, "schedule.buttonLabel")} size="large" client:load/>
   </div>
-  <Image class={"schedule__festin"} src={'/src/assets/festin.svg'} alt="Maria and Alex" width={400} height={600} />
+  <div class={"schedule__festin"}>
+  <Festin class={"schedule__festin__image"} />
+</div>
 </section>
 <style lang="scss" scoped>
 .schedule {
   position: relative;
-  // display: flex;
-  // flex-direction: column; 
-  // padding: 2rem;
-
 
   &__content{
   display: flex;
@@ -77,12 +75,19 @@ const locale = getLocale(lang);
 
   &__festin {
     position: relative;
-    margin-top: 4rem;
+    // max-width: 32rem;
+    margin-right: 0;
     width: 100%;
-    max-width: 32rem;
-    height: auto;
-    margin-bottom: 7rem;
-  }
+
+
+    &__image {
+      margin-top: 4rem;
+      width: 100%;
+      // max-width: 32rem;
+      height: auto;
+      margin-bottom: 7rem;
+    }
+  }  
 
   &__button{
     width: 15rem;
@@ -94,7 +99,7 @@ const locale = getLocale(lang);
     .schedule {
 
     &__festin {
-      max-width: 50%;
+      max-width: 80%;
       right: 0;
       // padding-left: 2%;
       // padding-right: 2%;
