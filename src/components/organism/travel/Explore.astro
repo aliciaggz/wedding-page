@@ -1,0 +1,65 @@
+---
+import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
+import Sun from '@/assets/sun-w.svg';
+import HotelCard from '@/components/molecules/HotelCard.astro';
+import Palmeras from "@/assets/palmeras.svg";
+
+const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
+
+---
+
+<div class="explore">
+  <h2 class="title-cormorant-h2">{t(locale, "travel.explore.title")}</h2>
+  <h3 class="subtitle-dancing-h3">{t(locale, "travel.explore.subtitle")}</h3>
+  <div class="explore__text">
+    <p>{t(locale, "travel.explore.text1")}</p>
+    <p>{t(locale, "travel.explore.text2")}</p>
+  </div>
+
+
+
+</div>
+<style lang="scss">
+.explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-weight: 200;
+    font-size: $font-size-md;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__content{
+    display: flex;
+
+    &__text{
+      display: flex;
+      flex-direction: column;
+      font-family: $font-cormorant;
+      font-size: $font-size-md;
+      font-weight: 200;
+      margin-left: 1rem;
+      text-align: right;
+      gap: 1rem;
+    }
+    &__icon{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+}
+
+</style>

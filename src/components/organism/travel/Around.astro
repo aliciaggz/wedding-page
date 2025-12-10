@@ -1,17 +1,70 @@
 ---
 import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
-import Accommodotion from '@/assets/accommodation.svg';
-import HotelCard from '@/components/molecules/HotelCard.astro';
-import City from "@/assets/city.svg";
+
+import Taxi from '@/assets/taxi.svg';
+import CarHire from '@/assets/car-hire.svg';
+import Walking from '@/assets/walking.svg';
+import PublicTransport from '@/assets/bus.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 
+const transportOptions = [
+  {
+    icon: Taxi,
+    title: t(locale, "travel.around.taxi.title"),
+    text1: t(locale, "travel.around.taxi.text1"),
+    text2: t(locale, "travel.around.taxi.text2"),
+  },
+  {
+    icon: CarHire,
+    title: t(locale, "travel.around.carhire.title"),
+    text1: t(locale, "travel.around.carhire.text1"),
+    text2: t(locale, "travel.around.carhire.text2"),
+  },
+  {
+    icon: Walking,
+    title: t(locale, "travel.around.walking.title"),
+    text1: t(locale, "travel.around.walking.text1"),
+    text2: t(locale, "travel.around.walking.text2"),
+  },
+  {
+    icon: PublicTransport,
+    title: t(locale, "travel.around.public.title"),
+    text1: t(locale, "travel.around.public.text1"),
+    text2: t(locale, "travel.around.public.text2"),
+  },
+];
 ---
+
 
 <div class="around">
   <h2 class="title-cormorant-h2">{t(locale, "travel.around.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.around.subtitle")}</h3>
+
+  <div class="around__transport-list">
+    {transportOptions.map((item, i) => {
+      const Icon = item.icon;
+      i = i + 1; // Ajustar índice para comenzar desde 1
+      const isEven = i % 2 === 0;
+  
+      return (
+        <div class={`around__transport-item ${isEven ? "even" : "odd"}`}>
+          
+          <div class={`around__transport-item__header ${isEven ? "even" : "odd"}`}>
+            <Icon class="transport-item__icon" /> 
+            <h4 class="around__transport-item__title">{item.title}</h4>
+          </div>
+
+          <div class="around__transport-item__content">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+          </div>
+      );
+    })}
+  </div>
+  
 </div>
 <style lang="scss">
 .around {
@@ -19,7 +72,6 @@ const locale = getLocale(lang);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 2rem;
   margin-top: 3rem;
 
@@ -35,6 +87,72 @@ const locale = getLocale(lang);
 
   }
 
+  &__transport-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  &__transport-item {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  text-align: left;
+  justify-content: center;
+
+  &__header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  // &__icon {
+  //   width: 60px;
+  //   height: 60px;
+  // }
+
+  &__content {
+    font-family: $font-cormorant;
+    font-size: $font-size-base;
+    // max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: $font-size-lg;
+    color: $color-red;
+    margin-bottom: 0.5rem;
+  }
+
+  &.odd {
+    // flex-direction: row;
+    // text-align: left;
+
+    .transport-item__content {
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  /* --- PAR (icono derecha, textos derecha) --- */
+  &.even {
+    // flex-direction: row-reverse;
+    text-align: right;
+
+    .around__transport-item__header {
+      text-align: right;
+      // align-items: flex-end;
+    }
+  }
+}
 
 }
 

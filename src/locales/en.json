@@ -73,20 +73,42 @@
       "subtitle": "transport options for carefree enjoyment",
       "taxi": {
         "title": "taxis",
-        "text": "Taxis and Ubers are available in Murcia, although Uber is not that popular in the city, so availability might be more limited.",
+        "text1": "Taxis and Ubers are available in Murcia, although Uber is not that popular in the city, so availability might be more limited.",
         "text2": "Taxis can be booked on the Pidetaxi app."
       },
       "carhire": {
         "title": "car hire",
-        "text": "If you’re planning to explore beyond Murcia, hiring a car is the easiest way.",
+        "text1": "If you’re planning to explore beyond Murcia, hiring a car is the easiest way.",
         "text2": "Please see the airports section for links of different car rental options."
+      },
+      "walking": {
+        "title": "walking",
+        "text1": "Murcia is a very walkable city, with many attractions, restaurants, and shops within easy reach of each other."
+      },
+      "public": {
+        "title": "public transport",
+        "text1": "Murcia has a reliable bus network that connects different parts of the city. You can buy tickets on board or at kiosks."
       }
     },
-    "weather": "Late May in Murcia is warm, with daytime 20-25°C and cooler nights of 12-16°C. Expect sunshine and low humidity. Bring light clothes and SPF.",
+    "weather": {
+      "title": "weather",
+      "subtitle": "quick climate guide so you can come prepared.",
+      "text1": "Late May in Murcia is the turning point from spring into full blown Summer. Expect it to be warm!",
+      "text2": "For the days, bring your SPF and light clothes for your off days and enjoy basking in the Sun!",
+      "text3": "Evenings may be slightly cooler, so do bring something long sleeved, but you can leave your woolly jumpers at home!"
+    },
     "tips": {
-      "language": "Spanish people love when you try their language, even just a few words.",
-      "food": "Lunch is eaten around 14:00-15:00, the main meal of the day. Dinner starts from 20:00 onwards.",
-      "general": "Service is relaxed, tipping is minimal (rounding up or 1-2€ is plenty)."
+      "title": "travel tips",
+      "subtitle": "essential tips to make your experience perfect",
+      "text1": "Late May in Murcia is the turning point from spring into full blown Summer. Expect it to be warm!",
+      "text2": "For the days, bring your SPF and light clothes for your off days and enjoy basking in the Sun!",
+      "text3": "Evenings may be slightly cooler, so do bring something long sleeved, but you can leave your woolly jumpers at home!"
+    },
+    "explore": {
+      "title": "explore murcia",
+      "subtitle": "essential tips to make your experience perfect",
+      "text1": "Murcia is more than just sunshine and sangria (though there’s plenty of both!).",
+      "text2": "If you’re staying a few days, here is a map with some of our favourite places to eat, drink, and explore."
     }
   },
   "sidebar": {
