@@ -62,7 +62,26 @@
       "paragraph2": "For those travelling from outside of Europe, the easiest route is to fly to Madrid’s Adolfo Suárez Madrid–Barajas Airport; from here, you can get a train or a flight to Murcia.",
       "paragraph3": "To check the best combination for you, please have a look at routes on Skyscanner."
     },
-    "accommodation": "We recommend staying near the city centre if possible. We will be running a bus to and from the wedding, so easy access will help you find your way back afterwards.",
+    "accommodation": {
+      "title": "accommodation",
+      "subtitle": "our recommended accommodation for your comfort",
+      "paragraph1": "We recommend staying near the city center. A bus will run to and from the wedding, making it easy to get back after the celebration.",
+      "paragraph2": "Here are some of our favorite hotels in Murcia."
+    },
+    "around": {
+      "title": "getting around",
+      "subtitle": "transport options for carefree enjoyment",
+      "taxi": {
+        "title": "taxis",
+        "text": "Taxis and Ubers are available in Murcia, although Uber is not that popular in the city, so availability might be more limited.",
+        "text2": "Taxis can be booked on the Pidetaxi app."
+      },
+      "carhire": {
+        "title": "car hire",
+        "text": "If you’re planning to explore beyond Murcia, hiring a car is the easiest way.",
+        "text2": "Please see the airports section for links of different car rental options."
+      }
+    },
     "weather": "Late May in Murcia is warm, with daytime 20-25°C and cooler nights of 12-16°C. Expect sunshine and low humidity. Bring light clothes and SPF.",
     "tips": {
       "language": "Spanish people love when you try their language, even just a few words.",

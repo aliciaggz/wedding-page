@@ -1,20 +1,20 @@
 ---
 import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
-import Airplane from '@/assets/plane.svg';
-import AirportsAccordion from '@/components/molecules/AirportsAccordion.vue';
+import Accommodotion from '@/assets/accommodation.svg';
+import HotelCard from '@/components/molecules/HotelCard.astro';
+import City from "@/assets/city.svg";
+
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 
 ---
 
-<div class="airports">
-  <Airplane/>
-  <h2 class="title-cormorant-h2">{t(locale, "travel.airports.title")}</h2>
-  <h3 class="subtitle-dancing-h3">{t(locale, "travel.airports.subtitle")}</h3>
-  <AirportsAccordion client:load/>
+<div class="around">
+  <h2 class="title-cormorant-h2">{t(locale, "travel.around.title")}</h2>
+  <h3 class="subtitle-dancing-h3">{t(locale, "travel.around.subtitle")}</h3>
 </div>
 <style lang="scss">
-.airports {
+.around {
   display: flex;
   flex-direction: column;
   align-items: center;

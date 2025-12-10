@@ -1,0 +1,60 @@
+---
+import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
+import CarHotel from '@/assets/car-hotel.svg';
+import Time from '@/assets/time.svg';
+
+const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
+const { icon: Icon, hotelName, km, min} = Astro.props;
+
+
+---
+
+<div class="hotel-card">
+  <!-- <Icon/> -->
+  <h5 class="hotel-card__title">{hotelName}</h5>
+  <div class="hotel-card__info">
+    <CarHotel/>
+    <p>{km}</p>
+    <Time/>
+    <p>{min}</p>
+  </div>
+  <div class="hotel-card__text">
+  </div>
+</div>
+<style lang="scss">
+.hotel-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-red-light;
+  border-radius: 1rem;
+  border: 1px solid $color-red;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__title{
+    font-family: $font-lato;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: $font-size-base;
+  }
+
+  &__text {
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: $font-size-md;
+    color: $color-red;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+  }
+
+}
+
+</style>

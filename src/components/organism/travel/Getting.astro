@@ -7,11 +7,13 @@ const locale = getLocale(lang);
 ---
 
 <div class="getting">
-  <House/>
+  <House class="getting__image"/>
   <h2 class="title-cormorant-h2">{t(locale, "travel.getting.title")}</h2>
-  <p>{t(locale, "travel.getting.paragraph1")}</p>
-  <p>{t(locale, "travel.getting.paragraph2")}</p>
-  <p>{t(locale, "travel.getting.paragrap3")}</p>
+  <div class="getting__text">
+    <p>{t(locale, "travel.getting.paragraph1")}</p>
+    <p>{t(locale, "travel.getting.paragraph2")}</p>
+    <p>{t(locale, "travel.getting.paragraph3")}</p>
+  </div>
 </div>
 <style lang="scss">
 .getting {
@@ -23,19 +25,21 @@ const locale = getLocale(lang);
   padding: 2rem;
   margin-top: 3rem;
 
+  &__image {
+    margin-bottom: 4rem;  
+  }
+
   &__text {
     font-family: $font-cormorant;
-    font-weight: bold;
-    font-size: $font-size-md;
-    color: $color-red;
+    line-height: 1.5rem;
+    font-weight: 300;
+    font-size: $font-size-base;
     margin-bottom: 5rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
   }
-
-
 }
 
 </style>
