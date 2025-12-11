@@ -68,6 +68,7 @@
       "paragraph1": "We recommend staying near the city center. A bus will run to and from the wedding, making it easy to get back after the celebration.",
       "paragraph2": "Here are some of our favorite hotels in Murcia.",
       "hotelCard": {
+        "discount": "discount",
         "button": "Check availability"
       }
     },

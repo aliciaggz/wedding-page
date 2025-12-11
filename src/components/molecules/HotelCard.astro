@@ -40,7 +40,7 @@ const { icon: Icon, hotelName, km, min, discount = null, description = null, lin
   {discount ? (
     <div class="hotel-card__discount" aria-live="polite">
       <span class={"hotel-card__discount-badge hotel-card__discount--" + discount}>
-        {discount}% discount <span>BODAMARIAYALEX</span>
+        {discount}%  {t(locale, "travel.accommodation.hotelCard.discount")} <span>BODAMARIAYALEX</span>
       </span>
       
     </div>
@@ -84,7 +84,6 @@ const { icon: Icon, hotelName, km, min, discount = null, description = null, lin
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  margin-top: 3rem;
 
   &__header {
     display: flex;
