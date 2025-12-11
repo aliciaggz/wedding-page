@@ -5,24 +5,74 @@ import Time from '@/assets/time.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
-const { icon: Icon, hotelName, km, min} = Astro.props;
-
+/*
+Props:
+ - icon: componente SVG (ej: import Icon from '@/assets/hotel.svg')
+ - hotelName: string
+ - km: string|number
+ - min: string|number
+ - discount?: number (5 o 10)
+ - description?: string | string[]
+ - onCheck?: (no usado en Astro, el botón hace enlace/submit)
+*/
+const { icon: Icon, hotelName, km, min, discount = null, description = null, link} = Astro.props;
 
 ---
 
-<div class="hotel-card">
-  <!-- <Icon/> -->
-  <h5 class="hotel-card__title">{hotelName}</h5>
-  <div class="hotel-card__info">
-    <CarHotel/>
-    <p>{km}</p>
-    <Time/>
-    <p>{min}</p>
+<div class="hotel-card" role="group" aria-label={`Hotel ${hotelName}`}>
+  <div class="hotel-card__header">
+    {Icon ? <Icon class="hotel-card__main-icon" /> : null}
+    <h5 class="hotel-card__title">{hotelName}</h5>
   </div>
+
+  <div class="hotel-card__info" aria-hidden="false">
+    <div class="hotel-card__info-item">
+      <CarHotel/>
+      <p class="hotel-card__stat"><strong>{km}</strong> km</p>
+    </div>
+
+    <div class="hotel-card__info-item">
+      <Time/>
+      <p class="hotel-card__stat"><strong>{min}</strong> min</p>
+    </div>
+  </div>
+
+  {discount ? (
+    <div class="hotel-card__discount" aria-live="polite">
+      <span class={"hotel-card__discount-badge hotel-card__discount--" + discount}>
+        {discount}% discount <span>BODAMARIAYALEX</span>
+      </span>
+      
+    </div>
+  ) : null}
+
   <div class="hotel-card__text">
+    {description ? (
+      <>
+        {description.text ? <p>{description.text}</p> : null}
+
+        {description.list && description.list.length > 0 ? (
+          <ul class="hotel-card__list">
+            {description.list.map(item => <li>{item}</li>)}
+          </ul>
+        ) : null}
+      </>
+    ) : null}
+  </div>
+
+  <div class="hotel-card__actions">
+    <a
+    href={link} 
+    target="_blank"
+    rel="noopener noreferrer"
+    class="hotel-card__button"
+    >
+      {t(locale, "travel.accommodation.hotelCard.button")}
+    </a>
   </div>
 </div>
-<style lang="scss">
+
+<style lang="scss" scoped>
 .hotel-card {
   width: 100%;
   display: flex;
@@ -36,25 +86,126 @@ const { icon: Icon, hotelName, km, min} = Astro.props;
   padding: 2rem;
   margin-top: 3rem;
 
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main-icon {
+    width: 48px;
+    height: 48px;
+  }
+
   &__title{
     font-family: $font-lato;
     text-transform: uppercase;
     font-weight: 300;
     font-size: $font-size-base;
+    margin-bottom: 1rem;
   }
 
-  &__text {
+  &__info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: $color-red;
+    margin-bottom: 1rem;
+  }
+
+  &__info-item {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  &__small-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  &__stat {
+    margin: 0;
     font-family: $font-cormorant;
     font-weight: bold;
-    font-size: $font-size-md;
-    color: $color-red;
-    margin-bottom: 5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    font-size: $font-size-sm;
+  }
+
+  &__discount {
+    margin-top: .2rem;
+    margin-bottom: 1rem;
+    width: 100%;
 
   }
 
+  &__discount-badge {
+    display: inline-block;
+    width: 100%;
+    padding: .25rem .6rem;
+    border-radius: 2rem;
+    // font-weight: 700;
+    font-size: .9rem;
+    border: 1px solid $color-red; /* o usa variantes */
+    color: $color-red;
+  }
+
+  // &__discount--5 { background: darken($color-red, 5%); }
+  // &__discount--10 { background: darken($color-red, 10%); }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    text-align: center;
+    font-family: $font-cormorant;
+    font-size: $font-size-base;
+    line-height: 1.5rem;
+  }
+
+  &__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    &::before {
+      content: "•";
+      padding-right: 0.5rem;
+      font-size: $font-size-base;   
+      line-height: 1;
+      color: currentColor;
+    }
+  }
 }
 
+  &__actions {
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    margin-top: 1.25rem;
+  }
+
+  &__button {
+    padding: .6rem 1rem;
+    border-radius: 1.5rem;
+    border: none;
+    background: $color-red;
+    font-family: $font-cormorant;
+    color: $color-white;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+/* Responsive */
+@media (min-width: 720px) {
+  .hotel-card { padding: 2rem; }
+  .hotel-card__info { gap: 3rem; }
+}
 </style>

@@ -1,0 +1,76 @@
+---
+import HotelCard from '@/components/molecules/HotelCard.astro';
+import HotelIconA from '@/assets/hotel-1.svg';
+import HotelIconB from '@/assets/hotel-2.svg';
+import HotelIconC from '@/assets/hotel-3.svg';
+
+const hotels = [
+  {
+    id: 1,
+    icon: HotelIconA,
+    hotelName: "Barceló Murcia Siete Coronas",
+    km: 27.6,
+    min: 30,
+    description: {
+      text: "Some rooms are reserved for the wedding. If you stay here, book through the hotel’s website and reference: “María and Alex’s wedding – 30th May 2025.”"
+    },
+    link: "https://www.barcelo.com/en-us/hotels/spain/murcia/barcelo-murcia-siete-coronas/?utm_source=google_my_business&utm_medium=organic"
+  },
+  {
+    id: 2,
+    icon: HotelIconB,
+    hotelName: "Hotel Murcia Rincón de Pepe",
+    km: 25.5,
+    min: 25,
+    discount: 10,
+    description: {
+      text: "If you book by email to reservas@hotelrincondepepe.com with the following details:",
+      list: [
+        "Name and Last Name",
+        "Type of room you want",
+        "Phone number",
+        "Credit card number"
+      ],
+    },
+    link: "https://hotelmurciarincondepepe.com-hotel.com/es/"
+  },
+  {
+    id: 3,
+    icon: HotelIconC,
+    hotelName: "Sercotel Amistad Murcia",
+    km: 26.5,
+    min: 26,
+    discount: 5,
+    description: {
+      text: "If you book through their website, you will receive the discount."
+    },
+    link: "https://www.sercotelhoteles.com/es/hotel-amistad-murcia"
+  }
+];
+---
+<section class="hotels-list">
+  {hotels.map(h => (
+    <HotelCard
+      key={h.id}
+      icon={h.icon}
+      hotelName={h.hotelName}
+      km={h.km}
+      min={h.min}
+      discount={h.discount}
+      description={h.description}
+      link={h.link}
+    />
+  ))}
+</section>
+
+<style lang="scss" scoped>
+.hotels-list {
+  display: grid;
+  gap: 2rem;
+
+  @media(min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+</style>

@@ -1,7 +1,7 @@
 ---
 import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
 import Accommodotion from '@/assets/accommodation.svg';
-import HotelCard from '@/components/molecules/HotelCard.astro';
+import HotelList from '@/components/molecules/HotelList.astro';
 import City from "@/assets/city.svg";
 
 const lang = getLangFromUrl(Astro.url);
@@ -17,7 +17,7 @@ const locale = getLocale(lang);
     <p>{t(locale, "travel.accommodation.paragraph1")}</p>
     <p>{t(locale, "travel.accommodation.paragraph2")}</p>
   </div>
-  <HotelCard hotelName="Barcelo Murcia Siete Coronas"/>
+  <HotelList/>
 
 
   <City class="accomodation__icon"/>
@@ -48,8 +48,9 @@ const locale = getLocale(lang);
 
   }
 
-  &__icon{
-   color: $color-red;
+  &__icon {
+    margin-top: 6rem;
+    color: $color-red;
   }
 
 
