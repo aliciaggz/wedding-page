@@ -5,22 +5,24 @@ import StampMark from '@/assets/stamp.svg';
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 
-const { title, icon: Icon } = Astro.props;
+const { title, icon: Icon, target } = Astro.props;
 
 ---
-<div class="stamp">
+<a href={`#${target}`} class="stamp">
   <h4 class="stamp__text">{title}</h4>
   <div class="stamp__wrap">
     <StampMark class="stamp__svg"/>
     <Icon class="stamp__icon"/>
   </div>
-</div>
+</a>
 
 <style lang="scss" scoped>
 .stamp {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: $color-text;
   &__text {
     font-family: $font-dancing;
     font-size: $font-size-sm;
@@ -38,7 +40,7 @@ const { title, icon: Icon } = Astro.props;
 
   &__svg {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
   }
 
@@ -46,8 +48,21 @@ const { title, icon: Icon } = Astro.props;
     position: absolute;
     inset: 0;
     margin: auto;
-    width: 60%;  
+    width: 50%;
+    // max-width: 3rem;  
     height: auto;
+
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $color-red;
+    transform: scale(1.1);
+    transition: transform 0.4s ease-in-out;
+
+    .stamp__text {
+      color: $color-red;
+    }
   }
 }
 

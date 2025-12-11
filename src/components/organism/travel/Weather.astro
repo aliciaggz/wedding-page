@@ -1,7 +1,6 @@
 ---
 import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
 import Sun from '@/assets/sun-w.svg';
-import HotelCard from '@/components/molecules/HotelCard.astro';
 import Palmeras from "@/assets/palmeras.svg";
 
 const lang = getLangFromUrl(Astro.url);
@@ -9,8 +8,8 @@ const locale = getLocale(lang);
 
 ---
 
-<div class="weather">
-  <Sun/>
+<div class="weather" id="weather">
+  <Sun class="weather__icon"/>
   <h2 class="title-cormorant-h2">{t(locale, "travel.weather.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.weather.subtitle")}</h3>
   <div class="weather__content">      
@@ -48,7 +47,7 @@ const locale = getLocale(lang);
     gap: 2rem;
   }
 
-  &__content{
+  &__content {
     display: flex;
 
     &__text{
@@ -65,6 +64,10 @@ const locale = getLocale(lang);
       width: 100%;
       height: auto;
     }
+  }
+
+  &__icon {
+   color: $color-red;
   }
 
 

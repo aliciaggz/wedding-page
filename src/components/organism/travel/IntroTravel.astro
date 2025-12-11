@@ -5,44 +5,55 @@ import Stamp from '@/components/atoms/Stamp.astro';
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 import Plane from '@/assets/plane.svg';
+import City from '@/assets/city.svg'; 
+import Sun from '@/assets/sun-w.svg';
+import Accomodation from '@/assets/accommodation.svg';
+import Lemon from '@/assets/lemon.svg';
+import Plate from '@/assets/plate.svg';
 
 const stamps = [
   {
     title: "airports",
     icon: Plane,
+    target: "airports"
   },
   {
     title: "accomodation",
-    icon: Plane,
+    icon: Accomodation,
+    target: "accomodation"
   } ,
   {
     title: "getting around",
-    icon: Plane,
+    icon: City,
+    target: "getting-around"
   },
   {
     title: "weather",
-    icon: Plane,
+    icon: Sun,
+    target: "weather"
   },
   {
     title: "travel tips",
-    icon: Plane,
+    icon: Plate,
+    target: "travel-tips"
   } ,
   {
     title: "explore Murcia",
-    icon: Plane,
+    icon: Lemon,
+    target: "explore-murcia"
   } 
 ];
 
 ---
 
 <div class="intro-travel">
-  <Houses/>
+  <Houses class="intro-travel__icon"/>
   <h2 class="title-cormorant-h2">{t(locale, "travel.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.subtitle")}</h3>
   <div class="intro-travel__grid">
     {stamps.map((stamp:any) => (
       <Stamp 
-        title={stamp.title} icon={stamp.icon} />
+        title={stamp.title} icon={stamp.icon} target={stamp.target}/>
     ))}
   </div>
 </div>
@@ -55,6 +66,13 @@ const stamps = [
   text-align: center;
   padding: 2rem;
   // margin-top: 3rem;
+
+  &__icon {
+    // width: 150px;
+    // height: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     font-family: $font-cormorant;

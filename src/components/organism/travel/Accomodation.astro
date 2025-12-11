@@ -9,7 +9,7 @@ const locale = getLocale(lang);
 
 ---
 
-<div class="accomodation">
+<div class="accomodation" id="accomodation">
   <Accommodotion/>
   <h2 class="title-cormorant-h2">{t(locale, "travel.accommodation.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.accommodation.subtitle")}</h3>
@@ -18,7 +18,7 @@ const locale = getLocale(lang);
   <HotelCard hotelName="Barcelo Murcia Siete Coronas"/>
 
 
-  <City/>
+  <City class="accomodation__icon"/>
 
 </div>
 <style lang="scss">
@@ -41,6 +41,10 @@ const locale = getLocale(lang);
     flex-direction: column;
     gap: 2rem;
 
+  }
+
+  &__icon{
+   color: $color-red;
   }
 
 

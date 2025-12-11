@@ -7,8 +7,8 @@ const locale = getLocale(lang);
 
 ---
 
-<div class="airports">
-  <Airplane/>
+<div class="airports" id="airports">
+  <Airplane class="airports__icon"/>
   <h2 class="title-cormorant-h2">{t(locale, "travel.airports.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.airports.subtitle")}</h3>
   <AirportsAccordion client:load/>
@@ -32,9 +32,11 @@ const locale = getLocale(lang);
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
   }
 
+  &__icon{
+   color: $color-red;
+  }
 
 }
 
