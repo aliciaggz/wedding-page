@@ -99,7 +99,6 @@ const transportOptions = [
   flex-direction: column;
   // align-items: center;
   gap: 2rem;
-  padding: 1rem;
   text-align: left;
   justify-content: center;
 
@@ -128,13 +127,9 @@ const transportOptions = [
     font-weight: bold;
     font-size: $font-size-lg;
     color: $color-red;
-    margin-bottom: 0.5rem;
   }
 
   &.odd {
-    // flex-direction: row;
-    // text-align: left;
-
     .transport-item__content {
       text-align: left;
       align-items: flex-start;
@@ -143,11 +138,10 @@ const transportOptions = [
 
   /* --- PAR (icono derecha, textos derecha) --- */
   &.even {
-    // flex-direction: row-reverse;
     text-align: right;
 
     .around__transport-item__header {
-      text-align: right;
+      justify-content: end;
       // align-items: flex-end;
     }
   }

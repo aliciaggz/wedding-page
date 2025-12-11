@@ -1,11 +1,31 @@
 ---
 import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
-import Sun from '@/assets/sun-w.svg';
-import HotelCard from '@/components/molecules/HotelCard.astro';
-import Palmeras from "@/assets/palmeras.svg";
-
+import Tick from '@/assets/tick.svg';
+import Bocadillo from '@/assets/bocadillo.svg';
+import Plate from "@/assets/plate.svg";
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
+
+const tips = [
+  {
+    icon: Bocadillo,
+    title: t(locale, "travel.tips.language.title"),
+    text1: t(locale, "travel.tips.language.text1"),
+    text2: t(locale, "travel.tips.language.text2"),
+  },
+  {
+    icon: Plate,
+    title: t(locale, "travel.tips.food.title"),
+    text1: t(locale, "travel.tips.food.text1"),
+    text2: t(locale, "travel.tips.carhire.text2"),
+  },
+  {
+    icon: Tick,
+    title: t(locale, "travel.tips.walking.title"),
+    text1: t(locale, "travel.tips.walking.text1"),
+    text2: t(locale, "travel.tips.walking.text2"),
+  },
+];
 
 ---
 
@@ -13,7 +33,28 @@ const locale = getLocale(lang);
   <h2 class="title-cormorant-h2">{t(locale, "travel.tips.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.tips.subtitle")}</h3>
   
+  <div class="tips-list">
+    {tips.map((item, i) => {
+      const Icon = item.icon;
+      i = i + 1; // Ajustar índice para comenzar desde 1
+      const isEven = i % 2 === 0;
+  
+      return (
+        <div class={`tips-item ${isEven ? "even" : "odd"}`}>
+          
+          <div class={`tips-item__header ${isEven ? "even" : "odd"}`}>
+            <Icon class="tips-item__icon" /> 
+            <h4 class="tips-item__title">{item.title}</h4>
+          </div>
 
+          <div class="tips-item__content">
+            <p>{item.text1}</p>
+            <p>{item.text2}</p>
+          </div>
+          </div>
+      );
+    })}
+  </div>
 
 
 </div>
@@ -56,6 +97,66 @@ const locale = getLocale(lang);
       height: auto;
     }
   }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+  }
+
+  &-item {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  gap: 2rem;
+  text-align: left;
+  justify-content: center;
+
+  &__header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__icon {
+    max-width: 2rem;
+    color: $color-red;
+  }
+
+  &__content {
+    font-family: $font-cormorant;
+    font-size: $font-size-base;
+    // max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-family: $font-dancing;
+    font-size: $font-size-base;
+    font-weight: $weight-serif-bold;
+    color: $color-red;
+  }
+
+  &.odd {
+    .transport-item__content {
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  /* --- PAR (icono derecha, textos derecha) --- */
+  &.even {
+    text-align: right;
+
+    .tips-item__header {
+      justify-content: end;
+      // align-items: flex-end;
+    }
+  }
+}
 
 
 }
