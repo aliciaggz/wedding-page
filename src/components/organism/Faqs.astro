@@ -22,17 +22,6 @@ import alexMaria04 from '@/assets/alex-maria04.jpg';
   margin-top: 3rem;
   margin-bottom: 10rem;
 
-  &__text {
-    font-family: $font-cormorant;
-    font-size: $font-size-base;
-    font-weight: 200;
-    color: $color-text;
-    margin: 3rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-  }
 
   &__button {
     margin-bottom: 5rem;
@@ -72,6 +61,13 @@ import alexMaria04 from '@/assets/alex-maria04.jpg';
   &__button{
     width: 15rem;
   }
+
+  @media (min-width: 720px) {
+    max-width: 80%;
+    padding-inline: 0;
+    padding-block: 4rem;
+    margin: auto;
+  } 
 
 }
 </style>

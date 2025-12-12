@@ -4,7 +4,13 @@
     "names": "Maria & Alex",
     "date": "30.05.26",
     "intro": "We are so excited to celebrate our special day with you in beautiful Murcia, Spain! Your presence would mean the world to us. We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world.",
-    "intro2": "We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world."
+    "intro2": "We cannot wait to celebrate our love surrounded by cherished family and friends from all around the world.",
+    "travel&stay": {
+      "title": "Travel & Stay",
+      "subtitle": "your travel guide",
+      "text": "We know many of you will be traveling to come celebrate, here are some lodging recs & travel tips!",
+      "buttonLabel": "travel guide"
+    }
   },
   "schedule": {
     "title": "Schedule",

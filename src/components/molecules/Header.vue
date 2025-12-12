@@ -18,7 +18,7 @@ defineProps({
   <header class="header">
     <div class="header__content">
       <LanguagePicker :languages="languages" :lang="lang" class="header__lang-picker" />
-      <img :src="logo" alt="Logo" class="header__logo" />
+      <a href="/"><img :src="logo" alt="Logo" class="header__logo" /></a>
       <Menu />
 
     </div>
