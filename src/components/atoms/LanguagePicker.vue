@@ -40,6 +40,11 @@ const translatePath = useTranslatedPath(props.lang);
       font-weight: bold;
       color: #000;
     }
+
+    &:hover {
+      color: $color-red;
+
+    }
   }
 
   & .separator {
@@ -47,5 +52,6 @@ const translatePath = useTranslatedPath(props.lang);
     opacity: 0.6;
     margin: 0 0.25rem;
   }
+
 }
 </style>

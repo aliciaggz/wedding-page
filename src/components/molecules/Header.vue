@@ -18,7 +18,9 @@ defineProps({
   <header class="header">
     <div class="header__content">
       <LanguagePicker :languages="languages" :lang="lang" class="header__lang-picker" />
-      <a href="/"><img :src="logo" alt="Logo" class="header__logo" /></a>
+      <a href="/" class="header__link">
+        <img :src="logo" alt="Logo" class="header__logo" />
+      </a>
       <Menu />
 
     </div>
@@ -43,6 +45,10 @@ defineProps({
     padding: 0 1.5rem;
   }
 
+  &__link {
+    cursor: pointer;
+  }
+
   &__logo {
     position: absolute; // posición absoluta dentro del header
     left: 50%; // centro horizontal del header
@@ -51,7 +57,12 @@ defineProps({
     width: 6rem;
     height: auto;
     z-index: 1002; // asegúrate que el logo esté por encima también
+  }
 
+  @media (min-width: 720px) {
+    &__content {
+      padding: 2rem 1.5rem 0 4rem;
+    }
   }
 }
 </style>
