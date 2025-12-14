@@ -3,18 +3,22 @@ import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
 import Sun from '@/assets/sun-w.svg';
 import HotelCard from '@/components/molecules/HotelCard.astro';
 import Palmeras from "@/assets/palmeras.svg";
-
+import Lemon from "@/assets/lemon.svg";
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 
 ---
 
 <div class="explore" id="explore-murcia">
+  <Lemon class="explore__icon"/>
   <h2 class="title-cormorant-h2">{t(locale, "travel.explore.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.explore.subtitle")}</h3>
   <div class="explore__text">
     <p>{t(locale, "travel.explore.text1")}</p>
     <p>{t(locale, "travel.explore.text2")}</p>
+  </div>
+  <div class="explore__map">
+    <iframe allowfullscreen src="https://www.google.com/maps/d/embed?mid=1nuGJy10lZLdaJR4aREBv5jCrWZSiVgk&ehbc=2E312F&z=12" width="640" height="480"></iframe>
   </div>
 
 
@@ -58,6 +62,37 @@ const locale = getLocale(lang);
       height: auto;
     }
   }
+
+  &__icon {
+    color: $color-red;
+    min-width: 4rem;
+    height: auto;
+      // width: 100%;
+  }
+
+  &__map {
+    width: 100%;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* altura relativa, ajusta entre 50–70 */
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+
+  @media (min-width: 720px) {
+    max-width: 42rem;
+    padding-inline: 0;
+    padding-block: 4rem;
+    margin: auto;
+  } 
+
 
 
 }

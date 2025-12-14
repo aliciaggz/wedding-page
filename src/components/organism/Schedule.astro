@@ -15,8 +15,8 @@ const locale = getLocale(lang);
     <Button extraClass="schedule__button" action="calendar" label={t(locale, "schedule.buttonLabel")} size="large" client:load/>
   </div>
   <div class={"schedule__festin"}>
-  <Festin class={"schedule__festin__image"} />
-</div>
+    <Festin class={"schedule__festin__image"} />
+  </div>
 </section>
 <style lang="scss" scoped>
 .schedule {
@@ -92,6 +92,16 @@ const locale = getLocale(lang);
   &__button{
     width: 15rem;
   }
+
+  @media (min-width: 720px) {
+
+    &__content{
+    max-width: 36rem;
+    padding-inline: 0;
+    padding-block: 4rem;
+    margin: auto; 
+    }
+  } 
 }
 
 
@@ -99,8 +109,7 @@ const locale = getLocale(lang);
     .schedule {
 
     &__festin {
-      max-width: 80%;
-      right: 0;
+      display: none;
       // padding-left: 2%;
       // padding-right: 2%;
       // margin: auto;

@@ -34,14 +34,13 @@ const locale = getLocale(lang);
 
   &__text {
     font-family: $font-cormorant;
-    font-size: $font-size-base;
+    font-size: $font-size-md;
     font-weight: 200;
     color: $color-text;
     margin: 3rem 0;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
   }
 
   &__button {
@@ -72,6 +71,31 @@ const locale = getLocale(lang);
 
     }
   }
+  @media (min-width: 720px) {
+    max-width: 36rem;
+    padding-inline: 0;
+    padding-block: 4rem;
+    margin: auto;
+
+    &__figure {
+      max-width: 10rem;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin: auto;
+    }
+
+    &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-md;
+    font-weight: 200;
+    color: $color-text;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  } 
+  
 }
 
 @media (min-width: 1024px) {

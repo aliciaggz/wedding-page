@@ -26,20 +26,29 @@ const locale = getLocale(lang);
   margin-top: 3rem;
 
   &__image {
-    margin-bottom: 4rem;  
+    margin-bottom: 4rem; 
+    min-width: 4rem;
+    height: auto; 
   }
 
   &__text {
     font-family: $font-cormorant;
     line-height: 1.5rem;
     font-weight: 300;
-    font-size: $font-size-base;
+    font-size: $font-size-md;
     margin-bottom: 5rem;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
+
+  @media (min-width: 720px) {
+    max-width: 36rem;
+    padding-inline: 0;
+    padding-block: 4rem;
+    margin: auto;
+  } 
 }
 
 </style>

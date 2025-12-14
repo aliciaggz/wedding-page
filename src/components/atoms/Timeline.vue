@@ -71,7 +71,7 @@ const events = [
 /* Línea vertical */
 .timeline-line {
   position: absolute;
-  top: 0;
+  top: 10px;
   bottom: 0;
   left: 50%;
   width: 1px;
@@ -117,7 +117,7 @@ const events = [
 .dot {
   position: absolute;
   left: 50%;
-  top: 0;
+  top: 10px;
   width: 0.2rem;
   height: 0.2rem;
   border-radius: 50%;
@@ -136,25 +136,27 @@ const events = [
 
 /* Tipografía */
 .time {
-  font-size: $font-size-sm;
+  font-size: $font-size-base;
   color: $color-text;
-  font-weight: lighter;
+  font-weight: 300;
+  color: $color-red;
+
   font-family: $font-lato;
 
 }
 
 .title {
   font-family: $font-lato;
-  font-weight: lighter;
-  color: $color-text;
-  font-size: $font-size-base;
+  font-weight: 300;
+  color: $color-red;
+  font-size: $font-size-md;
   margin: 0.4rem 0;
 }
 
 .text {
   font-family: $font-cormorant;
   color: $color-text;
-  font-size: $font-size-base;
+  font-size: $font-size-md;
   max-width: 260px;
   margin: auto;
 }
