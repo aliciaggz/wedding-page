@@ -57,6 +57,6 @@ function goToStep(step) {
 .rsvp-wrapper {
   max-width: 520px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 2rem;
 }
 </style>
