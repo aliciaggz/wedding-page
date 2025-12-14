@@ -24,8 +24,8 @@ const translatePath = useTranslatedPath(props.lang);
 <style lang="scss" scoped>
 .lang-picker {
   font-family: $font-serif;
-  font-size: $font-size-md;
-  font-weight: 200;
+  font-size: $font-size-lg;
+  font-weight: 300;
   text-transform: uppercase;
   top: 0;
   z-index: 1002;
@@ -38,7 +38,7 @@ const translatePath = useTranslatedPath(props.lang);
 
     &.active {
       font-weight: bold;
-      color: #000;
+      color: $color-red;
     }
 
     &:hover {

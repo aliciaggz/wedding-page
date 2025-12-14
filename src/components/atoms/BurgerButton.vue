@@ -13,7 +13,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .burger {
-  position: relative;   
+  position: relative;
   z-index: 1001;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ defineProps({
   padding: 0;
 
   &__line {
-    height: 0.05rem;
+    height: 0.12rem;
     width: 100%;
     background-color: $color-white;
     border-radius: 0.1rem;
@@ -37,6 +37,7 @@ defineProps({
     .burger__line:nth-child(1) {
       transform: rotate(45deg) translate(10px, 10px);
     }
+
     .burger__line:nth-child(2) {
       transform: rotate(-45deg);
     }
