@@ -82,7 +82,7 @@ function toggle(index) {
   padding-top: 0.8rem;
   text-align: left;
   cursor: pointer;
-  font-size: $font-size-sm;
+  font-size: $font-size-md;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -104,6 +104,6 @@ function toggle(index) {
   background: transparent;
   margin-top: 0.5rem;
   border-radius: 12px;
-  font-size: $font-size-sm;
+  font-size: $font-size-md;
 }
 </style>

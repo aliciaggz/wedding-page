@@ -70,7 +70,7 @@ function toggle(index) {
 }
 
 .faq-item {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-family: $font-cormorant;
 }
 
@@ -85,7 +85,7 @@ function toggle(index) {
   padding-top: 0.8rem;
   text-align: left;
   cursor: pointer;
-  font-size: $font-size-base;
+  font-size: $font-size-md;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -104,9 +104,9 @@ function toggle(index) {
 
 .faq-answer {
   background: transparent;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   border-radius: 12px;
-  font-size: $font-size-base;
+  font-size: $font-size-md;
   color: #333;
   text-align: left;
 
