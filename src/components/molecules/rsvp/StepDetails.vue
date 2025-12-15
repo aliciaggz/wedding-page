@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive, watch, computed, ref } from 'vue'
 import type { FormData } from '@/types/types.ts';
+import ModalError from "@/components/molecules/ModalError.vue";
 
 // Creamos el formulario reactivo
 const form = reactive<FormData>({
@@ -165,6 +166,8 @@ async function handleSubmit() {
       <button @click="isResponseModalVisible = false">Cerrar</button>
     </div>
   </div>
+
+  <ModalError/>
 
 
 </template>
