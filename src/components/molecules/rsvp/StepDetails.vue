@@ -192,19 +192,19 @@ async function handleSubmit() {
   text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  background: #ffffffcc;
-  backdrop-filter: blur(6px);
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  max-width: 480px;
-  margin: auto;
-  font-family: system-ui, sans-serif;
-}
+// form {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5rem;
+//   padding: 2rem;
+//   background: #ffffffcc;
+//   backdrop-filter: blur(6px);
+//   border-radius: 16px;
+//   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+//   max-width: 480px;
+//   margin: auto;
+//   font-family: system-ui, sans-serif;
+// }
 
 /* Labels */
 label {
@@ -241,29 +241,6 @@ div>label>input[type="radio"] {
   accent-color: #4f8cff;
 }
 
-/* Groups más ordenados */
-div {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Botón moderno */
-button {
-  padding: 0.9rem;
-  background: #4f8cff;
-  color: white;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.25s ease;
-}
-
-button:hover {
-  background: #3c73d9;
-}
-
 button:disabled {
   background: #c6d4f5;
   cursor: default;
@@ -275,10 +252,4 @@ textarea {
   resize: vertical;
 }
 
-/* Inputs responsive */
-@media (max-width: 480px) {
-  form {
-    padding: 1.2rem;
-  }
-}
 </style>
