@@ -77,7 +77,8 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit">
+  <div class="details-step">
+  <form  @submit.prevent="handleSubmit">
     <div>
       <label for="name">Nombre:</label>
       <input id="name" v-model="form.name" type="text" required />
@@ -169,7 +170,7 @@ async function handleSubmit() {
 
   <ModalError/>
 
-
+</div>
 </template>
 
 <style lang="scss">
@@ -212,6 +213,20 @@ label {
   color: #333;
   margin-bottom: 0.3rem;
   display: block;
+}
+
+.details-step {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 /* Inputs base */
