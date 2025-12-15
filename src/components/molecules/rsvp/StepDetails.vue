@@ -17,8 +17,8 @@ const form = reactive<FormData>({
 });
 
 // Estados para las modales
-const isLoading = ref(false); // Controla la visibilidad de la modal de loading
-const isResponseModalVisible = ref(false); // Controla la visibilidad de la modal de confirmación
+const isLoading = ref(false);
+const isErrorModalVisible = ref(false);
 const responseMessage = ref('');
 const showFinalStep = ref(false)
 
@@ -67,10 +67,10 @@ async function handleSubmit() {
     showFinalStep.value = true;
   } catch (error) {
     console.error(error);
+    isErrorModalVisible.value = true;
     responseMessage.value = "Hubo un error al enviar el formulario.";
   } finally {
     isLoading.value = false;
-    isResponseModalVisible.value = true;
   }
 }
 
@@ -159,15 +159,7 @@ async function handleSubmit() {
     </div>
   </div>
 
-  <!-- Modal de Respuesta -->
-  <div v-if="isResponseModalVisible" class="modal">
-    <div class="modal-content">
-      <p>{{ responseMessage }}</p>
-      <button @click="isResponseModalVisible = false">Cerrar</button>
-    </div>
-  </div>
-
-  <ModalError/>
+  <ModalError v-if="isErrorModalVisible" @close="isErrorModalVisible = false" />
 
 
 </template>
@@ -251,5 +243,4 @@ textarea {
   min-height: 90px;
   resize: vertical;
 }
-
 </style>

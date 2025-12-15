@@ -37,7 +37,8 @@ function next() {
     <p class="password-step__text">Por favor, introduzca la contraseña</p>
 
     <form class="password-step__form" @submit.prevent="next">
-        <input class="password-step__input" type="password" v-model="local.password" placeholder="Escribe la contraseña" />
+      <input class="password-step__input" type="password" v-model="local.password"
+        placeholder="Escribe la contraseña" />
       <p v-if="submitted && !isValid" class="error">
         Contraseña incorrecta. Por favor, inténtalo de nuevo
       </p>
@@ -112,7 +113,7 @@ function next() {
     transition: border-color 0.2s;
     font-size: $font-size-md;
   }
-  
+
 }
 
 
@@ -120,13 +121,6 @@ h3 {
   margin-bottom: 1rem;
   text-align: center;
   font-family: Source Serif Pro;
-  color: #333;
-}
-
-p {
-  margin-bottom: 1rem;
-  text-align: center;
-  font-family: Cormorant Garamond Light, serif;
   color: #333;
 }
 
@@ -166,5 +160,4 @@ input:focus {
   margin-bottom: 1rem;
   text-align: center;
 }
-
 </style>
