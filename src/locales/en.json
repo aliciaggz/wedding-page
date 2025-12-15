@@ -140,5 +140,8 @@
   },
   "footer": {
     "text": "Come hang with us in Murcia!"
+  },
+  "loader": {
+    "text": "Loading..."
   }
 }

@@ -2,6 +2,7 @@
 import { reactive, watch, computed, ref } from 'vue'
 import type { FormData } from '@/types/types.ts';
 import ModalError from "@/components/molecules/ModalError.vue";
+import Loader from '@/components/atoms/Loader.vue';
 
 // Creamos el formulario reactivo
 const form = reactive<FormData>({
@@ -158,6 +159,8 @@ async function handleSubmit() {
       <p>Enviando formulario...</p>
     </div>
   </div>
+
+  <Loader />
 
   <ModalError v-if="isErrorModalVisible" @close="isErrorModalVisible = false" />
 
