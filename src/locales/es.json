@@ -1,14 +1,23 @@
 {
   "home": {
     "title": "¡Nos casamos!",
-    "names": "María & Alex",
+    "names": "Maria y Alex",
     "date": "30.05.26",
-    "intro": "¡Estamos muy emocionados de celebrar nuestro día especial contigo en la hermosa Murcia, España! Tu presencia significará el mundo para nosotros. No podemos esperar a festejar nuestro amor rodeados de familiares y amigos de todas partes."
+    "intro": "¡Estamos muy emocionados de celebrar nuestro día especial con vosotros en la hermosa Murcia, España! Vuestra presencia significaría mucho para nosotros. Estamos deseando celebrar nuestro amor rodeados de nuestra querida familia y amigos de todo el mundo.",
+    "intro2": "Estamos deseando celebrar nuestro amor rodeados de nuestra querida familia y amigos de todo el mundo.",
+    "travel&stay": {
+      "title": "Viaje y Alojamiento",
+      "subtitle": "tu guía de viaje",
+      "text": "Sabemos que muchos viajaréis para venir a celebrarlo, ¡aquí tenéis algunas recomendaciones de alojamiento y consejos de viaje!",
+      "buttonLabel": "guía de viaje"
+    }
   },
-  "ceremony": {
-    "title": "Programación",
-    "schedule": {
-      "date": "30 de mayo de 2025",
+  "schedule": {
+    "title": "Itinerario",
+    "subtitle": "qué va a pasar",
+    "buttonLabel": "añadir al calendario",
+    "timeline": {
+      "date": "30 de Mayo de 2026",
       "place": "Parque de la Marquesa",
       "arrival": "Llegada - 13:30h",
       "ceremony": "Ceremonia - 14:00h",
@@ -16,45 +25,145 @@
       "party": "Fiesta - 18:00h",
       "end": "Fin - 00:00h"
     },
-    "dresscode": "Pedimos a los invitados que vistan con atuendo semiformal. Se recomiendan trajes con corbata, vestidos y en general looks elegantes. No es un evento de etiqueta estricta, así que no hace falta esmoquin ni vestidos largos, pero sí nos gustaría que todos se vistan para la ocasión. Por favor, evita usar blanco o tonos similares. Como la celebración será al aire libre bajo el sol de España, animamos al uso de telas ligeras y colores vivos. Si usas tacones, mejor cuñas o de bloque que stilettos."
-  },
-  "guests": {
-    "children": "Adoramos a los peques, pero nuestra boda será solo para adultos y adolescentes. Pedimos amablemente que los bebés y niños pequeños se queden en casa, en parte por normas del lugar y en parte para que todos puedan comer, beber y bailar sin preocupaciones.",
-    "plusOnes": "El RSVP está configurado para que una persona por grupo complete la respuesta. Ten en cuenta que la invitación solo se extiende a parejas establecidas; las personas solteras no podrán llevar acompañante."
+    "dresscode": "Rogamos a los invitados que vistan con etiqueta semiformal. Se recomienda traje y corbata, vestidos y, en general, atuendos elegantes. No es un evento de etiqueta rigurosa (Black Tie), por lo que no es necesario esmoquin ni vestidos largos de gala, pero nos encantaría que todos se vistieran elegantes para la ocasión. Por favor, evitad el color blanco o colores muy similares. Dado que la celebración será al aire libre bajo el sol español, se recomiendan telas ligeras y colores vivos. Si optáis por llevar tacones, os sugerimos cuñas o tacones anchos en lugar de tacones de aguja."
   },
   "rsvp": {
-    "title": "Confirmar asistencia",
+    "title": "Confirmar Asistencia",
     "fields": {
       "name": "Nombre y Apellidos *obligatorio",
-      "attendance": "¿Podrás acompañarnos en nuestra boda? *obligatorio",
+      "attendance": "¿Podréis acompañarnos en nuestra boda? *obligatorio",
       "options": {
-        "yes": "Con alegría acepto",
-        "no": "Con pesar declino"
+        "yes": "Acepto encantado/a",
+        "no": "Declino con pesar"
       },
-      "email": "Correo electrónico *obligatorio",
-      "partner": "¿Vendrá tu pareja contigo? *obligatorio",
-      "guestNames": "Nombres de los invitados de tu grupo",
-      "bus": "¿Utilizarás el autobús al lugar? *obligatorio",
-      "diet": "¿Algún requisito alimenticio?"
-    }
-  },
-  "travel": {
-    "title": "Viaje & Estancia",
-    "airports": "Murcia se alcanza fácilmente desde el Reino Unido, con vuelos regulares. El aeropuerto más cercano es Región de Murcia Internacional (RMU), a unos 30 minutos de la ciudad. Alicante (ALC) es también una gran opción, a una hora.",
-    "accommodation": "Recomendamos alojarse cerca del centro de Murcia. Habrá autobús desde y hacia la boda, por lo que estar cerca facilitará la vuelta después de la celebración.",
-    "weather": "A finales de mayo el clima en Murcia es cálido, con días de 20-25°C y noches frescas de 12-16°C. Mucho sol y baja humedad. Ropa ligera y protector solar son imprescindibles.",
-    "tips": {
-      "language": "A los españoles les encanta que intentes hablar su idioma, aunque sea un par de palabras.",
-      "food": "La comida principal es la comida del mediodía, entre 14:00-15:00. La cena se toma más tarde, a partir de las 20:00.",
-      "general": "El servicio es relajado, no se espera tanta propina como en otros países (dejar 1-2€ es suficiente)."
+      "email": "¿Cuál es tu correo electrónico? *obligatorio",
+      "partner": "¿Te acompañará tu pareja? *obligatorio",
+      "guestNames": "Nombre de los invitados en tu grupo",
+      "bus": "¿Utilizarás el autobús proporcionado para llegar al lugar? *obligatorio",
+      "diet": "¿Alguna restricción alimentaria o alergia?"
     }
   },
   "story": {
-    "title": "Nuestra historia",
-    "content": "Érase una vez..."
+    "title": "Nuestra Historia",
+    "subtitle": "10 años, y toda una vida por delante",
+    "text": "Todo comenzó con una coincidencia inesperada. Ella buscaba inspiración para su próximo viaje; él buscaba a alguien que no tuviera miedo de cantar a pleno pulmón en el coche.",
+    "text2": "Una tarde de otoño, entre risas, café y una lista de reproducción que sigue creciendo, descubrieron que compartían mucho más que sus canciones favoritas."
   },
-  "honeymoon": {
-    "title": "Fondo de luna de miel",
-    "text": "Nos sentimos increíblemente agradecidos de que muchos viajéis a España para celebrar con nosotros. No esperamos regalos — vuestra compañía es lo más importante. Si aún así queréis contribuir, una aportación a nuestro fondo de luna de miel significará mucho para nosotros."
+  "travel": {
+    "title": "Viaje y Alojamiento",
+    "subtitle": "si quieres ir directamente a cada sección, haz clic en el sello que quieras explorar",
+    "getting": {
+      "title": "Cómo llegar a Murcia",
+      "paragraph1": "Es fácil llegar a Murcia desde el Reino Unido, con vuelos regulares desde muchos aeropuertos. El aeropuerto más cercano es el Internacional de la Región de Murcia (RMU), a unos 30 minutos de la ciudad. El aeropuerto de Alicante (ALC) también es una gran opción, a una hora de distancia.",
+      "paragraph2": "Para quienes viajen desde fuera de Europa, la ruta más fácil es volar al Aeropuerto Adolfo Suárez Madrid-Barajas; desde allí, podéis coger un tren o un vuelo a Murcia.",
+      "paragraph3": "Para comprobar la mejor combinación para ti, echa un vistazo a las rutas en Skyscanner."
+    },
+    "airports": {
+      "title": "aeropuertos",
+      "subtitle": "¿cómo llegar a Murcia desde diferentes aeropuertos?",
+      "paragraph2": "Para quienes viajen desde fuera de Europa, la ruta más fácil es volar al Aeropuerto Adolfo Suárez Madrid-Barajas; desde allí, podéis coger un tren o un vuelo a Murcia.",
+      "paragraph3": "Para comprobar la mejor combinación para ti, echa un vistazo a las rutas en Skyscanner."
+    },
+    "accommodation": {
+      "title": "alojamiento",
+      "subtitle": "nuestro alojamiento recomendado para tu comodidad",
+      "paragraph1": "Recomendamos alojarse cerca del centro de la ciudad. Habrá un autobús de ida y vuelta a la boda, lo que facilitará el regreso después de la fiesta.",
+      "paragraph2": "Aquí tenéis algunos de nuestros hoteles favoritos en Murcia.",
+      "hotelCard": {
+        "discount": "descuento",
+        "button": "Consultar disponibilidad"
+      }
+    },
+    "around": {
+      "title": "moverse por la ciudad",
+      "subtitle": "opciones de transporte para disfrutar sin preocupaciones",
+      "taxi": {
+        "title": "taxis",
+        "text1": "Hay Taxis y Ubers disponibles en Murcia, aunque Uber no es tan popular en la ciudad, por lo que la disponibilidad podría ser más limitada.",
+        "text2": "Los taxis se pueden reservar en la app Pidetaxi."
+      },
+      "carhire": {
+        "title": "alquiler de coches",
+        "text1": "Si planeáis explorar más allá de Murcia, alquilar un coche es la forma más fácil.",
+        "text2": "Consultad la sección de aeropuertos para ver enlaces a diferentes opciones de alquiler de coches."
+      },
+      "walking": {
+        "title": "a pie",
+        "text1": "Murcia es una ciudad muy transitable a pie, con muchas atracciones, restaurantes y tiendas a poca distancia unos de otros."
+      },
+      "public": {
+        "title": "transporte público",
+        "text1": "Murcia cuenta con una red de autobuses fiable que conecta diferentes partes de la ciudad. Podéis comprar los billetes a bordo o en quioscos."
+      }
+    },
+    "weather": {
+      "title": "el tiempo",
+      "subtitle": "guía rápida del clima para venir preparados.",
+      "text1": "Finales de mayo en Murcia es el punto de inflexión de la primavera al pleno verano. ¡Esperad calor!",
+      "text2": "Para el día, traed protección solar y ropa ligera para vuestros días libres y ¡disfrutad del sol!",
+      "text3": "Las noches pueden ser algo más frescas, así que traed algo de manga larga, ¡pero podéis dejar los jerséis de lana en casa!"
+    },
+    "tips": {
+      "title": "consejos de viaje",
+      "subtitle": "consejos esenciales para que tu experiencia sea perfecta",
+      "text1": "Finales de mayo en Murcia es el punto de inflexión de la primavera al pleno verano. ¡Esperad calor!",
+      "text2": "Para el día, traed protección solar y ropa ligera para vuestros días libres y ¡disfrutad del sol!",
+      "text3": "Las noches pueden ser algo más frescas, así que traed algo de manga larga, ¡pero podéis dejar los jerséis de lana en casa!",
+      "language": {
+        "title": "idioma",
+        "text1": "El idioma oficial en Murcia es el español. Aunque mucha gente en el sector turístico habla inglés, es útil conocer algunas frases básicas en español para mejorar vuestra experiencia."
+      },
+      "food": {
+        "title": "comida y bebida",
+        "text1": "Murcia es conocida por su deliciosa gastronomía, incluyendo marisco fresco, tapas y especialidades locales como el zarangollo y el pastel de carne. ¡No olvidéis probar los vinos locales y la sangría!"
+      }
+    },
+    "explore": {
+      "title": "explorar murcia",
+      "subtitle": "consejos esenciales para que tu experiencia sea perfecta",
+      "text1": "Murcia es más que sol y sangría (¡aunque hay mucho de ambos!).",
+      "text2": "Si os quedáis unos días, aquí tenéis un mapa con algunos de nuestros lugares favoritos para comer, beber y explorar."
+    }
+  },
+  "sidebar": {
+    "navigation": {
+      "home": "Inicio",
+      "schedule": "Itinerario",
+      "story": "Nuestra Historia",
+      "travel": "Viaje y Alojamiento",
+      "rsvp": "Confirmar Asistencia"
+    }
+  },
+  "faqs": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "si tenéis preguntas, tenemos respuestas",
+    "questions": {
+      "q1": {
+        "question": "¿Dónde puedo confirmar mi asistencia?",
+        "answer": "Todas las confirmaciones (RSVP) se hacen online (sube un poco y haz clic en el botón grande de RSVP), pero si tienes problemas con el formulario, contacta con Alex o Maria."
+      },
+      "q2": {
+        "question": "¿Cuál es la fecha límite para confirmar?",
+        "answer": "Por favor, confirmad antes del 9 de abril de 2026."
+      },
+      "q3": {
+        "question": "¿Qué tiempo hace en la zona?",
+        "answer": "¡El tiempo durante el mes de mayo suele ser precioso! Dependiendo de si el verano se adelanta, puede rondar los 21-25°C, pero refresca agradablemente por la noche (10-15°C). La temperatura media es de unos 18°C y soleado. No esperamos lluvia, ¡pero siempre estaremos preparados!"
+      },
+      "q4": {
+        "question": "¿Pueden venir niños?",
+        "answer": "Adoramos a vuestros pequeños, pero nuestra boda será solo para adultos y adolescentes. Os pedimos amablemente que los niños pequeños no asistan, en parte debido a las normas del lugar y en parte para que todos puedan comer, beber y bailar sin preocuparse por la hora de la siesta."
+      },
+      "q5": {
+        "question": "Código de vestimenta y consejos",
+        "answer": "Rogamos a los invitados que vistan con etiqueta semiformal. Se recomienda traje y corbata, vestidos y, en general, atuendos elegantes. No es un evento de etiqueta rigurosa (Black Tie), por lo que no es necesario esmoquin ni vestidos largos de gala, pero nos encantaría que todos se vistieran elegantes para la ocasión. Por favor, evitad el color blanco o colores muy similares. Dado que la celebración será al aire libre bajo el sol español, se recomiendan telas ligeras y colores vivos. Si optáis por llevar tacones, os sugerimos cuñas o tacones anchos en lugar de tacones de aguja."
+      }
+    }
+  },
+  "footer": {
+    "text": "¡Venid a pasar el rato con nosotros en Murcia!"
+  },
+  "loader": {
+    "text": "Cargando..."
   }
 }
