@@ -2,7 +2,7 @@
   <div class="faq-box">
     <h2 class="faq-title title-cormorant-h2">FAQs</h2>
 
-    <div class="faq-item" v-for="(faq, i) in faqs" :key="i">
+    <div class="faq-item" v-for="(faq, i) in translatedFaqs" :key="i">
       <button class="faq-question" @click="toggle(i)">
         {{ faq.question }}
         <span class="arrow" :class="{ open: faq.open }">⌄</span>
@@ -17,35 +17,25 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { t } from '@/utils/i18n';
+import { reactive, computed } from 'vue'
+import { locale } from '@/stores/localeStore.js';
 
 const faqs = reactive([
-  {
-    question: "Where can I confirm my attendance?",
-    answer: "All RSVPs are done online (scroll up a bit and click the big RSVP button), but if you have trouble with the form, please contact Alex or Maria.",
-    open: false
-  },
-  {
-    question: "What date should I RSVP by?",
-    answer: "Please RSVP by April 9th, 2026.",
-    open: false
-  },
-  {
-    question: "What is the weather like in the area?",
-    answer: "The weather during the month of May is usually beautiful! Depending on if summer stays around it may be in the low to mid 70s, but then cool off nicely at night (50s-60s). The average temp is around 65 and sunny. We don't expect rain, but we'll always be prepared!",
-    open: false
-  },
-  {
-    question: "Can children come?",
-    answer: "We love your little ones, but our wedding will be for adults and teenagers only. We kindly ask that young children not attend, partly due to venue rules and partly so that everyone can eat, drink, and dance without worrying about nap times.",
-    open: false
-  },
-  {
-    question: "Dress Code & Outfit Tips",
-    answer: "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos.",
-    open: false
-  }
+  { key: 'q1', open: false },
+  { key: 'q2', open: false },
+  { key: 'q3', open: false },
+  { key: 'q4', open: false },
+  { key: 'q5', open: false }
 ])
+
+const translatedFaqs = computed(() =>
+  faqs.map(faq => ({
+    ...faq,
+    question: t(locale.value, `faqs.questions.${faq.key}.question`),
+    answer: t(locale.value, `faqs.questions.${faq.key}.answer`)
+  }))
+)
 
 function toggle(index) {
   faqs[index].open = !faqs[index].open
