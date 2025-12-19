@@ -42,7 +42,7 @@ const faqs = reactive([
   },
   {
     question: "Dress Code & Outfit Tips",
-    answer: "Solo está permitido si tu invitación lo especifica.",
+    answer: "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos.",
     open: false
   }
 ])

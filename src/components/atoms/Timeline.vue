@@ -36,7 +36,7 @@ const events = [
     icon: mirrorball
   },
   {
-    time: "00:00",
+    time: "23:00",
     title: "END OF THE CEREMONY",
     text: "Thank you all for coming and sharing this special moment with us.",
     icon: ""
