@@ -1,5 +1,5 @@
 <template>
-  <div class="lang-picker">
+  <div class="lang-picker" :class="{ 'is-white': isWhite }">
     <template v-for="(label, key, i) in languages" :key="key">
       <a :href="translatePath('/', key)">{{ label.slice(0, 2) }}</a>
       <span v-if="i < Object.keys(languages).length - 1" class="separator"> | </span>
@@ -15,6 +15,10 @@ const props = defineProps({
   lang: {
     type: String,
     default: 'es',
+  },
+  isWhite: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -51,6 +55,20 @@ const translatePath = useTranslatedPath(props.lang);
     color: $color-white;
     opacity: 0.6;
     margin: 0 0.25rem;
+  }
+
+  &.is-white {
+    & a {
+      color: $color-text; // Aquí usamos tu variable de color negro/oscuro
+
+      &:hover {
+        color: $color-red; // El hover se mantiene igual
+      }
+    }
+
+    & .separator {
+      color: $color-text;
+    }
   }
 
 }

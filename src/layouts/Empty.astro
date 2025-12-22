@@ -1,5 +1,9 @@
 ---
 import "../styles/global.scss";
+import HeaderRsvp from '@/components/molecules/rsvp/HeaderRsvp.astro'
+import { languages, getLangFromUrl } from '@/utils/i18n';
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
 <!doctype html>
@@ -11,6 +15,11 @@ import "../styles/global.scss";
 
   </head>
   <body>
-    <slot />
+    <header>
+      <HeaderRsvp />
+    </header>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
