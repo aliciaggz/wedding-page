@@ -7,24 +7,36 @@ import Flower from '@/components/icons/Flower.vue';
 
 </script>
 <template>
-  <div class="loader">
-    <Flower class="loader__icon" />
-    <p class="loader__text">{{ t(locale, "loader.text") }}</p>
-  </div>
+  <teleport to="body">
+    <div class="modal-overlay">
+      <div class="loader">
+        <Flower class="loader__icon" />
+        <p class="loader__text">{{ t(locale, "loader.text") }}</p>
+      </div>
+    </div>
+  </teleport>
 </template>
 
 <style lang="scss">
 .loader {
-  width: 100%;
+  background-color: $color-white;
   display: flex;
   flex-direction: column;
   align-self: center;
   justify-content: center;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+
+
+  &__icon {
+    margin-bottom: 1.5rem;
+  }
 
   &__text {
     font-family: $font-serif;
     font-size: $font-size-md;
     color: $color-red;
+    text-align: center;
   }
 }
 </style>

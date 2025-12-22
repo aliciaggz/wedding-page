@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, computed, ref } from 'vue'
+import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
 import coupledancing from '@/assets/couple-dancing.svg';
 const emits = defineEmits(['continue']);
 
@@ -15,11 +16,6 @@ const isValid = computed(() =>
   local.password.trim().toLowerCase() === PASSWORD.toLowerCase()
 )
 
-// function next() {
-//   submitted.value = true
-//   if (isValid.value) emits('continue')
-// }
-
 function next() {
   submitted.value = true
   if (isValid.value) {
@@ -30,28 +26,27 @@ function next() {
 
 </script>
 
-<template> 
-    <figure class="password-step__figure">
-      <img :src="coupledancing.src" alt="muñecos bailando" />
-    </figure>
-  <div class="password-step">
+<template>
+  <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando">
+    <div class="password-step">
 
-    <h2 class="password-step__title">Maria & Alex</h2>
-    <h3 class="password-step__subtitle">30.05.2026</h3>
-    <p class="password-step__text">Por favor, introduzca la contraseña</p>
+      <h2 class="password-step__title">Maria & Alex</h2>
+      <h3 class="password-step__subtitle">30.05.2026</h3>
+      <p class="password-step__text">Por favor, introduzca la contraseña</p>
 
-    <form class="password-step__form" @submit.prevent="next">
-      <input class="password-step__input" type="password" v-model="local.password"
-        placeholder="Escribe la contraseña" />
-      <p v-if="submitted && !isValid" class="error">
-        Contraseña incorrecta. Por favor, inténtalo de nuevo
-      </p>
-      <div class="password-step__buttons">
-        <button class="password-step__back-button" type="submit">Volver</button>
-        <button class="password-step__button" type="submit">Enviar</button>
-      </div>
-    </form>
-  </div>
+      <form class="password-step__form" @submit.prevent="next">
+        <input class="password-step__input" type="password" v-model="local.password"
+          placeholder="Escribe la contraseña" />
+        <p v-if="submitted && !isValid" class="error">
+          Contraseña incorrecta. Por favor, inténtalo de nuevo
+        </p>
+        <div class="password-step__buttons">
+          <a class="password-step__back-button" href="/">Volver</a>
+          <button class="password-step__button" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </RsvpStepLayout>
 </template>
 
 <style lang="scss">
@@ -69,7 +64,7 @@ function next() {
   // max-width: 400px;
   // margin: 1rem auto;
 
-    &__figure {
+  &__figure {
     margin-inline: auto;
     margin-bottom: 1.6rem;
     width: 150px;
@@ -78,6 +73,7 @@ function next() {
   &__text {
     font-family: $font-cormorant;
     font-size: $font-size-md;
+    margin-bottom: 1rem;
   }
 
   &__title {
@@ -98,7 +94,6 @@ function next() {
     display: flex;
     width: 100%;
     justify-content: space-between;
-
   }
 
   &__button {
@@ -123,6 +118,7 @@ function next() {
     padding: 0.5rem 2rem;
     border-radius: 5rem;
     font-size: $font-size-md;
+    text-decoration: none;
   }
 
   &__form {
@@ -134,13 +130,13 @@ function next() {
   }
 
   &__input {
+    width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
     font-family: $font-cormorant;
     border: 1px solid $color-text;
     background-color: transparent;
     border-radius: 4px;
-    margin-top: 0.3rem;
     margin-bottom: 1.5rem;
     outline: none;
     transition: border-color 0.2s;
