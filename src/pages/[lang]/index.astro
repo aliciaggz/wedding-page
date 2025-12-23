@@ -6,8 +6,6 @@ import { getLocale, t , useTranslatedPath, getLangFromUrl } from '../../utils/i1
 
 const lang = getLangFromUrl(Astro.url);
 
-const locale = getLocale(lang);
-
 //lo tengo que poner si o si para que funcione la generacion de rutas estaticas
 export function getStaticPaths() {
   return [
@@ -19,9 +17,6 @@ export function getStaticPaths() {
 ---
 
 <Layout>
-	<Home  />
-	<!-- <p>Idioma actual: {locale}</p>
-	<h1>{t(locale, "home.title")}</h1>
-  <a href=`/${locale}/rsvp`>RSVP</a> -->
+	<Home/>
 </Layout>
 

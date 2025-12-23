@@ -6,7 +6,7 @@ import mirrorball from '@/assets/mirrorball.svg'
 
 const events = [
   {
-    time: "30TH MAY 2025",
+    time: "30TH MAY 2026",
     title: "CEREMONY",
     text: "",
     icon: ""

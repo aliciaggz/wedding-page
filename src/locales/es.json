@@ -27,6 +27,14 @@
     },
     "dresscode": "Rogamos a los invitados que vistan con etiqueta semiformal. Se recomienda traje y corbata, vestidos y, en general, atuendos elegantes. No es un evento de etiqueta rigurosa (Black Tie), por lo que no es necesario esmoquin ni vestidos largos de gala, pero nos encantaría que todos se vistieran elegantes para la ocasión. Por favor, evitad el color blanco o colores muy similares. Dado que la celebración será al aire libre bajo el sol español, se recomiendan telas ligeras y colores vivos. Si optáis por llevar tacones, os sugerimos cuñas o tacones anchos en lugar de tacones de aguja."
   },
+  "gesture": {
+    "title": "un pequeño gesto",
+    "text": "Estamos muy agradecidos de que vengáis a celebrar nuestra boda con nosotros. Sabemos el esfuerzo (y el gasto) que ello conlleva, y lo apreciamos muchísimo.",
+    "text2": "No esperamos ningún regalo; para nosotros, lo más importante es que podáis estar allí ese día.",
+    "text3": "Pero si aún así os apetece tener un detalle, cualquier aportación para nuestra luna de miel nos hará muchísima ilusión y nos ayudará a crear recuerdos inolvidables juntos.",
+    "euros": "para regalos en euros (€):",
+    "pounds": "para regalos en libras (£):"
+  },
   "story": {
     "title": "Nuestra Historia",
     "subtitle": "10 años, y toda una vida por delante",
@@ -46,7 +54,33 @@
       "title": "aeropuertos",
       "subtitle": "¿cómo llegar a Murcia desde diferentes aeropuertos?",
       "paragraph2": "Para quienes viajen desde fuera de Europa, la ruta más fácil es volar al Aeropuerto Adolfo Suárez Madrid-Barajas; desde allí, podéis coger un tren o un vuelo a Murcia.",
-      "paragraph3": "Para comprobar la mejor combinación para ti, echa un vistazo a las rutas en Skyscanner."
+      "paragraph3": "Para comprobar la mejor combinación para ti, echa un vistazo a las rutas en Skyscanner.",
+      "accordion": {
+        "rmu": {
+          "title": "Aeropuerto de Murcia",
+          "acron": "Aeropuerto RMU",
+          "getThere": "A unos 30 min de la ciudad en coche, o una hora en transporte público.",
+          "text1": "El aeropuerto más cercano a Murcia, a unos 30 minutos en coche.",
+          "text2": "Desde el aeropuerto, puedes coger un taxi o alquilar un coche para llegar al centro.",
+          "transport1": "El autobús del aeropuerto tarda 30 minutos en llegar al centro de la ciudad.",
+          "transport2": "Si usas transporte público desde RMU, hay un corto paseo desde el aeropuerto hasta la parada 'La Torrica'. Coge el BUS 72 que te llevará a la ciudad, termina en 'Glorieta de España Par' en el centro.",
+          "transport3": "Desde aquí puedes hacer transbordo a otro autobús o taxi para llegar a tu alojamiento."
+        },
+        "alc": {
+          "title": "Aeropuerto de Alicante",
+          "acron": "Aeropuerto ALC",
+          "getThere": "A poco menos de una hora de la ciudad en coche o transporte público.",
+          "text1": "A una hora de Murcia en coche.",
+          "text2": "Desde el aeropuerto de Alicante, puedes coger autobús, tren o taxi a Murcia.",
+          "transport1": "Si usas transporte público desde ALC, hay un autobús lanzadera que te lleva a la Estación de Autobuses de Murcia.",
+          "transport2": "Es de la compañía ALSA y se puede coger desde el aeropuerto directo a Murcia. Pasa cada 2 horas."
+        },
+        "carRental": "alquiler de coches",
+        "getThere": "¿Cómo llego allí?",
+        "carTxt": "Estas son algunas compañías de alquiler disponibles en o cerca de",
+        "publicTransport": "transporte público",
+        "clickGoogle": "Haz clic aquí para ver en Google Maps"
+      }
     },
     "accommodation": {
       "title": "alojamiento",

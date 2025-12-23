@@ -1,7 +1,12 @@
-<script setup>
+<script setup lang="ts">
+import { computed } from 'vue'
 import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
 import coupledancing from '@/assets/couple-dancing.svg';
 import festin from '@/assets/festin.svg';
+import { locale } from '@/stores/localeStore.js';
+import { t } from '@/utils/i18n.js';
+
+const currentLocale = computed < "es" | "en" > (() => locale.value as "es" | "en");
 
 const props = defineProps({
   attending: Boolean

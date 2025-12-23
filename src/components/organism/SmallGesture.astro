@@ -1,0 +1,121 @@
+---
+import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
+import Gifts from "@/assets/gifts.svg"
+const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
+
+---
+<div class="small-gesture">
+  <h2 class="title-cormorant-h2">{t(locale, "gesture.title")}</h2>
+  <div class="small-gesture__text">
+    <p>{t(locale, "gesture.text")}</p>
+    <p>{t(locale, "gesture.text2")}</p>
+    <p>{t(locale, "gesture.text3")}</p>
+  </div>
+  <Gifts/>
+  <div class="small-gesture__gifts">
+    <div class="small-gesture__gifts__wrapper">
+      <h4 class="small-gesture__gifts__title">{t(locale, "gesture.euros")}</h4>
+      <p class="small-gesture__gifts__number">ES36 1583 0001 1490 9811 4625</p>
+    </div>
+    <div class="small-gesture__gifts__wrapper">
+      <h4 class="small-gesture__gifts__title">{t(locale, "gesture.pounds")}</h4>
+      <p class="small-gesture__gifts__number">04-00-04 ----- 65545864</p>
+    </div>
+  </div>
+</div>
+
+<style lang="scss" scoped>
+.small-gesture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-md;
+    font-weight: 200;
+    color: $color-text;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__gifts {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__title {
+      font-family: $font-cormorant;
+      font-size: $font-size-md;
+      font-weight: 600;
+      color: $color-red;
+    }
+
+    &__number {
+      font-family: $font-lato;
+      font-size: $font-size-md;
+      font-weight: 300;
+      color: $color-text;
+    }
+  }
+
+  @media (min-width: 720px) {
+    max-width: 36rem;
+    padding-inline: 0;
+    padding-block: 4rem;
+    margin: auto;
+
+    &__figure {
+      max-width: 10rem;
+      padding-left: 10%;
+      padding-right: 10%;
+      margin: auto;
+    }
+
+    &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-md;
+    font-weight: 200;
+    color: $color-text;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  } 
+  
+}
+
+@media (min-width: 1024px) {
+    .small-gesture {
+    &__marco {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__figure {
+      max-width: 80%;
+      // padding-left: 2%;
+      // padding-right: 2%;
+      margin: auto;
+    }
+  }
+}
+</style>

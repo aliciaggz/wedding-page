@@ -17,7 +17,7 @@
     "subtitle": "what’s Happening",
     "buttonLabel": "add to calendar",
     "timeline": {
-      "date": "30th May 2025",
+      "date": "30th May 2026",
       "place": "Parque de la Marquesa",
       "arrival": "Arrival - 13:30h",
       "ceremony": "Ceremony - 14:00h",
@@ -27,15 +27,13 @@
     },
     "dresscode": "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos."
   },
-  "guests": {
-    "children": "We love your little ones, but our wedding will be for adults and teens only. We kindly ask that toddlers and small infants sit this one out — partly because of venue rules, and partly so everyone can eat, drink, and dance without worrying about naptimes!",
-    "plusOnes": "We have set up the RSVP so that one person per party can fill it in. Please note wedding invitations are only extended to established couples, and single people are not allowed a plus one."
-  },
-  "story": {
-    "title": "Our Story",
-    "subtitle": "10 years, forever to go",
-    "text": "It all started with an unexpected match. She was looking for inspiration for her next trip; he was looking for someone who wasn't afraid to sing at the top of their lungs in the car.",
-    "text2": "One autumn afternoon, amid laughter, coffee and a playlist that continues to grow, they discovered they shared much more than favourite songs."
+  "gesture": {
+    "title": "a small gesture",
+    "text": "We are very grateful that you are coming to celebrate our wedding with us. We know the effort (and expense) that this entails, and we appreciate it very much.",
+    "text2": "We do not expect any gifts — for us, the most important thing is that you can be there on that day.",
+    "text3": "But if you still want to give us a gift, any contribution towards our honeymoon will make us very happy and help us create unforgettable memories together.",
+    "euros": "for gifts in euros (€):",
+    "pounds": "for gifts in pounds (£):"
   },
   "travel": {
     "title": "Travel & Stay",
@@ -52,20 +50,30 @@
       "paragraph2": "For those travelling from outside of Europe, the easiest route is to fly to Madrid’s Adolfo Suárez Madrid–Barajas Airport; from here, you can get a train or a flight to Murcia.",
       "paragraph3": "To check the best combination for you, please have a look at routes on Skyscanner.",
       "accordion": {
-        "rmU": {
-          "title": "Región de Murcia International Airport (RMU)",
+        "rmu": {
+          "title": "Murcia Airport",
+          "acron": "RMU Airport",
+          "getThere": "About 30 mins from the city by car, or an hour by public transport.",
           "text1": "The closest airport to Murcia, about 30 minutes away by car.",
-          "text2": "From the airport, you can take a taxi or use a car hire service to reach the city center."
+          "text2": "From the airport, you can take a taxi or use a car hire service to reach the city center.",
+          "transport1": "The airport bus takes 30 minutes to get to the city centre.",
+          "transport2": "If taking public transport from RMU, there is a short walk from the airport to the bus stop “La Torrica”. Catch BUS 72 which will take you to the city, it will end at “Glorieta de España Par” in the city centre.",
+          "transport3": "From here you can transfer to another bus or taxi to get to your accommodation."
         },
         "alc": {
-          "title": "Alicante Airport (ALC)",
+          "title": "Alicante Airport",
+          "acron": "ALC Airport",
+          "getThere": "Just shy of an hour away from the city by either car or public transport.",
           "text1": "About an hour away from Murcia by car.",
-          "text2": "From Alicante Airport, you can take a bus, train, or taxi to Murcia."
+          "text2": "From Alicante Airport, you can take a bus, train, or taxi to Murcia.",
+          "transport1": "If taking public transport from ALC, there is a shuttle Bus that can take you to Murcia Bus Station in the city.",
+          "transport2": "It uses a company called ALSA and can be taken from the airport direct to Murcia. This bus runs every 2 hours."
         },
         "carRental": "car rental",
+        "getThere": "How do I get there?",
         "carTxt": "These are some car rental companies that are available from or nearby",
         "publicTransport": "public transport",
-        "clickGoogle": "Click to view on Google Map"
+        "clickGoogle": "Here to view on Google Map"
       }
     },
     "accommodation": {
