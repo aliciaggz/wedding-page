@@ -13,32 +13,32 @@ import Plate from '@/assets/plate.svg';
 
 const stamps = [
   {
-    title: "airports",
+    title: t(locale, "travel.airports.title"),
     icon: Plane,
     target: "airports"
   },
   {
-    title: "accomodation",
+    title: t(locale, "travel.accommodation.title"),
     icon: Accomodation,
     target: "accomodation"
   } ,
   {
-    title: "getting around",
+    title: t(locale, "travel.around.title"),
     icon: City,
     target: "getting-around"
   },
   {
-    title: "weather",
+    title: t(locale, "travel.weather.title"),
     icon: Sun,
     target: "weather"
   },
   {
-    title: "travel tips",
+    title: t(locale, "travel.tips.title"),
     icon: Plate,
     target: "travel-tips"
   } ,
   {
-    title: "explore Murcia",
+    title: t(locale, "travel.explore.title"),
     icon: Lemon,
     target: "explore-murcia"
   } 
@@ -65,7 +65,6 @@ const stamps = [
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  // margin-top: 3rem;
 
   &__icon {
     width: 10rem;
@@ -102,7 +101,6 @@ const stamps = [
     padding-block: 4rem;
     margin: auto;
   } 
-
 }
 
 </style>
