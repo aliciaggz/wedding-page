@@ -2,6 +2,12 @@
 import { reactive, computed, ref } from 'vue'
 import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
 import coupledancing from '@/assets/couple-dancing.svg';
+import { locale } from '@/stores/localeStore.js';
+import { t } from '@/utils/i18n.js';
+
+const currentLocale = computed(() => locale.value);
+
+
 const emits = defineEmits(['continue']);
 
 const PASSWORD = "1234";
@@ -32,17 +38,17 @@ function next() {
 
       <h2 class="password-step__title">Maria & Alex</h2>
       <h3 class="password-step__subtitle">30.05.2026</h3>
-      <p class="password-step__text">Por favor, introduzca la contraseña</p>
+      <p class="password-step__text">{{ t(currentLocale, "rsvp.password.text") }}</p>
 
       <form class="password-step__form" @submit.prevent="next">
         <input class="password-step__input" type="password" v-model="local.password"
           placeholder="Escribe la contraseña" />
         <p v-if="submitted && !isValid" class="error">
-          Contraseña incorrecta. Por favor, inténtalo de nuevo
+          {{ t(currentLocale, "rsvp.password.invalidPassword") }}
         </p>
         <div class="password-step__buttons">
-          <a class="password-step__back-button" href="/">Volver</a>
-          <button class="password-step__button" type="submit">Enviar</button>
+          <a class="password-step__back-button" href="/">{{ t(currentLocale, "rsvp.buttonBack") }}</a>
+          <button class="password-step__button" type="submit">{{ t(currentLocale, "rsvp.buttonLabel") }}</button>
         </div>
       </form>
     </div>

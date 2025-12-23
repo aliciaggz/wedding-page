@@ -5,6 +5,10 @@ import ModalError from "@/components/molecules/ModalError.vue";
 import Loader from '@/components/atoms/Loader.vue';
 import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
 import coupledancing from '@/assets/couple-dancing.svg';
+import { locale } from '@/stores/localeStore.js';
+import { t } from '@/utils/i18n.js';
+
+const currentLocale = computed<"es" | "en">(() => locale.value as "es" | "en");
 
 // Creamos el formulario reactivo
 const form = reactive<FormData>({
@@ -23,11 +27,11 @@ const form = reactive<FormData>({
 const isLoading = ref(false);
 const isErrorModalVisible = ref(false);
 const responseMessage = ref('');
-const showFinalStep = ref(false)
 
 const emits = defineEmits<{
   (e: 'update:modelValue', value: FormData): void;
-  (e: 'submit', value: FormData): void;
+  // (e: 'submit', value: FormData): void;
+  (e: 'success'): void;
 }>();
 
 const isFormValid = computed(() => {
@@ -65,7 +69,7 @@ async function handleSubmit() {
     const data = await res.json();
     responseMessage.value = `Formulario enviado con éxito. ${data}`;
 
-    showFinalStep.value = true;
+    emits('success');
   } catch (error) {
     console.error(error);
     isErrorModalVisible.value = true;
@@ -83,74 +87,76 @@ async function handleSubmit() {
     <div class="details-step">
       <h2 class="details-step__title">Maria & Alex</h2>
       <h3 class="details-step__subtitle">30.05.2026</h3>
-      <p class="details-step__text">Por favor, complete los campos</p>
-
+      <p class="details-step__text">{{ t(currentLocale, "rsvp.details.text") }}</p>
 
       <form @submit.prevent="handleSubmit">
-        <input class="details-step__input" placeholder="Nombre" id="name" v-model="form.name" type="text" required />
-        <input class="details-step__input" id="lastname" v-model="form.lastname" placeholder="Apellidos" type="text"
-          required />
-        <input class="details-step__input" id="email" v-model="form.email" placeholder="Email" type="email" required />
+        <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.name')" id="name"
+          v-model="form.name" type="text" required />
+        <input class="details-step__input" id="lastname" v-model="form.lastname"
+          :placeholder="t(currentLocale, 'rsvp.details.lastname')" type="text" required />
+        <input class="details-step__input" id="email" v-model="form.email"
+          :placeholder="t(currentLocale, 'rsvp.details.email')" type="email" required />
 
         <div class="details-step__group">
-          <p class="details-step__question">¿Podrás asistir a nuestra boda?</p>
+          <p class="details-step__question">{{ t(currentLocale, "rsvp.details.question.attending") }}</p>
           <div class="details-step__radio-options">
             <label class="details-step__radio-label">
               <input type="radio" value="yes" v-model="form.attending" required />
-              <span>Por supuesto que sí</span>
+              <span>{{ t(currentLocale, "rsvp.details.answer.oc") }}</span>
             </label>
             <label class="details-step__radio-label">
               <input type="radio" value="no" v-model="form.attending" required />
-              <span>Lamentablemente no</span>
+              <span>{{ t(currentLocale, "rsvp.details.answer.not") }}</span>
             </label>
           </div>
         </div>
 
         <div v-if="form.attending === 'yes'" class="details-step__conditional">
           <div class="details-step__group">
-            <p class="details-step__question">¿Necesitarás servicio de autobús?</p>
+            <p class="details-step__question">{{ t(currentLocale, "rsvp.details.question.bus") }}</p>
             <div class="details-step__radio-options">
               <label class="details-step__radio-label">
                 <input type="radio" value="yes" v-model="form.bus" required />
-                <span>Sí</span>
+                <span>{{ t(currentLocale, "rsvp.details.answer.yes") }}</span>
               </label>
               <label class="details-step__radio-label">
                 <input type="radio" value="no" v-model="form.bus" required />
-                <span>No</span>
+                <span>{{ t(currentLocale, "rsvp.details.answer.no") }}</span>
               </label>
             </div>
           </div>
 
           <div class="details-step__group">
-            <p class="details-step__question">¿Irás acompañado/a?</p>
+            <p class="details-step__question">{{ t(currentLocale, "rsvp.details.question.partner") }}</p>
             <div class="details-step__radio-options">
               <label class="details-step__radio-label">
                 <input type="radio" value="yes" v-model="form.partnerJoining" required />
-                <span>Sí</span>
+                <span>{{ t(currentLocale, "rsvp.details.answer.yes") }}</span>
               </label>
               <label class="details-step__radio-label">
                 <input type="radio" value="no" v-model="form.partnerJoining" required />
-                <span>No</span>
+                <span>{{ t(currentLocale, "rsvp.details.answer.no") }}</span>
               </label>
             </div>
           </div>
 
           <div v-if="form.partnerJoining === 'yes'" class="details-step__subgroup">
-            <input class="details-step__input" placeholder="Nombre y apellidos del acompañante" id="partnerName"
-              v-model="form.partnerName" type="text" required />
+            <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.partnerName')"
+              id="partnerName" v-model="form.partnerName" type="text" required />
           </div>
         </div>
 
 
-        <input class="details-step__input" placeholder="¿Alguna restricción alimentaria?" id="allergies"
+        <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.question.diet')" id="allergies"
           v-model="form.allergies" type="text" />
 
-        <textarea class="details-step__input" placeholder="Comentarios" id="comments"
-          v-model="form.comments"></textarea>
+        <textarea class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.question.comment')"
+          id="comments" v-model="form.comments"></textarea>
 
         <div class="details-step__buttons">
-          <a class="details-step__back-button" href="/">Volver</a>
-          <button class="details-step__button" type="submit" :disabled="!isFormValid">Enviar</button>
+          <a class="details-step__back-button" href="/">{{ t(currentLocale, "rsvp.buttonBack") }}</a>
+          <button class="details-step__button" type="submit" :disabled="!isFormValid">{{ t(currentLocale,
+            "rsvp.buttonLabel") }}</button>
         </div>
       </form>
 
@@ -174,14 +180,6 @@ async function handleSubmit() {
   justify-content: center;
   align-items: center;
 }
-
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
 
 .details-step {
   display: flex;

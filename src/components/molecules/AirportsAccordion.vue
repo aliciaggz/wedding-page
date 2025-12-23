@@ -1,35 +1,13 @@
-<template>
-  <div class="airport-accordion">
-    <div class="accordion-item" v-for="(accordion, i) in accordions" :key="i">
-      <button class="accordion-question" @click="toggle(i)">
-        {{ accordion.question }}
-        <span class="arrow" :class="{ open: accordion.open }">⌄</span>
-      </button>
-      <div class="accordion-answer" v-show="accordion.open">
-        <h4 class="title-cormorant-h2">{{ accordion.question }}</h4>
-        <h5 class="subtitle-dancing-h3">How do I get there?</h5>
-        <p>{{ accordion.getThere }}</p>
-        <p>Click to vien on Google Maps</p>
-        <iframe :src="accordion.map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <h5 class="subtitle-dancing-h3">public transport</h5>
-        <p>{{ accordion.transportText1 }}</p>
-        <p>{{ accordion.transportText2 }}</p>
-        <p>{{ accordion.transportText3 }}</p>
-
-        <h5 class="subtitle-dancing-h3">car rental</h5>
-        <p>These are some car rental companies that are available from or nearby {{ accordion.airportAcron }}:</p>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
-import { reactive } from 'vue'
+import { reactive, computed } from 'vue'
+import { locale } from '@/stores/localeStore.js';
+import { t } from '@/utils/i18n.js';
+
+const currentLocale = computed(() => locale.value);
 
 const accordions = reactive([
   {
-    question: "Alicante airport",
+    question: t(currentLocale, "travel.airports.accordion.alc.title"),
     getThere: "Just shy of an hour away from the city by either car or public transport.",
     airportAcron: "ALC Airport",
     transportText1: "If taking public transport from ALC, there is a shuttle Bus that can take you to Murcia Bus Station in the city.",
@@ -54,8 +32,71 @@ function toggle(index) {
   accordions[index].open = !accordions[index].open
 }
 </script>
+<template>
+  <div class="airport-accordion">
+    <div class="accordion-item" v-for="(accordion, i) in accordions" :key="i">
+      <button class="accordion-question" @click="toggle(i)">
+        {{ accordion.question }}
+        <span class="arrow" :class="{ open: accordion.open }">⌄</span>
+      </button>
+      <div class="accordion-answer" v-show="accordion.open">
+        <h4 class="title-cormorant-h2">{{ accordion.question }}</h4>
+        <h5 class="subtitle-dancing-h3">How do I get there?</h5>
+        <p class="accordion__getThere">{{ accordion.getThere }}</p>
+        <p class="accordion__google">{{ t(currentLocale, "travel.airports.accordion.clickGoogle") }}</p>
+        <iframe :src="accordion.map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h5 class="subtitle-dancing-h3">{{ t(currentLocale, "travel.airports.accordion.publicTransport") }}</h5>
+        <div class="accordion-text-wrapper">
+          <p>{{ accordion.transportText1 }}</p>
+          <p>{{ accordion.transportText2 }}</p>
+          <p>{{ accordion.transportText3 }}</p>
+        </div>
+
+        <h5 class="subtitle-dancing-h3">{{ t(currentLocale, "travel.airports.accordion.carRental") }}</h5>
+        <p>{{ t(currentLocale, "travel.airports.accordion.carTxt") }} {{ accordion.airportAcron }}:</p>
+
+        <ul class="accordion__car-rental-list">
+          <a
+            href="https://www.avis.es/?cid=pp_site-GOOGLE_camp-18320326037_adgroup-140837266523_target-kwd-13402896_creative-773752672007_device-c_feed-&gclsrc=aw.ds&gad_source=1&gad_campaignid=18320326037&gbraid=0AAAAADEVRULrE-0omXpK5iAr94QGqF5zf&gclid=CjwKCAiAmKnKBhBrEiwAaqAnZ4zY8l1lWshpU44dA1sH0Pqkb1HUGwDs3moXUytbHZrfIhsxOUwy7BoCTVYQAvD_BwE">
+            <li>Avis</li>
+          </a>
+          <a href="https://www.goldcar.com/es-es/">
+            <li>Goldcar</li>
+          </a>
+          <a href="https://www.drivalia.es/es/">
+            <li>Drivalia</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
+.accordion {
+  &__car-rental-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    margin-top: 2rem;
+
+    & li {
+      color: $color-red;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: $font-cormorant;
+      font-size: $font-size-md;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+  }
+}
+
 .airport-accordion {
   padding: 2rem;
   width: 100%;
@@ -64,6 +105,12 @@ function toggle(index) {
 
 .accordion-title {
   text-transform: none;
+}
+
+.accordion-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .accordion-item {

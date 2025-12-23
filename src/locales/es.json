@@ -27,22 +27,6 @@
     },
     "dresscode": "Rogamos a los invitados que vistan con etiqueta semiformal. Se recomienda traje y corbata, vestidos y, en general, atuendos elegantes. No es un evento de etiqueta rigurosa (Black Tie), por lo que no es necesario esmoquin ni vestidos largos de gala, pero nos encantaría que todos se vistieran elegantes para la ocasión. Por favor, evitad el color blanco o colores muy similares. Dado que la celebración será al aire libre bajo el sol español, se recomiendan telas ligeras y colores vivos. Si optáis por llevar tacones, os sugerimos cuñas o tacones anchos en lugar de tacones de aguja."
   },
-  "rsvp": {
-    "title": "Confirmar Asistencia",
-    "fields": {
-      "name": "Nombre y Apellidos *obligatorio",
-      "attendance": "¿Podréis acompañarnos en nuestra boda? *obligatorio",
-      "options": {
-        "yes": "Acepto encantado/a",
-        "no": "Declino con pesar"
-      },
-      "email": "¿Cuál es tu correo electrónico? *obligatorio",
-      "partner": "¿Te acompañará tu pareja? *obligatorio",
-      "guestNames": "Nombre de los invitados en tu grupo",
-      "bus": "¿Utilizarás el autobús proporcionado para llegar al lugar? *obligatorio",
-      "diet": "¿Alguna restricción alimentaria o alergia?"
-    }
-  },
   "story": {
     "title": "Nuestra Historia",
     "subtitle": "10 años, y toda una vida por delante",
@@ -159,6 +143,48 @@
         "answer": "Rogamos a los invitados que vistan con etiqueta semiformal. Se recomienda traje y corbata, vestidos y, en general, atuendos elegantes. No es un evento de etiqueta rigurosa (Black Tie), por lo que no es necesario esmoquin ni vestidos largos de gala, pero nos encantaría que todos se vistieran elegantes para la ocasión. Por favor, evitad el color blanco o colores muy similares. Dado que la celebración será al aire libre bajo el sol español, se recomiendan telas ligeras y colores vivos. Si optáis por llevar tacones, os sugerimos cuñas o tacones anchos en lugar de tacones de aguja."
       }
     }
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "password": {
+      "text": "Por favor, introduzca la contraseña",
+      "invalidPassword": "Contraseña incorrecta. Por favor, inténtalo de nuevo"
+    },
+    "details": {
+      "text": "Por favor, complete los campos",
+      "name": "Nombre",
+      "lastname": "Apellidos",
+      "email": "Email",
+      "partnerName": "Partner's Name",
+      "question": {
+        "attending": "¿Podrás asistir a nuestra boda?",
+        "bus": "¿Necesitarás servicio de autobús?",
+        "partner": "¿Irás acompañado/a?",
+        "diet": "¿Alguna restricción alimentaria?",
+        "comment": "Comentarios"
+      },
+      "answer": {
+        "oc": "Por supuesto que sí",
+        "not": "Lamentablemente no",
+        "yes": "Sí",
+        "no": "No"
+      }
+    },
+    "final": {
+      "thanks": "¡Gracias",
+      "attendingText": "¡Estamos deseando que lo celebres con nosotros!",
+      "thanksNotAttending": "¡Gracias por avisarnos!",
+      "notAttendingText": " Aunque no puedas acompañarnos, te tendremos muy presente en nuestro día"
+    },
+    "modal": {
+      "ups": "Vaya...",
+      "errorText": "hemos tenido un problema",
+      "errorText2": "Por favor, inténtalo de nuevo más tarde",
+      "errorText3": "Si el problema continúa, puedes ponerte en contacto con los novios."
+    },
+    "buttonClose": "Cerrar",
+    "buttonBack": "Volver",
+    "buttonLabel": "Enviar"
   },
   "footer": {
     "text": "¡Venid a pasar el rato con nosotros en Murcia!"

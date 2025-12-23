@@ -1,7 +1,7 @@
 <template>
   <div class="lang-picker" :class="{ 'is-white': isWhite }">
     <template v-for="(label, key, i) in languages" :key="key">
-      <a :href="translatePath('/', key)">{{ label.slice(0, 2) }}</a>
+      <a :href="translatePath(currentPath, key)">{{ label.slice(0, 2) }}</a>
       <span v-if="i < Object.keys(languages).length - 1" class="separator"> | </span>
     </template>
   </div>
@@ -19,10 +19,16 @@ const props = defineProps({
   isWhite: {
     type: Boolean,
     default: false
+  },
+  currentPath: {
+    type: String,
+    default: '/'
   }
 })
 
 const translatePath = useTranslatedPath(props.lang);
+
+
 
 </script>
 <style lang="scss" scoped>

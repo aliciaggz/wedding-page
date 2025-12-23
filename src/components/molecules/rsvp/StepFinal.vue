@@ -1,24 +1,89 @@
 <script setup>
+import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
+import coupledancing from '@/assets/couple-dancing.svg';
+import festin from '@/assets/festin.svg';
+
 const props = defineProps({
   attending: Boolean
 })
 </script>
 
 <template>
-  <div class="step">
-    <h2 v-if="attending">
-      🎉 Thank you for confirming! We can’t wait to celebrate with you!
-    </h2>
+  <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando">
+    <div class="final-step">
+      <h2 class="final-step__title">Maria & Alex</h2>
+      <h3 class="final-step__subtitle">30.05.2026</h3>
+      <p v-if="attending" class="final-step__text">
+        <span>{{ t(currentLocale, "rsvp.final.thanks") }}</span>
+        {{ t(currentLocale, "rsvp.final.attendingText") }}
+      </p>
 
-    <h2 v-else>
-      💌 Thank you for letting us know. You'll be in our thoughts.
-    </h2>
-  </div>
+      <p v-else> <span>{{ t(currentLocale, "rsvp.final.thanksNotAttending") }}</span>
+        {{ t(currentLocale, "rsvp.final.notAttendingText") }}
+      </p>
+
+      <figure class="final-step__festin">
+        <img class="final-step__festin__image" :src="festin.src" alt="">
+      </figure>
+
+
+    </div>
+  </RsvpStepLayout>
 </template>
 
-<style scoped>
-.step {
+<style scoped lang="scss">
+.final-step {
   text-align: center;
-  padding: 2rem 0;
+
+  &__text {
+    font-family: $font-cormorant;
+    font-size: $font-size-xl;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+
+  }
+
+  &__title {
+    font-family: $font-cormorant;
+    font-size: $font-size-4xl;
+    font-weight: 300;
+    // margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-family: $font-serif;
+    font-size: $font-size-lg;
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+
+  &__festin {
+    position: relative;
+    // max-width: 32rem;
+    margin-right: 0;
+    width: 100%;
+
+
+    &__image {
+      position: absolute;
+      right: 0;
+      width: 100%;
+      max-width: 24rem;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: 524px) {
+    &__festin {
+      display: none;
+      // padding-left: 2%;
+      // padding-right: 2%;
+      // margin: auto;
+    }
+  }
 }
 </style>

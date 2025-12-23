@@ -13,6 +13,9 @@ const lang = getLangFromUrl(Astro.url);
 const path = Astro.url.pathname;
 const locale = getLocale(lang);
 
+const pathname = new URL(Astro.request.url).pathname;
+// Limpiamos el idioma del pathname si fuera necesario
+const currentRelativePath = pathname.replace(/^\/(es|en)/, '') || '/';
 
 
 
@@ -36,12 +39,6 @@ if (path === "/") {
     subtitle: "30.05.2026",
     image: bgMurcia.src
   };
-} else if (path.startsWith("/contacto")) {
-  heroData = {
-    title: "Contáctanos",
-    subtitle: "Estamos aquí para ayudarte",
-    image: bgImage.src
-  };
 }
 ---
 
@@ -55,7 +52,7 @@ if (path === "/") {
 		<title>A&M 30.05.2025</title>
 	</head>
 	<body>
-		<Header client:load languages={languages} lang={lang} logo={logoImage.src}/>
+		<Header currentPath={currentRelativePath} client:load languages={languages} lang={lang} logo={logoImage.src}/>
 		<Hero {...heroData} />
 		<main>
 		<slot />

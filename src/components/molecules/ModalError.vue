@@ -1,5 +1,4 @@
 <script setup>
-import { reactive, computed, ref } from 'vue'
 import tired from '@/assets/tired.svg';
 
 const emit = defineEmits(['close'])
@@ -11,8 +10,6 @@ defineProps({
 const close = () => {
   emit('close')
 }
-
-
 </script>
 
 <template>
@@ -23,12 +20,12 @@ const close = () => {
           <img :src="tired.src" alt="Error icon" />
         </figure>
         <div class="modal-error__content-red">
-          <p>Vaya...</p>
-          <p>hemos tenido un problema</p>
+          <p>{{ t(currentLocale, "rsvp.modal.ups") }}</p>
+          <p>{{ t(currentLocale, "rsvp.modal.errorText") }}</p>
         </div>
-        <p>Nuestro servidor está teniendo un pequeño tropiezo.</p>
-        <p>Intenta enviar el formulario de nuevo en unos minutos</p>
-        <button class="modal-error__button" @click="close()">Cerrar</button>
+        <p>{{ t(currentLocale, "rsvp.modal.errorText2") }}</p>
+        <p>{{ t(currentLocale, "rsvp.modal.errorText3") }}</p>
+        <button class="modal-error__button" @click="close()">{{ t(currentLocale, "rsvp.buttonClose") }}</button>
       </div>
     </div>
   </teleport>
@@ -39,7 +36,6 @@ const close = () => {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  /* fondo transparente oscuro */
   display: flex;
   align-items: center;
   justify-content: center;

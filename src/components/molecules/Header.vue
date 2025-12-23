@@ -11,13 +11,17 @@ defineProps({
   },
   logo: {
     type: String,
+  },
+  currentPath: {
+    type: String,
+    default: '/'
   }
 })
 </script>
 <template>
   <header class="header">
     <div class="header__content">
-      <LanguagePicker :languages="languages" :lang="lang" class="header__lang-picker" />
+      <LanguagePicker :currentPath="currentPath" :languages="languages" :lang="lang" class="header__lang-picker" />
       <a href="/" class="header__link">
         <img :src="logo" alt="Logo" class="header__logo" />
       </a>

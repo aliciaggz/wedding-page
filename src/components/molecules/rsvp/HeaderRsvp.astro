@@ -1,17 +1,18 @@
 ---
 import LanguagePicker from '@/components/atoms/LanguagePicker.vue'
 import { languages, getLangFromUrl } from '@/utils/i18n';
-
+const pathname = new URL(Astro.request.url).pathname;
+// Limpiamos el idioma del pathname si fuera necesario
+const currentRelativePath = pathname.replace(/^\/(es|en)/, '') || '/';
 const lang = getLangFromUrl(Astro.url);
 ---
 
     <header class="header">
-      <LanguagePicker isWhite languages={languages} lang={lang} />
+      <LanguagePicker isWhite currentPath={currentRelativePath} languages={languages} lang={lang} />
     </header>
 
   <style lang="scss" scoped>
   .header {
-    width: 100%;
     height: 10vh;
     position: absolute;
     background: transparent;

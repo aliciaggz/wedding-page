@@ -31,22 +31,6 @@
     "children": "We love your little ones, but our wedding will be for adults and teens only. We kindly ask that toddlers and small infants sit this one out — partly because of venue rules, and partly so everyone can eat, drink, and dance without worrying about naptimes!",
     "plusOnes": "We have set up the RSVP so that one person per party can fill it in. Please note wedding invitations are only extended to established couples, and single people are not allowed a plus one."
   },
-  "rsvp": {
-    "title": "RSVP",
-    "fields": {
-      "name": "First and Last name *required",
-      "attendance": "Will you be able to join us at our wedding? *required",
-      "options": {
-        "yes": "Joyfully accept",
-        "no": "Regretfully decline"
-      },
-      "email": "What is your email address? *required",
-      "partner": "Will your partner be joining us? *required",
-      "guestNames": "Name of guests in your party",
-      "bus": "Will you be taking the bus provided to get to the venue? *required",
-      "diet": "Any dietary requirements?"
-    }
-  },
   "story": {
     "title": "Our Story",
     "subtitle": "10 years, forever to go",
@@ -66,7 +50,23 @@
       "title": "airports",
       "subtitle": "how to get to Murcia from different airports?",
       "paragraph2": "For those travelling from outside of Europe, the easiest route is to fly to Madrid’s Adolfo Suárez Madrid–Barajas Airport; from here, you can get a train or a flight to Murcia.",
-      "paragraph3": "To check the best combination for you, please have a look at routes on Skyscanner."
+      "paragraph3": "To check the best combination for you, please have a look at routes on Skyscanner.",
+      "accordion": {
+        "rmU": {
+          "title": "Región de Murcia International Airport (RMU)",
+          "text1": "The closest airport to Murcia, about 30 minutes away by car.",
+          "text2": "From the airport, you can take a taxi or use a car hire service to reach the city center."
+        },
+        "alc": {
+          "title": "Alicante Airport (ALC)",
+          "text1": "About an hour away from Murcia by car.",
+          "text2": "From Alicante Airport, you can take a bus, train, or taxi to Murcia."
+        },
+        "carRental": "car rental",
+        "carTxt": "These are some car rental companies that are available from or nearby",
+        "publicTransport": "public transport",
+        "clickGoogle": "Click to view on Google Map"
+      }
     },
     "accommodation": {
       "title": "accommodation",
@@ -163,6 +163,48 @@
         "answer": "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos."
       }
     }
+  },
+  "rsvp": {
+    "title": "RSVP",
+    "password": {
+      "text": "Please enter the password",
+      "invalidPassword": "Incorrect password. Please try again"
+    },
+    "details": {
+      "text": "Please fill in the fields",
+      "name": "Name",
+      "lastname": "Last Name",
+      "email": "Email",
+      "partnerName": "Partner's Name",
+      "question": {
+        "attending": "Will you be attending our wedding?",
+        "bus": "Will you need the bus service?",
+        "partner": "Will you be bringing a plus-one?",
+        "diet": "Any dietary restrictions?",
+        "comment": "Comments"
+      },
+      "answer": {
+        "oc": "Of course!",
+        "not": "Regretfully, no",
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "final": {
+      "thanks": "Thank you",
+      "attendingText": "We can't wait to celebrate with you!",
+      "thanksNotAttending": "Thank you for letting us know!",
+      "notAttendingText": "Even though you can't join us, we will be thinking of you on our special day"
+    },
+    "modal": {
+      "ups": "Oops...",
+      "errorText": "Something went wrong",
+      "errorText2": "Please try again in a few moments",
+      "errorText3": "If the problem persists, feel free to contact the couple directly."
+    },
+    "buttonClose": "Close",
+    "buttonBack": "Back",
+    "buttonLabel": "Submit"
   },
   "footer": {
     "text": "Come hang with us in Murcia!"

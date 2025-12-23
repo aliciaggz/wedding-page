@@ -61,6 +61,7 @@ function handleFormSubmitSuccess() {
 
 <style lang="scss">
 .rsvp-wrapper {
+  width: 100%;
   max-width: 520px;
   margin: 0 auto;
 }
