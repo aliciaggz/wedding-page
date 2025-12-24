@@ -45,10 +45,10 @@
     "title": "Viaje y Alojamiento",
     "subtitle": "si quieres ir directamente a cada sección, haz clic en el sello que quieras explorar",
     "getting": {
-      "title": "Cómo llegar a Murcia",
-      "paragraph1": "Es fácil llegar a Murcia desde el Reino Unido, con vuelos regulares desde muchos aeropuertos. El aeropuerto más cercano es el Internacional de la Región de Murcia (RMU), a unos 30 minutos de la ciudad. El aeropuerto de Alicante (ALC) también es una gran opción, a una hora de distancia.",
-      "paragraph2": "Para quienes viajen desde fuera de Europa, la ruta más fácil es volar al Aeropuerto Adolfo Suárez Madrid-Barajas; desde allí, podéis coger un tren o un vuelo a Murcia.",
-      "paragraph3": "Para comprobar la mejor combinación para ti, echa un vistazo a las rutas en Skyscanner."
+      "title": "¿cómo llegar a Murcia?",
+      "paragraph1": "<b class='f600'>Se puede llegar fácilmente a Murcia desde el Reino Unido</b>, con vuelos regulares desde muchos aeropuertos. El aeropuerto más cercano es el Aeropuerto Internacional Región de Murcia (RMU), a unos 30 minutos de la ciudad. El aeropuerto de Alicante (ALC) también es una buena opción, a aproximadamente una hora de distancia.",
+      "paragraph2": "<b class='f600'>Para aquellos que viajan desde fuera de Europa</b>,, la ruta más fácil es volar al aeropuerto Adolfo Suárez Madrid-Barajas; desde aquí, se puede coger un tren o un vuelo a Murcia.",
+      "paragraph3": "<b class='f600'>Para comprobar la mejor combinación para ti</b>,, echa un vistazo a las rutas en Skyscanner."
     },
     "airports": {
       "title": "aeropuertos",
@@ -93,25 +93,26 @@
       }
     },
     "around": {
-      "title": "moverse por la ciudad",
+      "title": "¿cómo moverse?",
       "subtitle": "opciones de transporte para disfrutar sin preocupaciones",
       "taxi": {
         "title": "taxis",
-        "text1": "Hay Taxis y Ubers disponibles en Murcia, aunque Uber no es tan popular en la ciudad, por lo que la disponibilidad podría ser más limitada.",
-        "text2": "Los taxis se pueden reservar en la app Pidetaxi."
+        "text1": "En Murcia hay taxis y Uber, aunque Uber no es muy popular en la ciudad, por lo que la disponibilidad puede ser más limitada.",
+        "text2": "Los taxis se pueden reservar a través de la aplicación Pidetaxi."
       },
       "carhire": {
         "title": "alquiler de coches",
         "text1": "Si planeáis explorar más allá de Murcia, alquilar un coche es la forma más fácil.",
-        "text2": "Consultad la sección de aeropuertos para ver enlaces a diferentes opciones de alquiler de coches."
+        "text2": "Consulta la sección de aeropuertos para ver los enlaces de las diferentes opciones de alquiler de coches."
       },
       "walking": {
         "title": "a pie",
-        "text1": "Murcia es una ciudad muy transitable a pie, con muchas atracciones, restaurantes y tiendas a poca distancia unos de otros."
+        "text1": "Murcia es una ciudad segura y muy fácil de recorrer a pie, por lo que quizá te apetezca explorarla a pie."
       },
       "public": {
         "title": "transporte público",
-        "text1": "Murcia cuenta con una red de autobuses fiable que conecta diferentes partes de la ciudad. Podéis comprar los billetes a bordo o en quioscos."
+        "text1": "Es muy bueno si necesitas llegar al otro lado de la ciudad.",
+        "text2": "Si necesitas salir de la ciudad, el transporte público es menos frecuente y no tan bueno."
       }
     },
     "weather": {
@@ -137,7 +138,7 @@
       }
     },
     "explore": {
-      "title": "explorar murcia",
+      "title": "explora Murcia",
       "subtitle": "consejos esenciales para que tu experiencia sea perfecta",
       "text1": "Murcia es más que sol y sangría (¡aunque hay mucho de ambos!).",
       "text2": "Si os quedáis unos días, aquí tenéis un mapa con algunos de nuestros lugares favoritos para comer, beber y explorar."

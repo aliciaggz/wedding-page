@@ -101,11 +101,12 @@
       },
       "walking": {
         "title": "walking",
-        "text1": "Murcia is a very walkable city, with many attractions, restaurants, and shops within easy reach of each other."
+        "text1": "Murcia is a safe and very walkable city, so you might want to explore the city by foot. "
       },
       "public": {
         "title": "public transport",
-        "text1": "Murcia has a reliable bus network that connects different parts of the city. You can buy tickets on board or at kiosks."
+        "text1": "It’s very good if you need to get to the other side of the city, but get your Spanish prepped, as the drivers may not speak your lingo!",
+        "text2": "If you need to go outside the city, public transport is less frequent and not quite as good."
       }
     },
     "weather": {

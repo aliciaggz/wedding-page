@@ -26,7 +26,7 @@ const transportOptions = [
     icon: Walking,
     title: t(locale, "travel.around.walking.title"),
     text1: t(locale, "travel.around.walking.text1"),
-    text2: t(locale, "travel.around.walking.text2"),
+    text2: ""
   },
   {
     icon: PublicTransport,
@@ -52,7 +52,7 @@ const transportOptions = [
         <div class={`around__transport-item ${isEven ? "even" : "odd"}`}>
           
           <div class={`around__transport-item__header ${isEven ? "even" : "odd"}`}>
-            <Icon class="transport-item__icon" /> 
+            <Icon class="around__transport-item__icon" /> 
             <h4 class="around__transport-item__title">{item.title}</h4>
           </div>
 
@@ -60,7 +60,7 @@ const transportOptions = [
             <p>{item.text1}</p>
             <p>{item.text2}</p>
           </div>
-          </div>
+        </div>
       );
     })}
   </div>
@@ -108,10 +108,10 @@ const transportOptions = [
     gap: 1rem;
   }
 
-  // &__icon {
-  //   width: 60px;
-  //   height: 60px;
-  // }
+  &__icon {
+    width: 3.75rem;
+    height: auto;
+  }
 
   &__content {
     font-family: $font-cormorant;

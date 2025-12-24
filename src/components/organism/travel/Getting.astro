@@ -10,7 +10,7 @@ const locale = getLocale(lang);
   <House class="getting__image"/>
   <h2 class="title-cormorant-h2">{t(locale, "travel.getting.title")}</h2>
   <div class="getting__text">
-    <p>{t(locale, "travel.getting.paragraph1")}</p>
+    <p set:html={t(locale, 'travel.getting.paragraph1')}></p>
     <p>{t(locale, "travel.getting.paragraph2")}</p>
     <p>{t(locale, "travel.getting.paragraph3")}</p>
   </div>
@@ -41,6 +41,10 @@ const locale = getLocale(lang);
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    :global(.f600) {
+      font-weight: 600;
+    }
   }
 
   @media (min-width: 720px) {
