@@ -83,7 +83,6 @@ async function handleSubmit() {
 
 <template>
   <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando">
-
     <div class="details-step">
       <h2 class="details-step__title">Maria & Alex</h2>
       <h3 class="details-step__subtitle">30.05.2026</h3>
@@ -146,7 +145,6 @@ async function handleSubmit() {
           </div>
         </div>
 
-
         <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.question.diet')" id="allergies"
           v-model="form.allergies" type="text" />
 
@@ -159,28 +157,13 @@ async function handleSubmit() {
             "rsvp.buttonLabel") }}</button>
         </div>
       </form>
-
       <Loader v-if="isLoading" />
-
       <ModalError v-if="isErrorModalVisible" @close="isErrorModalVisible = false" />
-
     </div>
   </RsvpStepLayout>
 </template>
 
 <style lang="scss">
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .details-step {
   display: flex;
   flex-direction: column;
@@ -190,6 +173,7 @@ async function handleSubmit() {
   font-family: $font-serif;
   font-size: $font-size-md;
   color: $color-text;
+  text-align: center;
 
   &__text {
     font-family: $font-cormorant;
@@ -201,7 +185,7 @@ async function handleSubmit() {
     font-family: $font-cormorant;
     font-size: $font-size-4xl;
     font-weight: 300;
-    // margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   &__subtitle {

@@ -1,5 +1,10 @@
-<script setup>
+<script setup lang="ts">
+import { computed } from 'vue'
 import tired from '@/assets/tired.svg';
+import { locale } from '@/stores/localeStore.js';
+import { t } from '@/utils/i18n.js';
+
+const currentLocale = computed<"es" | "en">(() => locale.value as "es" | "en");
 
 const emit = defineEmits(['close'])
 

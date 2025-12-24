@@ -176,7 +176,8 @@
     "title": "RSVP",
     "password": {
       "text": "Please enter the password",
-      "invalidPassword": "Incorrect password. Please try again"
+      "invalidPassword": "Incorrect password. Please try again",
+      "write": "Enter password"
     },
     "details": {
       "text": "Please fill in the fields",
@@ -199,7 +200,7 @@
       }
     },
     "final": {
-      "thanks": "Thank you",
+      "thanks": "Thank you!",
       "attendingText": "We can't wait to celebrate with you!",
       "thanksNotAttending": "Thank you for letting us know!",
       "notAttendingText": "Even though you can't join us, we will be thinking of you on our special day"

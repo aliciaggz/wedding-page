@@ -182,7 +182,8 @@
     "title": "RSVP",
     "password": {
       "text": "Por favor, introduzca la contraseña",
-      "invalidPassword": "Contraseña incorrecta. Por favor, inténtalo de nuevo"
+      "invalidPassword": "Contraseña incorrecta. Por favor, inténtalo de nuevo",
+      "write": "Escribe la contraseña"
     },
     "details": {
       "text": "Por favor, complete los campos",
@@ -205,7 +206,7 @@
       }
     },
     "final": {
-      "thanks": "¡Gracias",
+      "thanks": "¡Gracias!",
       "attendingText": "¡Estamos deseando que lo celebres con nosotros!",
       "thanksNotAttending": "¡Gracias por avisarnos!",
       "notAttendingText": " Aunque no puedas acompañarnos, te tendremos muy presente en nuestro día"

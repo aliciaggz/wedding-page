@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
-import coupledancing from '@/assets/couple-dancing.svg';
+import boydancing from '@/assets/boy-dancing.svg';
 import festin from '@/assets/festin.svg';
 import { locale } from '@/stores/localeStore.js';
 import { t } from '@/utils/i18n.js';
 
-const currentLocale = computed < "es" | "en" > (() => locale.value as "es" | "en");
+const currentLocale = computed<"es" | "en">(() => locale.value as "es" | "en");
 
 const props = defineProps({
   attending: Boolean
@@ -14,7 +14,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando">
+  <RsvpStepLayout :image="boydancing" image-alt="Muñecos bailando">
     <div class="final-step">
       <h2 class="final-step__title">Maria & Alex</h2>
       <h3 class="final-step__subtitle">30.05.2026</h3>
@@ -55,7 +55,7 @@ const props = defineProps({
     font-family: $font-cormorant;
     font-size: $font-size-4xl;
     font-weight: 300;
-    // margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   &__subtitle {

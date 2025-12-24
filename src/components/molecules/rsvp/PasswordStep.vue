@@ -1,12 +1,11 @@
 <script setup>
 import { reactive, computed, ref } from 'vue'
 import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
-import coupledancing from '@/assets/couple-dancing.svg';
+import girldancing from '@/assets/girl-dancing.svg';
 import { locale } from '@/stores/localeStore.js';
 import { t } from '@/utils/i18n.js';
 
 const currentLocale = computed(() => locale.value);
-
 
 const emits = defineEmits(['continue']);
 
@@ -33,7 +32,7 @@ function next() {
 </script>
 
 <template>
-  <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando">
+  <RsvpStepLayout :image="girldancing" image-alt="Muñecos bailando">
     <div class="password-step">
 
       <h2 class="password-step__title">Maria & Alex</h2>
@@ -41,9 +40,9 @@ function next() {
       <p class="password-step__text">{{ t(currentLocale, "rsvp.password.text") }}</p>
 
       <form class="password-step__form" @submit.prevent="next">
-        <input class="password-step__input" type="password" v-model="local.password"
-          placeholder="Escribe la contraseña" />
-        <p v-if="submitted && !isValid" class="error">
+        <input class="password-step__input" :class="{ 'password-step__input-error': submitted && !isValid }"
+          type="password" v-model="local.password" :placeholder="t(currentLocale, 'rsvp.password.write')" />
+        <p v-if="submitted && !isValid" class="password-step__error">
           {{ t(currentLocale, "rsvp.password.invalidPassword") }}
         </p>
         <div class="password-step__buttons">
@@ -62,13 +61,6 @@ function next() {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  // display: block;
-  // padding: 1.5rem;
-  // background: #f8f8f8;
-  // border-radius: 8px;
-  // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  // max-width: 400px;
-  // margin: 1rem auto;
 
   &__figure {
     margin-inline: auto;
@@ -131,7 +123,6 @@ function next() {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: end;
     flex-direction: column;
   }
 
@@ -147,6 +138,18 @@ function next() {
     outline: none;
     transition: border-color 0.2s;
     font-size: $font-size-md;
+  }
+
+
+  &__input-error {
+    color: $color-red;
+    border: 1px solid $color-red;
+  }
+
+  &__error {
+    color: $color-red;
+    font-size: $font-size-md;
+    font-family: $font-cormorant;
   }
 
 }
@@ -187,12 +190,5 @@ input {
 
 input:focus {
   border-color: #C21807;
-}
-
-.error {
-  color: #C21807;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 </style>
