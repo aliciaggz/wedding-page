@@ -27,6 +27,7 @@ const form = reactive<FormData>({
 const isLoading = ref(false);
 const isErrorModalVisible = ref(false);
 const responseMessage = ref('');
+const submitted = ref(false);
 
 const emits = defineEmits<{
   (e: 'update:modelValue', value: FormData): void;
@@ -34,16 +35,6 @@ const emits = defineEmits<{
   (e: 'success'): void;
 }>();
 
-const isFormValid = computed(() => {
-  const requiredFields = ['name', 'lastname', 'attending'];
-  if (form.attending === 'yes') {
-    requiredFields.push('bus', 'partnerJoining');
-    if (form.partnerJoining === 'yes') {
-      requiredFields.push('partnerName');
-    }
-  }
-  return requiredFields.every((field) => form[field as keyof FormData].trim() !== '');
-});
 
 watch(form, () => {
   emits("update:modelValue", form)
@@ -56,8 +47,46 @@ watch(() => form.partnerJoining, (val) => {
 
 const attending = computed(() => form.attending)
 
+const validationErrors = computed(() => {
+  const errors: Record<string, string> = {};
+
+  // Validación Nombre
+  if (!form.name.trim()) errors.name = 'required';
+
+  // Validación Apellido
+  if (!form.lastname.trim()) errors.lastname = 'required';
+
+  // Validación Email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!form.email.trim()) {
+    errors.email = 'required';
+  } else if (!emailRegex.test(form.email)) {
+    errors.email = 'format';
+  }
+
+  // Validación Asistencia
+  if (!form.attending) errors.attending = 'required';
+
+  if (form.attending === 'yes') {
+    if (!form.bus) errors.bus = 'required';
+    if (!form.partnerJoining) errors.partnerJoining = 'required';
+
+    if (form.partnerJoining === 'yes' && !form.partnerName.trim()) {
+      errors.partnerName = 'required';
+    }
+  }
+
+  return errors;
+});
 
 async function handleSubmit() {
+  submitted.value = true;
+
+  if (Object.keys(validationErrors.value).length > 0) {
+    // Opcional: Scrollear al primer error si el formulario es muy largo
+    return;
+  }
+
   isLoading.value = true;
   responseMessage.value = "";
   try {
@@ -82,79 +111,116 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando">
+  <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando" novalidate>
     <div class="details-step">
       <h2 class="details-step__title">Maria & Alex</h2>
       <h3 class="details-step__subtitle">30.05.2026</h3>
       <p class="details-step__text">{{ t(currentLocale, "rsvp.details.text") }}</p>
 
       <form @submit.prevent="handleSubmit">
-        <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.name')" id="name"
-          v-model="form.name" type="text" required />
-        <input class="details-step__input" id="lastname" v-model="form.lastname"
-          :placeholder="t(currentLocale, 'rsvp.details.lastname')" type="text" required />
-        <input class="details-step__input" id="email" v-model="form.email"
-          :placeholder="t(currentLocale, 'rsvp.details.email')" type="email" required />
+        <div class="details-step__field-wrapper">
+          <input class="details-step__input" :class="{ 'has-error': submitted && validationErrors.name }"
+            :placeholder="t(currentLocale, 'rsvp.details.name')" id="name" v-model="form.name" type="text" />
+          <span v-if="submitted && validationErrors.name" class="error-text">
+            {{ t(currentLocale, 'errors.required') || 'Campo requerido' }}
+          </span>
+        </div>
+        <div class="details-step__field-wrapper">
+          <input class="details-step__input" :class="{ 'has-error': submitted && validationErrors.lastname }"
+            id="lastname" v-model="form.lastname" :placeholder="t(currentLocale, 'rsvp.details.lastname')"
+            type="text" />
+          <span v-if="submitted && validationErrors.lastname" class="error-text">
+            {{ t(currentLocale, 'errors.required') || 'Campo requerido' }}
+          </span>
+        </div>
+        <div class="details-step__field-wrapper">
+          <input class="details-step__input" :class="{ 'has-error': submitted && validationErrors.email }" id="email"
+            v-model="form.email" :placeholder="t(currentLocale, 'rsvp.details.email')" type="email" />
+          <span v-if="submitted && validationErrors.email === 'required'" class="error-text">
+            {{ t(currentLocale, 'errors.required') }}
+          </span>
+          <span v-if="submitted && validationErrors.email === 'format'" class="error-text">
+            {{ t(currentLocale, 'errors.email') }}
+          </span>
+        </div>
 
-        <div class="details-step__group">
+        <div class="details-step__group" :class="{ 'has-error-group': submitted && validationErrors.attending }">
           <p class="details-step__question">{{ t(currentLocale, "rsvp.details.question.attending") }}</p>
           <div class="details-step__radio-options">
             <label class="details-step__radio-label">
-              <input type="radio" value="yes" v-model="form.attending" required />
+              <input type="radio" value="yes" v-model="form.attending" />
               <span>{{ t(currentLocale, "rsvp.details.answer.oc") }}</span>
             </label>
             <label class="details-step__radio-label">
-              <input type="radio" value="no" v-model="form.attending" required />
+              <input type="radio" value="no" v-model="form.attending" />
               <span>{{ t(currentLocale, "rsvp.details.answer.not") }}</span>
             </label>
           </div>
+          <span v-if="submitted && validationErrors.attending" class="error-text">
+            {{ t(currentLocale, 'errors.required') || 'Selecciona una opción' }}
+          </span>
         </div>
 
         <div v-if="form.attending === 'yes'" class="details-step__conditional">
-          <div class="details-step__group">
+          <div class="details-step__group" :class="{ 'has-error-group': submitted && validationErrors.bus }">
             <p class="details-step__question">{{ t(currentLocale, "rsvp.details.question.bus") }}</p>
             <div class="details-step__radio-options">
               <label class="details-step__radio-label">
-                <input type="radio" value="yes" v-model="form.bus" required />
+                <input type="radio" value="yes" v-model="form.bus" />
                 <span>{{ t(currentLocale, "rsvp.details.answer.yes") }}</span>
               </label>
               <label class="details-step__radio-label">
-                <input type="radio" value="no" v-model="form.bus" required />
+                <input type="radio" value="no" v-model="form.bus" />
                 <span>{{ t(currentLocale, "rsvp.details.answer.no") }}</span>
               </label>
             </div>
+            <span v-if="submitted && validationErrors.bus" class="error-text">
+              {{ t(currentLocale, 'errors.required') || 'Selecciona una opción' }}
+            </span>
           </div>
 
-          <div class="details-step__group">
+          <div class="details-step__group" :class="{ 'has-error-group': submitted && validationErrors.partnerJoining }">
             <p class="details-step__question">{{ t(currentLocale, "rsvp.details.question.partner") }}</p>
             <div class="details-step__radio-options">
               <label class="details-step__radio-label">
-                <input type="radio" value="yes" v-model="form.partnerJoining" required />
+                <input type="radio" value="yes" v-model="form.partnerJoining" />
                 <span>{{ t(currentLocale, "rsvp.details.answer.yes") }}</span>
               </label>
               <label class="details-step__radio-label">
-                <input type="radio" value="no" v-model="form.partnerJoining" required />
+                <input type="radio" value="no" v-model="form.partnerJoining" />
                 <span>{{ t(currentLocale, "rsvp.details.answer.no") }}</span>
               </label>
             </div>
+            <span v-if="submitted && validationErrors.partnerJoining" class="error-text">
+              {{ t(currentLocale, 'errors.required') || 'Selecciona una opción' }}
+            </span>
           </div>
 
-          <div v-if="form.partnerJoining === 'yes'" class="details-step__subgroup">
-            <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.partnerName')"
-              id="partnerName" v-model="form.partnerName" type="text" required />
+          <div v-if="form.partnerJoining === 'yes'" class="details-step__field-wrapper details-step__subgroup">
+            <input class="details-step__input" :class="{ 'has-error': submitted && validationErrors.partnerName }"
+              :placeholder="t(currentLocale, 'rsvp.details.partnerName')" id="partnerName" v-model="form.partnerName"
+              type="text" />
+            <span v-if="submitted && validationErrors.partnerName" class="error-text">
+              {{ t(currentLocale, 'errors.required') || 'Campo requerido' }}
+            </span>
           </div>
         </div>
 
-        <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.question.diet')" id="allergies"
-          v-model="form.allergies" type="text" />
+        <div class="details-step__field-wrapper">
+          <input class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.question.diet')"
+            id="allergies" v-model="form.allergies" type="text" />
+        </div>
 
-        <textarea class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.question.comment')"
-          id="comments" v-model="form.comments"></textarea>
+        <div class="details-step__field-wrapper">
+          <textarea class="details-step__input" :placeholder="t(currentLocale, 'rsvp.details.question.comment')"
+            id="comments" v-model="form.comments"></textarea>
+        </div>
 
         <div class="details-step__buttons">
           <a class="details-step__back-button" href="/">{{ t(currentLocale, "rsvp.buttonBack") }}</a>
-          <button class="details-step__button" type="submit" :disabled="!isFormValid">{{ t(currentLocale,
-            "rsvp.buttonLabel") }}</button>
+          <button class="details-step__button" type="submit">
+            {{ t(currentLocale, "rsvp.buttonLabel") }}
+          </button>
         </div>
       </form>
       <Loader v-if="isLoading" />
@@ -215,6 +281,66 @@ async function handleSubmit() {
     outline: none;
     transition: border-color 0.2s;
     font-size: $font-size-md;
+  }
+
+  // Wrapper para poder posicionar el mensaje de error relativo al input 
+  &__field-wrapper {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: $font-cormorant;
+    border: 1px solid $color-text;
+    background-color: transparent;
+    border-radius: 4px;
+    // Quitamos margin-bottom de aquí porque lo controla el wrapper ahora
+    margin-bottom: 0;
+    outline: none;
+    transition: all 0.2s;
+    font-size: $font-size-md;
+
+    // Clase de error
+    &.has-error {
+      border-color: $color-red;
+      background-color: rgba($color-red, 0.05);
+      color: $color-red;
+    }
+  }
+
+  // Mensaje de error
+  .error-text {
+    color: $color-red;
+    font-size: $font-size-base;
+    font-family: $font-serif;
+    margin-top: 0.25rem;
+    text-align: left;
+    width: 100%;
+    animation: fadeIn 0.3s ease;
+  }
+
+  &__group {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid transparent; // Para que no salte al añadir borde rojo
+
+    &.has-error-group {
+      border: 1px solid rgba($color-red, 0.3);
+      background-color: rgba($color-red, 0.02);
+
+      .details-step__question {
+        color: $color-red;
+      }
+    }
   }
 
   &__buttons {
@@ -314,11 +440,6 @@ textarea:focus {
 div>label>input[type="radio"] {
   margin-right: 0.4rem;
   accent-color: $color-text;
-}
-
-button:disabled {
-  background: #945d5d89;
-  cursor: not-allowed;
 }
 
 @keyframes fadeIn {
