@@ -31,7 +31,7 @@ function handleCalendarAction() {
     description: "Nos encantaría que vinieras a nuestra boda",
     location: "Parque de la Marquesa, Carretera B-10, Km 4.3, 30612 Ulea, Murcia, España",
     start: new Date("2026-05-30T13:00:00"),
-    end: new Date("2026-05-30T00:00:00")
+    end: new Date("2026-05-31T00:00:00")
   });
 }
 
@@ -56,7 +56,7 @@ function handleClick(e: Event) {
     :class="[extraClass, `sketch-btn--${props.color}`]" @click="handleClick">
     <BlockIcon class="sketch-btn__block-icon" :size="props.size" :color="props.color" />
     <span class="sketch-btn__label" :style="props.size === 'large' && 'width: 100%;'" :class="props.color">{{ label
-      }}</span>
+    }}</span>
   </component>
 </template>
 
