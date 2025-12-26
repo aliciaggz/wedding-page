@@ -13,19 +13,41 @@
     }
   },
   "schedule": {
-    "title": "Itinerario",
-    "subtitle": "qué va a pasar",
-    "buttonLabel": "añadir al calendario",
+    "title": "Schedule",
+    "subtitle": "what’s Happening",
+    "buttonLabel": "add to calendar",
     "timeline": {
-      "date": "30 de Mayo de 2026",
-      "place": "Parque de la Marquesa",
-      "arrival": "Llegada - 13:30h",
-      "ceremony": "Ceremonia - 14:00h",
-      "food": "Comida - 15:00h",
-      "party": "Fiesta - 18:00h",
-      "end": "Fin - 00:00h"
+      "ceremony": {
+        "time": "30TH MAY 2026",
+        "title": "CEREMONIA"
+      },
+      "arrival": {
+        "time": "13:30",
+        "title": "LLEGADA",
+        "text": "Parque de la Marquesa, Carretera B-10, Km 4.3, 30612 Ulea, Murcia"
+      },
+      "start": {
+        "time": "14:00",
+        "title": "COMIENZA LA CEREMONIA",
+        "text": "Los invitados pueden llegar a las 13:30 y la ceremonia comenzará a las 15:00."
+      },
+      "food": {
+        "time": "15:00",
+        "title": "COMIDA",
+        "text": "Disfrutad de bebidas, canapés, conversación y melodías de ensueño bajo el roble."
+      },
+      "party": {
+        "time": "18:00",
+        "title": "FIESTA",
+        "text": "Bailamos, brindamos y celebramos."
+      },
+      "end": {
+        "time": "23:00",
+        "title": "FIN DEL DÍA",
+        "text": "Gracias a todos por venir y compartir este momento tan especial con nosotros."
+      }
     },
-    "dresscode": "Rogamos a los invitados que vistan con etiqueta semiformal. Se recomienda traje y corbata, vestidos y, en general, atuendos elegantes. No es un evento de etiqueta rigurosa (Black Tie), por lo que no es necesario esmoquin ni vestidos largos de gala, pero nos encantaría que todos se vistieran elegantes para la ocasión. Por favor, evitad el color blanco o colores muy similares. Dado que la celebración será al aire libre bajo el sol español, se recomiendan telas ligeras y colores vivos. Si optáis por llevar tacones, os sugerimos cuñas o tacones anchos en lugar de tacones de aguja."
+    "dresscode": "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos."
   },
   "gesture": {
     "title": "un pequeño gesto",

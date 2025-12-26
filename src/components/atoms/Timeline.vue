@@ -3,45 +3,50 @@ import car from '@/assets/car.svg'
 import rings from '@/assets/rings.svg'
 import cheese from '@/assets/cheese.svg'
 import mirrorball from '@/assets/mirrorball.svg'
+import { t } from '@/utils/i18n';
+import { ref, computed } from 'vue'
 
-const events = [
+import { locale } from '@/stores/localeStore.js';
+const currentLocale = computed(() => locale.value);
+
+const events = computed(() => [
   {
-    time: "30TH MAY 2026",
-    title: "CEREMONY",
+    time: t(currentLocale.value, "schedule.timeline.ceremony.time"),
+    title: t(currentLocale.value, "schedule.timeline.ceremony.title"),
     text: "",
     icon: ""
   },
   {
-    time: "13:30",
-    title: "ARRIVAL",
-    text: "Parque de la Marquesa, Carretera B-10, Km 4.3, 30612 Ulea, Murcia",
+    time: t(currentLocale.value, "schedule.timeline.arrival.time"),
+    title: t(currentLocale.value, "schedule.timeline.arrival.title"),
+    text: t(currentLocale.value, "schedule.timeline.arrival.text"),
     icon: car
   },
   {
-    time: "14:00",
-    title: "START OF THE CEREMONY",
-    text: "Guests may arrive at 1:30 p.m. and the ceremony will begin at 3:00 p.m.",
+    time: t(currentLocale.value, "schedule.timeline.start.time"),
+    title: t(currentLocale.value, "schedule.timeline.start.title"),
+    text: t(currentLocale.value, "schedule.timeline.start.text"),
     icon: rings
   },
   {
-    time: "15:00",
-    title: "FOOD",
-    text: "Enjoy drinks, canapés, conversation and dreamy melodies under the oak tree.",
+    time: t(currentLocale.value, "schedule.timeline.food.time"),
+    title: t(currentLocale.value, "schedule.timeline.food.title"),
+    text: t(currentLocale.value, "schedule.timeline.food.text"),
     icon: cheese
   },
   {
-    time: "18:00",
-    title: "PARTY",
-    text: "We danced, toasted and celebrated.",
+    time: t(currentLocale.value, "schedule.timeline.party.time"),
+    title: t(currentLocale.value, "schedule.timeline.party.title"),
+    text: t(currentLocale.value, "schedule.timeline.party.text"),
     icon: mirrorball
   },
   {
-    time: "23:00",
-    title: "END OF THE CEREMONY",
-    text: "Thank you all for coming and sharing this special moment with us.",
+    time: t(currentLocale.value, "schedule.timeline.end.time"),
+    title: t(currentLocale.value, "schedule.timeline.end.title"),
+    text: t(currentLocale.value, "schedule.timeline.end.text"),
     icon: ""
   },
-];
+]);
 </script>
 <template>
   <div class="timeline">
@@ -61,7 +66,6 @@ const events = [
 .timeline {
   position: relative;
   width: 100%;
-  // padding: 4rem 0;
   display: grid;
   gap: 3rem;
   margin-top: 2.5rem;

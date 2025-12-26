@@ -17,13 +17,35 @@
     "subtitle": "what’s Happening",
     "buttonLabel": "add to calendar",
     "timeline": {
-      "date": "30th May 2026",
-      "place": "Parque de la Marquesa",
-      "arrival": "Arrival - 13:30h",
-      "ceremony": "Ceremony - 14:00h",
-      "food": "Food - 15:00h",
-      "party": "Party - 18:00h",
-      "end": "End - 00:00h"
+      "ceremony": {
+        "time": "30TH MAY 2026",
+        "title": "CEREMONY"
+      },
+      "arrival": {
+        "time": "13:30",
+        "title": "ARRIVAL",
+        "text": "Parque de la Marquesa, Carretera B-10, Km 4.3, 30612 Ulea, Murcia"
+      },
+      "start": {
+        "time": "14:00",
+        "title": "START OF THE CEREMONY",
+        "text": "Guests may arrive at 1:30 p.m. and the ceremony will begin at 3:00 p.m."
+      },
+      "food": {
+        "time": "15:00",
+        "title": "FOOD",
+        "text": "Enjoy drinks, canapés, conversation and dreamy melodies under the oak tree."
+      },
+      "party": {
+        "time": "18:00",
+        "title": "PARTY",
+        "text": "We danced, toasted and celebrated."
+      },
+      "end": {
+        "time": "23:00",
+        "title": "END OF THE CEREMONY",
+        "text": "Thank you all for coming and sharing this special moment with us."
+      }
     },
     "dresscode": "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos."
   },
