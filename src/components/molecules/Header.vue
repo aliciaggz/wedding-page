@@ -32,10 +32,16 @@ defineProps({
 </template>
 <style lang="scss" scoped>
 .header {
+  // width: 100%;
+  // height: 10vh;
+  // position: absolute;
+  // background: transparent;
+  // z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 10vh;
-  position: absolute;
-  background: transparent;
   z-index: 1001;
 
 

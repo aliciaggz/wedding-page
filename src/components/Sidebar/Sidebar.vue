@@ -27,14 +27,16 @@ defineProps({
 <style scoped lang="scss">
 .sidebar {
   position: fixed;
+  // inset: 0;
   top: 0;
   left: 100%;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background: $color-red;
   color: white;
   transition: left 0.3s ease;
-  padding: 2rem;
+  padding:
+    env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   z-index: 1000;
 
 
@@ -50,7 +52,9 @@ defineProps({
   &__button {
     width: 9rem;
     position: fixed;
-    bottom: 8rem;
+    // bottom: 8rem;
+    position: absolute;
+    bottom: calc(5rem + env(safe-area-inset-bottom));
   }
 
   &.open {
