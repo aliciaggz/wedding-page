@@ -11,8 +11,8 @@ const locale = getLocale(lang);
   <h2 class="title-cormorant-h2">{t(locale, "travel.getting.title")}</h2>
   <div class="getting__text">
     <p set:html={t(locale, 'travel.getting.paragraph1')}></p>
-    <p>{t(locale, "travel.getting.paragraph2")}</p>
-    <p>{t(locale, "travel.getting.paragraph3")}</p>
+    <p set:html={t(locale, 'travel.getting.paragraph2')}></p>
+    <p set:html={t(locale, 'travel.getting.paragraph3')}></p>
   </div>
 </div>
 <style lang="scss">
@@ -33,7 +33,7 @@ const locale = getLocale(lang);
 
   &__text {
     font-family: $font-cormorant;
-    line-height: 1.5rem;
+    line-height: 2rem;
     font-weight: 300;
     font-size: $font-size-md;
     margin-bottom: 5rem;
