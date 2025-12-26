@@ -147,16 +147,28 @@
     "tips": {
       "title": "consejos de viaje",
       "subtitle": "consejos esenciales para que tu experiencia sea perfecta",
-      "text1": "Finales de mayo en Murcia es el punto de inflexión de la primavera al pleno verano. ¡Esperad calor!",
-      "text2": "Para el día, traed protección solar y ropa ligera para vuestros días libres y ¡disfrutad del sol!",
-      "text3": "Las noches pueden ser algo más frescas, así que traed algo de manga larga, ¡pero podéis dejar los jerséis de lana en casa!",
+      "text1": "A finales de mayo en Murcia comienza la transición de la primavera al pleno verano. ¡Cuenta con que hará calor!",
+      "text2": "Durante el día, trae protector solar y ropa ligera para tus ratos libres y ¡disfruta del sol!",
+      "text3": "Las noches pueden ser algo más frescas, así que trae algo de manga larga, ¡pero puedes dejar los jerséis de lana en casa!",
       "language": {
         "title": "idioma",
-        "text1": "El idioma oficial en Murcia es el español. Aunque mucha gente en el sector turístico habla inglés, es útil conocer algunas frases básicas en español para mejorar vuestra experiencia."
+        "text1": "El idioma oficial en Murcia es el español. Aunque muchas personas en el sector turístico hablan inglés, es útil conocer algunas frases básicas en español para mejorar tu experiencia.",
+        "text2": "Hola = Hello <br/> Por favor = Please <br/> Gracias = Thank you <br/> ¿Dónde está…? = Where is… <br/> El Baño = The bathroom <br/> ¿La cuenta, por favor? = The bill, please <br/> Una cerveza, por favor = A beer, please "
       },
       "food": {
         "title": "comida y bebida",
-        "text1": "Murcia es conocida por su deliciosa gastronomía, incluyendo marisco fresco, tapas y especialidades locales como el zarangollo y el pastel de carne. ¡No olvidéis probar los vinos locales y la sangría!"
+        "text1": "Murcia es conocida por su deliciosa gastronomía, que incluye mariscos frescos, tapas y especialidades locales como el zarangollo y el pastel de carne. ¡No olvides probar los vinos locales y la sangría!",
+        "text2": "La cena empieza tarde. La mayoría de los restaurantes no abren antes de las 20:00, y la gente suele empezar a comer entre las 20:30 y las 22:00. Así que no te preocupes, es totalmente normal cenar tarde aquí.",
+        "text3": "Las tapas están pensadas para compartir, así que no dudes en pedir varios platos para toda la mesa."
+      },
+      "general": {
+        "title": "consejos generales",
+        "text1": "Un “hola” o un “buenos días” amigable siempre es de agradecer.",
+        "text2": "La gente suele saludarse con dos besos en las mejillas, incluso si os acabáis de conocer.",
+        "text3": "Las propinas no son obligatorias: redondear el importe o dejar uno o dos euros es suficiente.",
+        "text4": "El servicio es relajado, así que tómate tu tiempo. Pide la cuenta (“la cuenta, por favor”) cuando estés listo.",
+        "text5": "Las tarjetas se aceptan en casi todas partes, pero tener algo de efectivo es útil para sitios pequeños y transporte.",
+        "text6": "Los domingos muchas tiendas cierran, aunque la mayoría de los restaurantes y bares permanecen abiertos."
       }
     },
     "explore": {

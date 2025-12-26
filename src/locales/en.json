@@ -146,11 +146,23 @@
       "text3": "Evenings may be slightly cooler, so do bring something long sleeved, but you can leave your woolly jumpers at home!",
       "language": {
         "title": "language",
-        "text1": "The official language in Murcia is Spanish. While many people in the tourism industry speak English, it’s helpful to know some basic Spanish phrases to enhance your experience."
+        "text1": "The official language in Murcia is Spanish. While many people in the tourism industry speak English, it’s helpful to know some basic Spanish phrases to enhance your experience.",
+        "text2": "Hola = Hello <br/> Por favor = Please <br/> Gracias = Thank you <br/> ¿Dónde está…? = Where is… <br/> El Baño = The bathroom <br/> ¿La cuenta, por favor? = The bill, please <br/> Una cerveza, por favor = A beer, please "
       },
       "food": {
         "title": "food & drink",
-        "text1": "Murcia is known for its delicious cuisine, including fresh seafood, tapas, and local specialties like zarangollo and pastel de carne. Don’t forget to try the local wines and sangria!"
+        "text1": "Murcia is known for its delicious cuisine, including fresh seafood, tapas, and local specialties like zarangollo and pastel de carne. Don’t forget to try the local wines and sangria!",
+        "text2": "Dinner starts late. Most restaurants don't open before 8:00 pm, and people usually start eating between 8:30 and 10:00 pm. So don't worry, it's perfectly normal to eat late here.",
+        "text3": "Tapas are meant to be shared, so don't hesitate to order several dishes for the whole table."
+      },
+      "general": {
+        "title": "general tips",
+        "text1": "A friendly “hola” or “buenos días” is always appreciated.",
+        "text2": "People often greet with two cheek kisses, even if you’ve just met.",
+        "text3": "Tipping isn’t a big deal—rounding up or leaving a euro or two is enough.",
+        "text4": "Service is relaxed, so take your time. Ask for the bill (“la cuenta, por favor”) when you’re ready.",
+        "text5": "Cards are widely accepted, but having some cash is useful for small places and transport.",
+        "text6": "On Sundays, many shops close, though most restaurants and bars remain open."
       }
     },
     "explore": {

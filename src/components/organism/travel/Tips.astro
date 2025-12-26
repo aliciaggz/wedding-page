@@ -3,6 +3,7 @@ import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
 import Tick from '@/assets/tick.svg';
 import Bocadillo from '@/assets/bocadillo.svg';
 import Plate from "@/assets/plate.svg";
+
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
 
@@ -10,22 +11,33 @@ const tips = [
   {
     icon: Bocadillo,
     title: t(locale, "travel.tips.language.title"),
-    text1: t(locale, "travel.tips.language.text1"),
-    text2: t(locale, "travel.tips.language.text2"),
+    texts: [
+      t(locale, "travel.tips.language.text1"),
+      t(locale, "travel.tips.language.text2"),
+    ],
   },
   {
     icon: Plate,
     title: t(locale, "travel.tips.food.title"),
-    text1: t(locale, "travel.tips.food.text1"),
-    text2: t(locale, "travel.tips.carhire.text2"),
+    texts: [
+      t(locale, "travel.tips.food.text1"),
+      t(locale, "travel.tips.food.text2"),
+    ],
   },
   {
     icon: Tick,
-    title: t(locale, "travel.tips.walking.title"),
-    text1: t(locale, "travel.tips.walking.text1"),
-    text2: t(locale, "travel.tips.walking.text2"),
+    title: t(locale, "travel.tips.general.title"),
+    texts: [
+      t(locale, "travel.tips.general.text1"),
+      t(locale, "travel.tips.general.text2"),
+      t(locale, "travel.tips.general.text3"),
+      t(locale, "travel.tips.general.text4"),
+      t(locale, "travel.tips.general.text5"),
+      t(locale, "travel.tips.general.text6"),
+    ],
   },
 ];
+---
 
 ---
 
@@ -48,10 +60,11 @@ const tips = [
           </div>
 
           <div class="tips-item__content">
-            <p>{item.text1}</p>
-            <p>{item.text2}</p>
+            {item.texts.map((text) => (
+              <p set:html={text}></p>
+            ))}
           </div>
-          </div>
+        </div>
       );
     })}
   </div>
@@ -79,25 +92,6 @@ const tips = [
     gap: 2rem;
   }
 
-  &__content{
-    display: flex;
-
-    &__text{
-      display: flex;
-      flex-direction: column;
-      font-family: $font-cormorant;
-      font-size: $font-size-md;
-      font-weight: 200;
-      margin-left: 1rem;
-      text-align: right;
-      gap: 1rem;
-    }
-    &__icon{
-      width: 100%;
-      height: auto;
-    }
-  }
-
   &-list {
     display: flex;
     flex-direction: column;
@@ -120,17 +114,19 @@ const tips = [
   }
 
   &__icon {
-    max-width: 2rem;
+    width: 3rem;
+    height: auto;
     color: $color-red;
   }
 
   &__content {
     font-family: $font-cormorant;
     font-size: $font-size-md;
+    line-height: 2rem;
     // max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   &__title {
