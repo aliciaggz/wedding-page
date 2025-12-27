@@ -5,8 +5,6 @@ import girldancing from '@/assets/girl-dancing.svg';
 import { locale } from '@/stores/localeStore.js';
 import { t } from '@/utils/i18n.js';
 
-const currentLocale = computed(() => locale.value);
-
 const emits = defineEmits(['continue']);
 
 const PASSWORD = "1234";
@@ -37,17 +35,18 @@ function next() {
 
       <h2 class="password-step__title">Maria & Alex</h2>
       <h3 class="password-step__subtitle">30.05.2026</h3>
-      <p class="password-step__text">{{ t(currentLocale, "rsvp.password.text") }}</p>
+      <p class="password-step__text">{{ t(locale, "rsvp.password.text") }}</p>
 
       <form class="password-step__form" @submit.prevent="next">
-        <input class="password-step__input" :class="{ 'password-step__input-error': submitted && !isValid }"
-          type="password" v-model="local.password" :placeholder="t(currentLocale, 'rsvp.password.write')" />
+        <input class="password-step__input" autocomplete="current-password" id="password"
+          :class="{ 'password-step__input-error': submitted && !isValid }" type="password" v-model="local.password"
+          :placeholder="t(locale, 'rsvp.password.write')" />
         <p v-if="submitted && !isValid" class="password-step__error">
-          {{ t(currentLocale, "rsvp.password.invalidPassword") }}
+          {{ t(locale, "rsvp.password.invalidPassword") }}
         </p>
         <div class="password-step__buttons">
-          <a class="password-step__back-button" href="/">{{ t(currentLocale, "rsvp.buttonBack") }}</a>
-          <button class="password-step__button" type="submit">{{ t(currentLocale, "rsvp.buttonLabel") }}</button>
+          <a class="password-step__back-button" href="/">{{ t(locale, "rsvp.buttonBack") }}</a>
+          <button class="password-step__button" type="submit">{{ t(locale, "rsvp.buttonLabel") }}</button>
         </div>
       </form>
     </div>

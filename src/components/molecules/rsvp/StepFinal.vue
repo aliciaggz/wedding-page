@@ -23,7 +23,7 @@ const props = defineProps({
         {{ t(currentLocale, "rsvp.final.attendingText") }}
       </p>
 
-      <p v-else> <span>{{ t(currentLocale, "rsvp.final.thanksNotAttending") }}</span>
+      <p v-else class="final-step__text"> <span>{{ t(currentLocale, "rsvp.final.thanksNotAttending") }}</span>
         {{ t(currentLocale, "rsvp.final.notAttendingText") }}
       </p>
 

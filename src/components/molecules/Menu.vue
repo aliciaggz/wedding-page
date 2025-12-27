@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import BurgerButton from '../atoms/BurgerButton.vue';
 import Sidebar from '../Sidebar/Sidebar.vue';
 import Button from '@/components/atoms/Button.vue';
@@ -21,10 +21,6 @@ onMounted(() => {
 
   width.value = window.innerWidth;
   window.addEventListener('resize', () => (width.value = window.innerWidth));
-});
-
-watch(open, (value) => {
-  document.body.style.overflow = value ? 'hidden' : '';
 });
 </script>
 <template>
