@@ -36,8 +36,6 @@ defineProps({
   background: $color-red;
   color: white;
   transition: left 0.3s ease;
-  padding:
-    env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   z-index: 1000;
 
 
@@ -55,7 +53,7 @@ defineProps({
     position: fixed;
     // bottom: 8rem;
     position: absolute;
-    bottom: calc(5rem + env(safe-area-inset-bottom));
+    bottom: calc(4rem + env(safe-area-inset-bottom));
 
     &--es {
       width: 12rem;
