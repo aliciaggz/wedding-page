@@ -1,52 +1,74 @@
-<script setup>
-import { reactive, computed, ref } from 'vue'
-import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
-import girldancing from '@/assets/girl-dancing.svg';
-import { locale } from '@/stores/localeStore.js';
-import { t } from '@/utils/i18n.js';
+<script setup lang="ts">
+import { reactive, computed, ref } from "vue";
+import RsvpStepLayout from "@/components/atoms/RsvpStepLayout.vue";
+import girldancing from "@/assets/girl-dancing.svg";
+import { locale } from "@/stores/localeStore.js";
+import { t } from "@/utils/i18n.js";
 
-const emits = defineEmits(['continue']);
+const emits = defineEmits(["continue"]);
 
+const currentLocale = computed<"es" | "en">(() => locale.value as "es" | "en");
 const PASSWORD = "1234";
 const submitted = ref(false);
 
 // estado local de los inputs
 const local = reactive({
-  password: ''
-})
+  password: "",
+});
 
-const isValid = computed(() =>
-  local.password.trim().toLowerCase() === PASSWORD.toLowerCase()
-)
+const isValid = computed(
+  () => local.password.trim().toLowerCase() === PASSWORD.toLowerCase()
+);
 
 function next() {
-  submitted.value = true
+  submitted.value = true;
   if (isValid.value) {
-    localStorage.setItem("rsvp-auth", "true")
-    emits('continue')
+    localStorage.setItem("rsvp-auth", "true");
+    emits("continue");
   }
 }
-
 </script>
 
 <template>
   <RsvpStepLayout :image="girldancing" image-alt="Muñecos bailando">
     <div class="password-step">
-
       <h2 class="password-step__title">Maria & Alex</h2>
       <h3 class="password-step__subtitle">30.05.2026</h3>
-      <p class="password-step__text">{{ t(locale, "rsvp.password.text") }}</p>
+      <p class="password-step__text">
+        {{ t(currentLocale, "rsvp.password.text") }}
+      </p>
 
       <form class="password-step__form" @submit.prevent="next">
-        <input class="password-step__input" autocomplete="current-password" id="password"
-          :class="{ 'password-step__input-error': submitted && !isValid }" type="password" v-model="local.password"
-          :placeholder="t(locale, 'rsvp.password.write')" />
+        <div
+          class="password-step__field-wrapper"
+          style="position: relative; width: 100%"
+        >
+          <label
+            v-if="!local.password"
+            for="password"
+            class="password-step__label"
+          >
+            {{ t(currentLocale, "rsvp.password.write") }}
+          </label>
+
+          <input
+            id="password"
+            class="password-step__input"
+            type="password"
+            v-model="local.password"
+            autocomplete="current-password"
+          />
+        </div>
         <p v-if="submitted && !isValid" class="password-step__error">
-          {{ t(locale, "rsvp.password.invalidPassword") }}
+          {{ t(currentLocale, "rsvp.password.invalidPassword") }}
         </p>
         <div class="password-step__buttons">
-          <a class="password-step__back-button" href="/">{{ t(locale, "rsvp.buttonBack") }}</a>
-          <button class="password-step__button" type="submit">{{ t(locale, "rsvp.buttonLabel") }}</button>
+          <a class="password-step__back-button" href="/">{{
+            t(currentLocale, "rsvp.buttonBack")
+          }}</a>
+          <button class="password-step__button" type="submit">
+            {{ t(currentLocale, "rsvp.buttonLabel") }}
+          </button>
         </div>
       </form>
     </div>
@@ -91,10 +113,10 @@ function next() {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin-top: 2rem;
   }
 
   &__button {
-    margin-top: 1rem;
     background-color: $color-red;
     color: $color-white;
     font-family: $font-cormorant;
@@ -106,7 +128,6 @@ function next() {
   }
 
   &__back-button {
-    margin-top: 1rem;
     background-color: $color-background;
     color: $color-text;
     font-family: $font-cormorant;
@@ -133,12 +154,11 @@ function next() {
     border: 1px solid $color-text;
     background-color: transparent;
     border-radius: 4px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     outline: none;
     transition: border-color 0.2s;
     font-size: $font-size-md;
   }
-
 
   &__input-error {
     color: $color-red;
@@ -151,14 +171,15 @@ function next() {
     font-family: $font-cormorant;
   }
 
-}
-
-
-h3 {
-  margin-bottom: 1rem;
-  text-align: center;
-  font-family: Source Serif Pro;
-  color: #333;
+  &__label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    pointer-events: none;
+    color: #999;
+    font-family: $font-cormorant;
+    font-size: $font-size-md;
+  }
 }
 
 .input-group {
@@ -167,27 +188,7 @@ h3 {
   flex-wrap: wrap;
 }
 
-label {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-input {
-  padding: 0.5rem;
-  font-size: 1rem;
-  font-family: $font-cormorant;
-  border: 1px solid #C21807;
-  border-radius: 4px;
-  margin-top: 0.3rem;
-  margin-bottom: 1.5rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
 input:focus {
-  border-color: #C21807;
+  border-color: #c21807;
 }
 </style>
