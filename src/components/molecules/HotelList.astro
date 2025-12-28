@@ -3,6 +3,9 @@ import HotelCard from '@/components/molecules/HotelCard.astro';
 import HotelIconA from '@/assets/hotel-1.svg';
 import HotelIconB from '@/assets/hotel-2.svg';
 import HotelIconC from '@/assets/hotel-3.svg';
+import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
+const lang = getLangFromUrl(Astro.url);
+const locale = getLocale(lang);
 
 const hotels = [
   {
@@ -12,7 +15,7 @@ const hotels = [
     km: 27.6,
     min: 30,
     description: {
-      text: "Some rooms are reserved for the wedding. If you stay here, book through the hotel’s website and reference: “María and Alex’s wedding – 30th May 2025.”"
+      text: t(locale, "travel.accommodation.hotels.hotel1.text")
     },
     link: "https://www.barcelo.com/en-us/hotels/spain/murcia/barcelo-murcia-siete-coronas/?utm_source=google_my_business&utm_medium=organic"
   },
@@ -24,12 +27,12 @@ const hotels = [
     min: 25,
     discount: 10,
     description: {
-      text: "If you book by email to reservas@hotelrincondepepe.com with the following details:",
+      text: t(locale, "travel.accommodation.hotels.hotel2.text"),
       list: [
-        "Name and Last Name",
-        "Type of room you want",
-        "Phone number",
-        "Credit card number"
+        t(locale, "travel.accommodation.hotels.hotel2.list.name"),
+        t(locale, "travel.accommodation.hotels.hotel2.list.room"),
+        t(locale, "travel.accommodation.hotels.hotel2.list.phone"),
+        t(locale, "travel.accommodation.hotels.hotel2.list.card"),
       ],
     },
     link: "https://hotelmurciarincondepepe.com-hotel.com/es/"
@@ -42,7 +45,7 @@ const hotels = [
     min: 26,
     discount: 5,
     description: {
-      text: "If you book through their website, you will receive the discount."
+      text: t(locale, "travel.accommodation.hotels.hotel3.text")
     },
     link: "https://www.sercotelhoteles.com/es/hotel-amistad-murcia"
   }

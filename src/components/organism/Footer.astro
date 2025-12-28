@@ -10,7 +10,8 @@ const locale = getLocale(lang);
 <footer class="footer">
   <PeopleDancing class="footer__image" />
   <p class="footer__text">{t(locale, "footer.text")}</p>
-  <Button extraClass='footer__button' href=`/${locale}/rsvp` label={t(locale, "rsvp.title")}/>
+  <Button  extraClass={`footer__button ${locale === 'es' ? 'footer__button--es' : 'footer__button--en'}`}
+  href=`/${locale}/rsvp` label={t(locale, "rsvp.title")}/>
 </footer>
 
 <style lang="scss" scoped>
@@ -38,6 +39,10 @@ const locale = getLocale(lang);
   &__button {
     margin-bottom: 5rem;
     width: 9rem;
+
+    &--es {
+      width: 12rem;
+    }
   }
 }
 </style>

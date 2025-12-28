@@ -12,7 +12,7 @@ const locale = getLocale(lang);
     <h2 class="title-cormorant-h2">{t(locale, "schedule.title")}</h2>
     <!-- <h3 class="subtitle-dancing-h3">{t(locale, "schedule.subtitle")}</h3> -->
     <Timeline client:load/>
-    <Button extraClass="schedule__button" action="calendar" label={t(locale, "schedule.buttonLabel")} size="large" client:load/>
+    <Button extraClass={`schedule__button ${locale === 'es' ? 'schedule__button--es' : 'schedule__button--en'}`} action="calendar" label={t(locale, "schedule.buttonLabel")} size="large" client:load/>
   </div>
   <div class={"schedule__festin"}>
     <Festin class={"schedule__festin__image"} />
@@ -42,11 +42,6 @@ const locale = getLocale(lang);
     flex-direction: column;
     gap: 2rem;
 
-  }
-
-  &__button {
-    margin-bottom: 5rem;
-    width: 9rem;
   }
 
   &__marco {
@@ -89,8 +84,13 @@ const locale = getLocale(lang);
     }
   }  
 
-  &__button{
+  &__button {
+    margin-bottom: 5rem;
     width: 15rem;
+
+    &--es {
+      width: 17rem;
+    }
   }
 
   @media (min-width: 720px) {

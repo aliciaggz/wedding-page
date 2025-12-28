@@ -18,7 +18,8 @@ defineProps({
         <li><a :href="`/${currentLocale}/travel`">{{ t(currentLocale, "sidebar.navigation.travel") }}</a></li>
         <li><a href="/#schedule">{{ t(currentLocale, "sidebar.navigation.schedule") }}</a></li>
       </ul>
-      <Button extraClass='sidebar__button' :href="`/${locale}/rsvp`" color="white" :label="t(locale, 'rsvp.title')" />
+      <Button :extraClass="`sidebar__button ${locale === 'es' ? 'sidebar__button--es' : 'sidebar__button--en'}`"
+        :href="`/${locale}/rsvp`" color="white" :label="t(locale, 'rsvp.title')" />
 
     </nav>
   </aside>
@@ -55,6 +56,10 @@ defineProps({
     // bottom: 8rem;
     position: absolute;
     bottom: calc(5rem + env(safe-area-inset-bottom));
+
+    &--es {
+      width: 12rem;
+    }
   }
 
   &.open {

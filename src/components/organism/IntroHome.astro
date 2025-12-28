@@ -13,7 +13,7 @@ const locale = getLocale(lang);
   <div class="intro-home__text">
     <p class="intro-home__text__p">{t(locale, "home.intro")}</p>
   </div>
-  <Button extraClass='intro-home__button' href=`/${locale}/rsvp` label={t(locale, "rsvp.title")}/>
+  <Button extraClass={`intro-home__button ${locale === 'es' ? 'intro-home__button--es' : 'intro-home__button--en'}`} href=`/${locale}/rsvp` label={t(locale, "rsvp.title")}/>
   <div class="intro-home__figures-container">
     <Image class={"intro-home__figures-container__marco"} src={marco1} alt="Marco"/>
 
@@ -47,6 +47,10 @@ const locale = getLocale(lang);
   &__button {
     margin-bottom: 5rem;
     width: 9rem;
+
+    &--es {
+      width: 12rem;
+    }
   }
 
   &__figures-container {
