@@ -43,8 +43,9 @@ export const POST: APIRoute = async ({ request }) => {
     // Append data
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "A:J",
+      range: "Hoja1!A1",
       valueInputOption: "USER_ENTERED",
+      insertDataOption: "INSERT_ROWS",
       requestBody: {
         values: [
           [
@@ -57,7 +58,7 @@ export const POST: APIRoute = async ({ request }) => {
             partnerName,
             allergies,
             comments,
-            new Date().toLocaleString(),
+            new Date().toISOString(),
           ],
         ],
       },
