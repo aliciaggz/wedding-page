@@ -58,7 +58,7 @@ export const POST: APIRoute = async ({ request }) => {
             partnerName,
             allergies,
             comments,
-            new Date().toISOString(),
+            new Date().toLocaleString(),
           ],
         ],
       },
