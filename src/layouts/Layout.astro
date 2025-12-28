@@ -47,16 +47,16 @@ if (path === "/") {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href={favicon.src} />
 		<meta name="generator" content={Astro.generator} />
 		<title>A&M 30.05.2026</title>
 	</head>
 	<body>
-		<Header currentPath={currentRelativePath} client:load languages={languages} lang={lang} logo={logoImage.src}/>
+		<Header client:load currentPath={currentRelativePath} languages={languages} lang={lang} logo={logoImage.src}/>
 		<Hero {...heroData} />
 		<main>
-		<slot />
+			<slot />
 		</main>
 	</body>
 </html>

@@ -26,14 +26,18 @@ defineProps({
         <img :src="logo" alt="Logo" class="header__logo" />
       </a>
       <Menu />
-
     </div>
   </header>
 </template>
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  height: 10vh;
+  padding-top: env(safe-area-inset-top);
+
+  // OJO: Como tienes height: 10vh, verifica que 
+  // esto no descuadre el alto. Quizás prefieras usar min-height.
+  height: auto;
+  min-height: 10vh;
   // position: absolute;
   // background: transparent;
   position: absolute;

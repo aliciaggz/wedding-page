@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import BurgerButton from '../atoms/BurgerButton.vue';
 import Sidebar from '../Sidebar/Sidebar.vue';
 import Button from '@/components/atoms/Button.vue';
@@ -17,10 +17,47 @@ const width = ref(0);
 const isDesktop = computed(() => width.value >= 1023);
 
 onMounted(() => {
-  console.log(width.value);
-
   width.value = window.innerWidth;
   window.addEventListener('resize', () => (width.value = window.innerWidth));
+});
+
+// Función auxiliar para cambiar el meta tag theme-color dinámicamente
+const updateThemeColor = (color) => {
+  const metaThemeColor = document.querySelector("meta[name=theme-color]");
+  if (metaThemeColor) {
+    metaThemeColor.setAttribute("content", color);
+  } else {
+    // Si no existe, lo creamos (seguridad)
+    const meta = document.createElement('meta');
+    meta.name = "theme-color";
+    meta.content = color;
+    document.head.appendChild(meta);
+  }
+};
+// --- LÓGICA NUEVA PARA IOS ---
+watch(open, (isOpen) => {
+  const html = document.documentElement; // Nodo <html>
+  const body = document.body;
+  if (isOpen) {
+    // Nodo <body>
+    // 1. Bloquear scroll del body para evitar que el header se vaya
+    // Bloqueamos el scroll en ambos
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+
+    // IMPORTANTE para iOS: evita que el scroll "elástico" funcione
+    html.style.height = '100%';
+    body.style.height = '100%';
+    // 2. Cambiar el color de la UI de Safari (Notch y barra inferior) a ROJO
+    updateThemeColor('#c21807');
+  } else {
+    html.style.overflow = '';
+    body.style.overflow = '';
+    html.style.height = '';
+    body.style.height = '';
+
+    updateThemeColor('#fef8f0');
+  }
 });
 </script>
 <template>
