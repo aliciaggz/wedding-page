@@ -1,45 +1,45 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import PasswordStep from '@/components/molecules/rsvp/PasswordStep.vue'
-import DetailsStep from '@/components/molecules/rsvp/DetailsStep.vue'
-import StepFinal from '@/components/molecules/rsvp/StepFinal.vue'
+import { ref, onMounted } from "vue";
+import PasswordStep from "@/components/molecules/rsvp/PasswordStep.vue";
+import DetailsStep from "@/components/molecules/rsvp/DetailsStep.vue";
+import StepFinal from "@/components/molecules/rsvp/StepFinal.vue";
 
-const currentStep = ref(1)
-const authenticated = ref(false)
-const form = ref({ attending: 'yes' }) // Estado mínimo para el StepFinal
+const currentStep = ref(1);
+const authenticated = ref(false);
+const form = ref({ attending: "yes" });
 
 onMounted(() => {
-  const isAuth = localStorage.getItem("rsvp-auth") === "true"
-  const isSubmitted = localStorage.getItem("rsvp-submitted") === "true"
-  const savedAttending = localStorage.getItem("rsvp-attending")
+  const isAuth = localStorage.getItem("rsvp-auth") === "true";
+  const isSubmitted = localStorage.getItem("rsvp-submitted") === "true";
+  const savedAttending = localStorage.getItem("rsvp-attending");
 
   if (isAuth) {
-    authenticated.value = true
+    authenticated.value = true;
 
     if (isSubmitted) {
       // Si ya envió el formulario, saltamos directamente al paso final
-      form.value.attending = savedAttending || 'yes'
-      currentStep.value = 3
+      form.value.attending = savedAttending || "yes";
+      currentStep.value = 3;
     } else {
       // Si está autenticado pero no ha enviado, al formulario
-      currentStep.value = 2
+      currentStep.value = 2;
     }
   }
-})
+});
 
 function handleAuthSuccess() {
-  localStorage.setItem("rsvp-auth", "true")
-  authenticated.value = true
-  currentStep.value = 2
+  localStorage.setItem("rsvp-auth", "true");
+  authenticated.value = true;
+  currentStep.value = 2;
 }
 
 function handleFormSubmitSuccess() {
   // Guardamos que ya se ha enviado con éxito
-  localStorage.setItem("rsvp-submitted", "true")
+  localStorage.setItem("rsvp-submitted", "true");
   // Guardamos la respuesta de asistencia para mostrar el mensaje correcto en el Step 3
-  localStorage.setItem("rsvp-attending", form.value.attending)
+  localStorage.setItem("rsvp-attending", form.value.attending);
 
-  currentStep.value = 3
+  currentStep.value = 3;
 }
 </script>
 

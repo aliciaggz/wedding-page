@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import RsvpStepLayout from '@/components/atoms/RsvpStepLayout.vue'
-import boydancing from '@/assets/boy-dancing.svg';
-import festin from '@/assets/festin.svg';
-import { locale } from '@/stores/localeStore.js';
-import { t } from '@/utils/i18n.js';
+import { computed } from "vue";
+import RsvpStepLayout from "@/components/atoms/RsvpStepLayout.vue";
+import boydancing from "@/assets/boy-dancing.svg";
+import festin from "@/assets/festin.svg";
+import { locale } from "@/stores/localeStore.js";
+import { t } from "@/utils/i18n.js";
 
 const currentLocale = computed<"es" | "en">(() => locale.value as "es" | "en");
-
 const props = defineProps({
-  attending: Boolean
-})
+  attending: String,
+});
 </script>
 
 <template>
@@ -18,20 +17,19 @@ const props = defineProps({
     <div class="final-step">
       <h2 class="final-step__title">Maria & Alex</h2>
       <h3 class="final-step__subtitle">30.05.2026</h3>
-      <p v-if="attending" class="final-step__text">
+      <p v-if="attending === 'yes'" class="final-step__text">
         <span>{{ t(currentLocale, "rsvp.final.thanks") }}</span>
         {{ t(currentLocale, "rsvp.final.attendingText") }}
       </p>
 
-      <p v-else class="final-step__text"> <span>{{ t(currentLocale, "rsvp.final.thanksNotAttending") }}</span>
+      <p v-else class="final-step__text">
+        <span>{{ t(currentLocale, "rsvp.final.thanksNotAttending") }}</span>
         {{ t(currentLocale, "rsvp.final.notAttendingText") }}
       </p>
 
       <figure class="final-step__festin">
-        <img class="final-step__festin__image" :src="festin.src" alt="">
+        <img class="final-step__festin__image" :src="festin.src" alt="" />
       </figure>
-
-
     </div>
   </RsvpStepLayout>
 </template>
@@ -48,7 +46,6 @@ const props = defineProps({
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-
   }
 
   &__title {
@@ -70,7 +67,6 @@ const props = defineProps({
     // max-width: 32rem;
     margin-right: 0;
     width: 100%;
-
 
     &__image {
       position: absolute;

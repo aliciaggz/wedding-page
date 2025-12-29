@@ -243,7 +243,7 @@
       "name": "Nombre",
       "lastname": "Apellidos",
       "email": "Email",
-      "partnerName": "Partner's Name",
+      "partnerName": "Nombre del acompañante",
       "question": {
         "attending": "¿Podrás asistir a nuestra boda?",
         "bus": "¿Necesitarás servicio de autobús?",
@@ -262,7 +262,7 @@
       "thanks": "¡Gracias!",
       "attendingText": "¡Estamos deseando que lo celebres con nosotros!",
       "thanksNotAttending": "¡Gracias por avisarnos!",
-      "notAttendingText": " Aunque no puedas acompañarnos, te tendremos muy presente en nuestro día"
+      "notAttendingText": "Aunque no puedas acompañarnos, te tendremos muy presente en nuestro día"
     },
     "modal": {
       "ups": "Vaya...",
