@@ -158,7 +158,9 @@
       "subtitle": "guía rápida del clima para venir preparados.",
       "text1": "Finales de mayo en Murcia es el punto de inflexión de la primavera al pleno verano. ¡Esperad calor!",
       "text2": "Para el día, traed protección solar y ropa ligera para vuestros días libres y ¡disfrutad del sol!",
-      "text3": "Las noches pueden ser algo más frescas, así que traed algo de manga larga, ¡pero podéis dejar los jerséis de lana en casa!"
+      "text3": "Las noches pueden ser algo más frescas, así que traed algo de manga larga, ¡pero podéis dejar los jerséis de lana en casa!",
+      "day": "día",
+      "night": "noche"
     },
     "tips": {
       "title": "consejos de viaje",

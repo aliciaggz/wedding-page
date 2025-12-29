@@ -17,20 +17,19 @@ const locale = getLocale(lang);
   <div class="weather__content">      
     <Palmeras class="weather__content__icon"/>
     <div class="weather__content__text">
-      <p class="">{t(locale, "travel.weather.text1")}</p>
+      <p>{t(locale, "travel.weather.text1")}</p>
       <div class="weather__temp">
         <div class="weather__temp__father">
           <Day class="weather__temp__icon"/>
-          <p class="weather__temp__degree">day 20-25ºC</p>
+          <p class="weather__temp__degree">{t(locale, "travel.weather.day")} 20-25ºC</p>
         </div>
         <div class="weather__temp__father">
           <Night class="weather__temp__icon"/>
-          <p class="weather__temp__degree">night 15-20ºC</p>
+          <p class="weather__temp__degree">{t(locale, "travel.weather.night")} 15-20ºC</p>
         </div>
       </div>
-      <p class="">{t(locale, "travel.weather.text2")}</p>
-      <p class="">{t(locale, "travel.weather.text3")}</p>
-
+      <p >{t(locale, "travel.weather.text2")}</p>
+      <p >{t(locale, "travel.weather.text3")}</p>
     </div>
   </div>
 
@@ -114,7 +113,6 @@ const locale = getLocale(lang);
     padding-block: 4rem;
     margin: auto;
   } 
-
 
 }
 
