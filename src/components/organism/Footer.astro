@@ -27,6 +27,7 @@ const locale = getLocale(lang);
   }
 
   &__text {
+    max-width: 12rem;
     font-family: $font-cormorant;
     font-weight: bold;
     font-size: $font-size-md;
@@ -34,6 +35,7 @@ const locale = getLocale(lang);
     margin-bottom: 5rem;
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
   &__button {
@@ -42,6 +44,13 @@ const locale = getLocale(lang);
 
     &--es {
       width: 12rem;
+    }
+  }
+
+  @media (min-width: 720px) {
+    &__text {
+      max-width: 100%;
+      font-size: $font-size-lg;
     }
   }
 }

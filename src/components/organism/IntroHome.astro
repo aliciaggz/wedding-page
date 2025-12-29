@@ -12,6 +12,8 @@ const locale = getLocale(lang);
 <div class="intro-home">
   <div class="intro-home__text">
     <p class="intro-home__text__p">{t(locale, "home.intro")}</p>
+    <p class="intro-home__text__p">{t(locale, "home.intro2")}</p>
+
   </div>
   <Button extraClass={`intro-home__button ${locale === 'es' ? 'intro-home__button--es' : 'intro-home__button--en'}`} href=`/${locale}/rsvp` label={t(locale, "rsvp.title")}/>
   <div class="intro-home__figures-container">
