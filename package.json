@@ -16,6 +16,7 @@
     "@fontsource-variable/dancing-script": "^5.2.8",
     "@fontsource/lato": "^5.2.7",
     "@fontsource/source-serif-pro": "^5.2.5",
+    "@vercel/analytics": "^1.6.1",
     "astro": "^5.14.4",
     "googleapis": "^160.0.0",
     "sass": "^1.93.2",

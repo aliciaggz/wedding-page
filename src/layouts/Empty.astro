@@ -2,6 +2,8 @@
 import "../styles/global.scss";
 import HeaderRsvp from '@/components/molecules/rsvp/HeaderRsvp.astro'
 import favicon from '@/assets/favicon.svg';
+import Analytics from '@vercel/analytics/astro';
+
 import { languages, getLangFromUrl } from '@/utils/i18n';
 const lang = getLangFromUrl(Astro.url);
 
@@ -13,6 +15,7 @@ const lang = getLangFromUrl(Astro.url);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <Analytics />
     <title>A&M 30.05.2026</title>
   </head>
   <body>

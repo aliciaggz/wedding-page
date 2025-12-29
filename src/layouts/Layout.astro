@@ -5,6 +5,7 @@ import Hero from '@/components/molecules/Hero.astro';
 import bgImage from "@/assets/alex-maria01.jpeg";
 import bgMurcia from "@/assets/bg-murcia.png";
 import favicon from '@/assets/favicon.svg';
+import Analytics from '@vercel/analytics/astro';
 
 import '../styles/global.scss';
 import logoImage from "../assets/logoam.png";
@@ -50,6 +51,7 @@ if (path === "/") {
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href={favicon.src} />
 		<meta name="generator" content={Astro.generator} />
+		<Analytics />
 		<title>A&M 30.05.2026</title>
 	</head>
 	<body>
