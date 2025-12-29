@@ -2,6 +2,8 @@
 import { getLocale, t , getLangFromUrl } from '@/utils/i18n';
 import Sun from '@/assets/sun-w.svg';
 import Palmeras from "@/assets/palmeras.svg";
+import Day from "@/assets/day.svg";
+import Night from "@/assets/night.svg";
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
@@ -16,8 +18,17 @@ const locale = getLocale(lang);
     <Palmeras class="weather__content__icon"/>
     <div class="weather__content__text">
       <p class="">{t(locale, "travel.weather.text1")}</p>
+      <div class="weather__temp">
+        <div class="weather__temp__father">
+          <Day class="weather__temp__icon"/>
+          <p class="weather__temp__degree">day 20-25ºC</p>
+        </div>
+        <div class="weather__temp__father">
+          <Night class="weather__temp__icon"/>
+          <p class="weather__temp__degree">night 15-20ºC</p>
+        </div>
+      </div>
       <p class="">{t(locale, "travel.weather.text2")}</p>
-
       <p class="">{t(locale, "travel.weather.text3")}</p>
 
     </div>
@@ -59,7 +70,7 @@ const locale = getLocale(lang);
       font-weight: 200;
       margin-left: 1rem;
       text-align: right;
-      gap: 1rem;
+      gap: 1.5rem;
     }
     &__icon{
       width: 100%;
@@ -74,6 +85,28 @@ const locale = getLocale(lang);
     height: auto;
     margin-bottom: 4rem; 
   }
+
+&__temp {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  &__father {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &__degree {
+    font-weight: bold;
+    font-family: $font-dancing;
+    font-size: $font-size-md;
+
+  }
+}
 
   @media (min-width: 720px) {
     max-width: 42rem;
