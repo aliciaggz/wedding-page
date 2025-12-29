@@ -1,6 +1,6 @@
 ---
 import Header from '@/components/molecules/Header.vue';
-import { getLocale, languages, getLangFromUrl } from '@/utils/i18n';
+import { getLocale, languages, t,  getLangFromUrl } from '@/utils/i18n';
 import Hero from '@/components/molecules/Hero.astro';
 import bgImage from "@/assets/alex-maria01.jpeg";
 import bgMurcia from "@/assets/bg-murcia.png";
@@ -29,15 +29,9 @@ let heroData = {
 
 console.log("Current path:", path);
 
-if (path === "/") {
+if (path.startsWith(`/${locale}/travel`)) {
   heroData = {
-    title: "Inicio",
-    subtitle: "Bienvenido a la web",
-    image: bgImage.src
-  };
-} else if (path.startsWith(`/${locale}/travel`)) {
-  heroData = {
-    title: "Travel & Stay",
+    title:  t(locale, "travel.title"),
     subtitle: "30.05.2026",
     image: bgMurcia.src
   };

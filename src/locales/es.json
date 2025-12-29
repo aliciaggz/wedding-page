@@ -211,7 +211,7 @@
     "questions": {
       "q1": {
         "question": "¿Dónde puedo confirmar mi asistencia?",
-        "answer": "Todas las confirmaciones (RSVP) se hacen online (sube un poco y haz clic en el botón grande de Confirmar asistencia), pero si tienes problemas con el formulario, contacta con Alex o Maria."
+        "answer": "Todas las confirmaciones se hacen online (haz clic en alguno de los botones de Confirmar asistencia), pero si tienes problemas con el formulario, contacta con Alex o Maria."
       },
       "q2": {
         "question": "¿Cuál es la fecha límite para confirmar?",

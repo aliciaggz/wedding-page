@@ -1,26 +1,41 @@
 <script setup>
-import { computed } from 'vue';
-import Button from '@/components/atoms/Button.vue';
-import { t } from '@/utils/i18n.js';
-import { locale } from '@/stores/localeStore.js';
+import { computed } from "vue";
+import Button from "@/components/atoms/Button.vue";
+import { t } from "@/utils/i18n.js";
+import { locale } from "@/stores/localeStore.js";
 
 const currentLocale = computed(() => locale.value);
 
 defineProps({
-  isOpen: Boolean
-})
+  isOpen: Boolean,
+});
 </script>
 <template>
   <aside class="sidebar" :class="{ open: isOpen }">
     <nav class="sidebar__menu">
       <ul>
-        <li><a href="/">{{ t(currentLocale, "sidebar.navigation.home") }}</a></li>
-        <li><a :href="`/${currentLocale}/travel`">{{ t(currentLocale, "sidebar.navigation.travel") }}</a></li>
-        <li><a href="/#schedule">{{ t(currentLocale, "sidebar.navigation.schedule") }}</a></li>
+        <li>
+          <a href="/">{{ t(currentLocale, "sidebar.navigation.home") }}</a>
+        </li>
+        <li>
+          <a :href="`/${currentLocale}/travel`">{{
+            t(currentLocale, "sidebar.navigation.travel")
+          }}</a>
+        </li>
+        <li>
+          <a href="/#schedule">{{
+            t(currentLocale, "sidebar.navigation.schedule")
+          }}</a>
+        </li>
       </ul>
-      <Button :extraClass="`sidebar__button ${locale === 'es' ? 'sidebar__button--es' : 'sidebar__button--en'}`"
-        :href="`/${locale}/rsvp`" color="white" :label="t(locale, 'rsvp.title')" />
-
+      <Button
+        :extraClass="`sidebar__button ${
+          locale === 'es' ? 'sidebar__button--es' : 'sidebar__button--en'
+        }`"
+        :href="`/${locale}/rsvp`"
+        color="white"
+        :label="t(locale, 'rsvp.title')"
+      />
     </nav>
   </aside>
 </template>
@@ -37,7 +52,6 @@ defineProps({
   color: white;
   transition: left 0.3s ease;
   z-index: 1000;
-
 
   &__menu {
     height: 100%;
@@ -70,9 +84,9 @@ defineProps({
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    padding-inline: 2rem;
 
     li {
-
       a {
         color: $color-white;
         text-decoration: none;
