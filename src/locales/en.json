@@ -100,18 +100,18 @@
     "accommodation": {
       "title": "accommodation",
       "subtitle": "our recommended accommodation for your comfort",
-      "paragraph1": "We recommend staying near the city center. A bus will run to and from the wedding, making it easy to get back after the celebration.",
-      "paragraph2": "Here are some of our favorite hotels in Murcia.",
+      "paragraph1": "Whether you are getting a hotel or sharing an AirBnb between a few pals, we would recommend staying near the city centre if possible. We will be running a bus to and from the wedding to a centre point in town, so easy access to there will help you find your way back after you have had a few!",
+      "paragraph2": "We recommend the following hotels:",
       "hotelCard": {
         "discount": "discount",
         "button": "Check availability"
       },
       "hotels": {
         "hotel1": {
-          "text": "Some rooms are reserved for the wedding. If you stay here, book through the hotel’s website and reference: “María and Alex’s wedding – 30th May 2025."
+          "text": "There are some rooms held for reservation at this hotel. If you decide to stay here, please book via their website and reference ‘María and Alex’s wedding - 30th May 2025’."
         },
         "hotel2": {
-          "text": "If you book by email to reservas@hotelrincondepepe.com with the following details:",
+          "text": "There is a 10% discount if you book by email to reservas@hotelrincondepepe.com with the discount code and the following:",
           "list": {
             "name": "Name and Last Name",
             "room": "Type of room you want",
@@ -120,7 +120,7 @@
           }
         },
         "hotel3": {
-          "text": "If you book through their website, you will receive the discount."
+          "text": "You will get a 5% discount if you book via their website and reference the code"
         }
       }
     },
@@ -164,23 +164,22 @@
       "text3": "Evenings may be slightly cooler, so do bring something long sleeved, but you can leave your woolly jumpers at home!",
       "language": {
         "title": "language",
-        "text1": "The official language in Murcia is Spanish. While many people in the tourism industry speak English, it’s helpful to know some basic Spanish phrases to enhance your experience.",
+        "text1": "Spanish people love when you speak their language, even if it is just a few words. Below are some useful phrases to get around:",
         "text2": "Hola = Hello <br/> Por favor = Please <br/> Gracias = Thank you <br/> ¿Dónde está…? = Where is… <br/> El Baño = The bathroom <br/> ¿La cuenta, por favor? = The bill, please <br/> Una cerveza, por favor = A beer, please "
       },
       "food": {
         "title": "food & drink",
-        "text1": "Murcia is known for its delicious cuisine, including fresh seafood, tapas, and local specialties like zarangollo and pastel de carne. Don’t forget to try the local wines and sangria!",
-        "text2": "Dinner starts late. Most restaurants don't open before 8:00 pm, and people usually start eating between 8:30 and 10:00 pm. So don't worry, it's perfectly normal to eat late here.",
-        "text3": "Tapas are meant to be shared, so don't hesitate to order several dishes for the whole table."
+        "text1": "Lunch is eaten around 14:00-15:00 and it is the main meal in Spain. This is why shops often close for a few hours in the afternoon. It is not because everyone is having a siesta, but so that people can go home to have lunch with their family! Shops open until 21:00-22:00, at which point is time to have dinner.  Restaurants will often not open for dinner before 20:00, so please be flexible with your eating times.",
+        "text2": "Tapas Culture: Tapas are meant to be shared, so don’t be shy about ordering a mix for the table."
       },
       "general": {
         "title": "general tips",
-        "text1": "A friendly “hola” or “buenos días” is always appreciated.",
-        "text2": "People often greet with two cheek kisses, even if you’ve just met.",
-        "text3": "Tipping isn’t a big deal—rounding up or leaving a euro or two is enough.",
-        "text4": "Service is relaxed, so take your time. Ask for the bill (“la cuenta, por favor”) when you’re ready.",
-        "text5": "Cards are widely accepted, but having some cash is useful for small places and transport.",
-        "text6": "On Sundays, many shops close, though most restaurants and bars remain open."
+        "text1": "Greetings: A friendly “hola” (hello) or “buenos días” (good morning) goes a long way.",
+        "text2": "Kisses on the Cheek: It’s common to greet with two kisses (one on each cheek), even if you’ve just met.",
+        "text3": "Tipping: Not as expected as in the UK. Rounding up the bill or leaving a euro or two for good service is plenty.",
+        "text4": "Don’t Rush: Service is more relaxed, and there is usually no limit on how long you can stay at your table. If you need the bill, ask for it (“la cuenta, por favor”) — it won’t just appear.",
+        "text5": "Cash vs Card: Cards are widely accepted, but it’s handy to have some euros for taxis, buses, small bars, and markets.",
+        "text6": "Sundays: Don’t expect too much to go on this day. Shops may be closed, but restaurants / bars should be open."
       }
     },
     "explore": {
@@ -216,7 +215,7 @@
         "answer": "The weather during the month of May is usually beautiful! Depending on if summer stays around it may be in the low to mid 70s, but then cool off nicely at night (50s-60s). The average temp is around 65 and sunny. We don't expect rain, but we'll always be prepared!"
       },
       "q4": {
-        "question": "Can children come?",
+        "question": "Can small children come?",
         "answer": "We love your little ones, but our wedding will be for adults and teenagers only. We kindly ask that young children not attend, partly due to venue rules and partly so that everyone can eat, drink, and dance without worrying about nap times."
       },
       "q5": {

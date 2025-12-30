@@ -58,11 +58,11 @@ function toggle(index) {
         <span class="arrow" :class="{ open: openIndex === i }">⌄</span>
       </button>
       <div class="accordion-answer" v-show="openIndex === i">
-        <h4 class="title-cormorant-h2">{{ accordion.question }}</h4>
+        <!-- <h4 class="title-cormorant-h2">{{ accordion.question }}</h4> -->
         <h5 class="subtitle-dancing-h3">
           {{ t(currentLocale, "travel.airports.accordion.getThere") }}
         </h5>
-        <p class="accordion__getThere">{{ accordion.getThere }}</p>
+        <!-- <p class="accordion__getThere">{{ accordion.getThere }}</p> -->
         <iframe
           class="accordion__iframe"
           :src="accordion.map"
@@ -136,7 +136,7 @@ function toggle(index) {
     width: 100%;
     border: 1rem solid $color-white;
     border-width: 1rem 1rem 1.5rem 1rem;
-    margin-top: 2rem;
+    // margin-top: 2rem;
     margin-bottom: 3rem;
     box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.25);
   }
