@@ -8,7 +8,7 @@
     "travel&stay": {
       "title": "Travel & Stay",
       "subtitle": "your travel guide",
-      "text": "We know many of you will be traveling to come celebrate, here are some lodging recs & travel tips!",
+      "text": "We know many of you will be travelling to come celebrate, here are some lodging recs & travel tips!",
       "buttonLabel": "travel guide"
     }
   },
@@ -19,7 +19,7 @@
     "timeline": {
       "ceremony": {
         "time": "30TH MAY 2026",
-        "title": "CEREMONY"
+        "title": "WEDDING DAY"
       },
       "arrival": {
         "time": "13:30",
@@ -34,32 +34,32 @@
       "food": {
         "time": "15:00",
         "title": "FOOD",
-        "text": "Enjoy drinks, canapés, conversation and dreamy melodies under the oak tree."
+        "text": "Sip and savor amidst music, laughter and joy"
       },
       "party": {
         "time": "18:00",
         "title": "PARTY",
-        "text": "We danced, toasted and celebrated."
+        "text": "Dance, toast and boogie"
       },
       "end": {
         "time": "23:00",
-        "title": "END OF THE CEREMONY",
-        "text": "Thank you all for coming and sharing this special moment with us."
+        "title": "THE END",
+        "text": ""
       }
     },
     "dresscode": "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos."
   },
   "gesture": {
     "title": "a small gesture",
-    "text": "We are very grateful that you are coming to celebrate our wedding with us. We know the effort (and expense) that this entails, and we appreciate it very much.",
-    "text2": "We do not expect any gifts — for us, the most important thing is that you can be there on that day.",
-    "text3": "But if you still want to give us a gift, any contribution towards our honeymoon will make us very happy and help us create unforgettable memories together.",
+    "text": "We feel incredibly grateful that so many of you are travelling to Spain to celebrate with us, and we truly appreciate the effort and expense involved in joining us for our wedding.",
+    "text2": "Please know that we do not expect any gifts — your company on the day is what matters most.",
+    "text3": "If you would still like to give something, a contribution to our honeymoon fund would mean the world to us and help us create even more lasting memories together.",
     "euros": "for gifts in euros (€):",
     "pounds": "for gifts in pounds (£):"
   },
   "travel": {
     "title": "Travel & Stay",
-    "subtitle": "if you want to go directly to each section, click on the stamp you want to explore",
+    "subtitle": "click on the stamp of the section you wish to explore",
     "getting": {
       "title": "Getting to Murcia",
       "paragraph1": "Murcia is easily reached from the UK, with regular flights from many airports. The nearest airport is Región de Murcia International (RMU), about 30 minutes from the city. Alicante airport (ALC) is also a great option, about an hour away.",
@@ -94,8 +94,7 @@
         "carRental": "car rental",
         "getThere": "How do I get there?",
         "carTxt": "These are some car rental companies that are available from or nearby",
-        "publicTransport": "public transport",
-        "clickGoogle": "Here to view on Google Map"
+        "publicTransport": "public transport"
       }
     },
     "accommodation": {
@@ -221,7 +220,7 @@
         "answer": "We love your little ones, but our wedding will be for adults and teenagers only. We kindly ask that young children not attend, partly due to venue rules and partly so that everyone can eat, drink, and dance without worrying about nap times."
       },
       "q5": {
-        "question": "Dress Code & Outfit Tips",
+        "question": "Dress code & outfit tips",
         "answer": "We kindly ask guests to dress in semi-formal attire. Suits and ties, dresses and generally elegant outfits are encouraged. It’s not a black-tie event, so no need for tuxedos or floor-length gowns — but we’d love everyone to feel dressed up for the occasion. Please refrain from wearing white or white-adjacent colours. Since the celebration will be outdoors in the Spanish sunshine, lighter fabrics and bright colours are encouraged. If choosing to wear heels, you may wish to choose wedges or block heels instead of stilettos."
       }
     }

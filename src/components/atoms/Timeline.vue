@@ -1,12 +1,12 @@
 <script setup>
-import car from '@/assets/car.svg'
-import rings from '@/assets/rings.svg'
-import cheese from '@/assets/cheese.svg'
-import mirrorball from '@/assets/mirrorball.svg'
-import { t } from '@/utils/i18n';
-import { ref, computed } from 'vue'
+import car from "@/assets/car.svg";
+import rings from "@/assets/rings.svg";
+import cheese from "@/assets/cheese.svg";
+import mirrorball from "@/assets/mirrorball.svg";
+import { t } from "@/utils/i18n";
+import { ref, computed } from "vue";
 
-import { locale } from '@/stores/localeStore.js';
+import { locale } from "@/stores/localeStore.js";
 const currentLocale = computed(() => locale.value);
 
 const events = computed(() => [
@@ -14,44 +14,49 @@ const events = computed(() => [
     time: t(currentLocale.value, "schedule.timeline.ceremony.time"),
     title: t(currentLocale.value, "schedule.timeline.ceremony.title"),
     text: "",
-    icon: ""
+    icon: "",
   },
   {
     time: t(currentLocale.value, "schedule.timeline.arrival.time"),
     title: t(currentLocale.value, "schedule.timeline.arrival.title"),
     text: t(currentLocale.value, "schedule.timeline.arrival.text"),
-    icon: car
+    icon: car,
   },
   {
     time: t(currentLocale.value, "schedule.timeline.start.time"),
     title: t(currentLocale.value, "schedule.timeline.start.title"),
     text: t(currentLocale.value, "schedule.timeline.start.text"),
-    icon: rings
+    icon: rings,
   },
   {
     time: t(currentLocale.value, "schedule.timeline.food.time"),
     title: t(currentLocale.value, "schedule.timeline.food.title"),
     text: t(currentLocale.value, "schedule.timeline.food.text"),
-    icon: cheese
+    icon: cheese,
   },
   {
     time: t(currentLocale.value, "schedule.timeline.party.time"),
     title: t(currentLocale.value, "schedule.timeline.party.title"),
     text: t(currentLocale.value, "schedule.timeline.party.text"),
-    icon: mirrorball
+    icon: mirrorball,
   },
   {
     time: t(currentLocale.value, "schedule.timeline.end.time"),
     title: t(currentLocale.value, "schedule.timeline.end.title"),
-    text: t(currentLocale.value, "schedule.timeline.end.text"),
-    icon: ""
+    text: "",
+    icon: "",
   },
 ]);
 </script>
 <template>
   <div class="timeline">
     <div class="timeline-line"></div>
-    <div class="timeline-item" v-for="(event, i) in events" :key="i" :class="i % 2 === 0 ? 'left' : 'right'">
+    <div
+      class="timeline-item"
+      v-for="(event, i) in events"
+      :key="i"
+      :class="i % 2 === 0 ? 'left' : 'right'"
+    >
       <div class="content">
         <span class="time">{{ event.time }}</span>
         <h3 class="title">{{ event.title }}</h3>
@@ -76,7 +81,7 @@ const events = computed(() => [
 .timeline-line {
   position: absolute;
   top: 10px;
-  bottom: 0;
+  bottom: 50px;
   left: 50%;
   width: 1px;
   transform: translateX(-50%);
@@ -96,7 +101,6 @@ const events = computed(() => [
       grid-column: 1;
       text-align: right;
       margin-right: 1rem;
-
     }
 
     .icon {
@@ -146,7 +150,6 @@ const events = computed(() => [
   color: $color-red;
 
   font-family: $font-lato;
-
 }
 
 .title {

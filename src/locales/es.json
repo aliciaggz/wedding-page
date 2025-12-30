@@ -19,7 +19,7 @@
     "timeline": {
       "ceremony": {
         "time": "30TH MAY 2026",
-        "title": "CEREMONIA"
+        "title": "DÍA DE LA BODA"
       },
       "arrival": {
         "time": "13:30",
@@ -34,7 +34,7 @@
       "food": {
         "time": "15:00",
         "title": "COMIDA",
-        "text": "Disfrutad de bebidas, canapés, conversación y melodías de ensueño bajo el roble."
+        "text": "Disfrutad de bebidas, canapés, conversación y música en directo"
       },
       "party": {
         "time": "18:00",
@@ -99,8 +99,7 @@
         "carRental": "alquiler de coches",
         "getThere": "¿Cómo llego allí?",
         "carTxt": "Estas son algunas compañías de alquiler disponibles en o cerca de",
-        "publicTransport": "transporte público",
-        "clickGoogle": "Haz clic aquí para ver en Google Maps"
+        "publicTransport": "transporte público"
       }
     },
     "accommodation": {
