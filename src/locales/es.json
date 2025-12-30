@@ -8,7 +8,7 @@
     "travel&stay": {
       "title": "Viaje y Alojamiento",
       "subtitle": "tu guía de viaje",
-      "text": "Sabemos que muchos viajaréis para venir a celebrarlo, ¡aquí tenéis algunas recomendaciones de alojamiento y consejos de viaje!",
+      "text": "Para los que viajéis de lejos, aquí os dejamos algunas recomendaciones de alojamientos",
       "buttonLabel": "guía de viaje"
     }
   },
@@ -67,9 +67,9 @@
     "subtitle": "si quieres ir directamente a cada sección, haz clic en el sello que quieras explorar",
     "getting": {
       "title": "¿cómo llegar a Murcia?",
-      "paragraph1": "<b class='f600'>Se puede llegar fácilmente a Murcia desde el Reino Unido</b>, con vuelos regulares desde muchos aeropuertos. El aeropuerto más cercano es el Aeropuerto Internacional Región de Murcia (RMU), a unos 30 minutos de la ciudad. El aeropuerto de Alicante (ALC) también es una buena opción, a aproximadamente una hora de distancia.",
-      "paragraph2": "<b class='f600'>Para aquellos que viajan desde fuera de Europa</b>, la ruta más fácil es volar al aeropuerto Adolfo Suárez Madrid-Barajas; desde aquí, se puede coger un tren o un vuelo a Murcia.",
-      "paragraph3": "<b class='f600'>Para comprobar la mejor combinación para ti</b>, echa un vistazo a las rutas en Skyscanner."
+      "paragraph1": "<b class='f600'>Desde Inglaterra hay vuelos directos a Murcia y Alicante todos los días.</b>.El aeropuerto más cercano es el Aeropuerto Internacional de la Región de Murcia (RMU), a unos 30 minutos de la ciudad. El Aeropuerto de Alicante (ALC) es el siguiente más cercano, queda a una hora de Murcia.",
+      "paragraph2": "<b class='f600'>Para los que viajan desde fuera de Europa</b>, la ruta más fácil es volar al aeropuerto Adolfo Suárez Madrid-Barajas; desde aquí, se puede coger un tren o un vuelo a Murcia.",
+      "paragraph3": "<b class='f600'>Para mirar la mejor ruta</b>, echa un vistazo a las rutas en Skyscanner."
     },
     "airports": {
       "title": "aeropuertos",
@@ -105,8 +105,8 @@
     "accommodation": {
       "title": "alojamiento",
       "subtitle": "nuestro alojamiento recomendado para tu comodidad",
-      "paragraph1": "Recomendamos alojarse cerca del centro de la ciudad. Habrá un autobús de ida y vuelta a la boda, lo que facilitará el regreso después de la fiesta.",
-      "paragraph2": "Aquí tenéis algunos de nuestros hoteles favoritos en Murcia.",
+      "paragraph1": "Tanto si os quedáis en un hotel como si compartís un Airbnb con amigos, os recomendamos alojaros cerca del centro de la ciudad si es posible. Habrá un autobús de ida y vuelta a la boda que saldrá desde un punto céntrico, así que estar cerca os facilitará mucho volver después de unas copas. El sitio concreto de ida y vuelta será confirmado más adelante.",
+      "paragraph2": "Si sois españoles, la Región de Murcia cuenta con un bono turístico que cubre el 50% del coste de los servicios de alojamiento en algunos hoteles de la ciudad. Para más información, visitad la página de turismo de la región.",
       "hotelCard": {
         "discount": "descuento",
         "button": "Consultar disponibilidad"
@@ -134,17 +134,17 @@
       "subtitle": "opciones de transporte para disfrutar sin preocupaciones",
       "taxi": {
         "title": "taxis",
-        "text1": "En Murcia hay taxis y Uber, aunque Uber no es muy popular en la ciudad, por lo que la disponibilidad puede ser más limitada.",
-        "text2": "Los taxis se pueden reservar a través de la aplicación Pidetaxi."
+        "text1": "Se pueden coger tanto taxis como Ubers en Murcia, aunque Uber no es tan popular como en ciudades grandes, así que quizá no haya mucha disponibilidad.",
+        "text2": "Podéis pillar taxis desde la app Pidetaxi."
       },
       "carhire": {
         "title": "alquiler de coches",
-        "text1": "Si planeáis explorar más allá de Murcia, alquilar un coche es la forma más fácil.",
-        "text2": "Consulta la sección de aeropuertos para ver los enlaces de las diferentes opciones de alquiler de coches."
+        "text1": "Si tenéis pensado viajar fuera de la ciudad, lo mejor es alquilar un coche.",
+        "text2": "Tienes toda la información en el apartado de los aeropuertos."
       },
       "walking": {
         "title": "a pie",
-        "text1": "Murcia es una ciudad segura y muy fácil de recorrer a pie, por lo que quizá te apetezca explorarla a pie."
+        "text1": "Murcia es una ciudad bastante segura y caminable, y el tiempo en mayo es agradable, así que la opción más fácil para explorarla es ir a pie."
       },
       "public": {
         "title": "transporte público",
@@ -155,9 +155,9 @@
     "weather": {
       "title": "el tiempo",
       "subtitle": "guía rápida del clima para venir preparados",
-      "text1": "Finales de mayo en Murcia es el punto de inflexión de la primavera al pleno verano. ¡Esperad calor!",
-      "text2": "Para el día, traed protección solar y ropa ligera para vuestros días libres y ¡disfrutad del sol!",
-      "text3": "Las noches pueden ser algo más frescas, así que traed algo de manga larga, ¡pero podéis dejar los jerséis de lana en casa!",
+      "text1": "A finales de mayo en Murcia suele hacer calor.",
+      "text2": "Os aconsejamos que durante el día uséis protección solar y ropa ligera.",
+      "text3": "Las noches suelen ser más frescas, así que traed algo de manga larga, pero dejaos los jerseys de lana en casa.",
       "day": "día",
       "night": "noche"
     },
@@ -218,15 +218,19 @@
       },
       "q3": {
         "question": "¿Qué tiempo hace en la zona?",
-        "answer": "¡El tiempo durante el mes de mayo suele ser precioso! Dependiendo de si el verano se adelanta, puede rondar los 21-25°C, pero refresca agradablemente por la noche (10-15°C). La temperatura media es de unos 18°C y soleado. No esperamos lluvia, ¡pero siempre estaremos preparados!"
+        "answer": "¡El tiempo durante el mes de mayo suele ser precioso! Dependiendo de si el verano se adelanta, puede rondar los 21-25°C, pero refresca agradablemente por la noche (10-15°C). La temperatura media es de unos 18°C y soleado. Aunque no suele llover a finales de mayo, puede suceder, así que, ¡estad preparados!"
       },
       "q4": {
         "question": "¿Pueden venir niños?",
-        "answer": "Adoramos a vuestros pequeños, pero nuestra boda será solo para adultos y adolescentes. Os pedimos amablemente que los niños pequeños no asistan, en parte debido a las normas del lugar y en parte para que todos puedan comer, beber y bailar sin preocuparse por la hora de la siesta."
+        "answer": "Aunque no suele llover a finales de mayo, puede suceder, así que, ¡estad preparados! Os pedimos que los más chiquitines se queden en casa — en parte por las normas del sitio, y también para que todos podáis comer, brindar y bailar sin pensar en siestas ni biberones."
       },
       "q5": {
         "question": "Código de vestimenta y consejos",
-        "answer": "Rogamos a los invitados que vistan con etiqueta semiformal. Se recomienda traje y corbata, vestidos y, en general, atuendos elegantes. No es un evento de etiqueta rigurosa (Black Tie), por lo que no es necesario esmoquin ni vestidos largos de gala, pero nos encantaría que todos se vistieran elegantes para la ocasión. Por favor, evitad el color blanco o colores muy similares. Dado que la celebración será al aire libre bajo el sol español, se recomiendan telas ligeras y colores vivos. Si optáis por llevar tacones, os sugerimos cuñas o tacones anchos en lugar de tacones de aguja."
+        "answer": "No hace falta ir de etiqueta,  así que puedes dejar el esmoquin y los vestidos de gala en casa, pero sí que nos gustaría ver a nuestros invitados arreglados y formales, con trajes, vestidos y conjuntos arreglados. Eso sí, evitad el blanco o los tonos muy claros.Como la celebración será al aire libre y bajo el sol español, las telas ligeras y los colores alegres son la mejor opción.  Y si vas a llevar tacones, mejor plataformas o tacones anchos."
+      },
+      "q6": {
+        "question": "¿Desde dónde saldrá el autobús hacia la finca?",
+        "answer": "El autobús os esperará en el hotel Siete Coronas. Confirmaremos el horario más cerca de la fecha."
       }
     }
   },

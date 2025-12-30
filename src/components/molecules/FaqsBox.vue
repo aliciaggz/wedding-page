@@ -12,33 +12,33 @@
         <p>{{ faq.answer }}</p>
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup>
-import { t } from '@/utils/i18n';
-import { reactive, computed } from 'vue'
-import { locale } from '@/stores/localeStore.js';
+import { t } from "@/utils/i18n";
+import { reactive, computed } from "vue";
+import { locale } from "@/stores/localeStore.js";
 
 const faqs = reactive([
-  { key: 'q1', open: false },
-  { key: 'q2', open: false },
-  { key: 'q3', open: false },
-  { key: 'q4', open: false },
-  { key: 'q5', open: false }
-])
+  { key: "q1", open: false },
+  { key: "q2", open: false },
+  { key: "q3", open: false },
+  { key: "q4", open: false },
+  { key: "q5", open: false },
+  { key: "q6", open: false },
+]);
 
 const translatedFaqs = computed(() =>
-  faqs.map(faq => ({
+  faqs.map((faq) => ({
     ...faq,
     question: t(locale.value, `faqs.questions.${faq.key}.question`),
-    answer: t(locale.value, `faqs.questions.${faq.key}.answer`)
+    answer: t(locale.value, `faqs.questions.${faq.key}.answer`),
   }))
-)
+);
 
 function toggle(index) {
-  faqs[index].open = !faqs[index].open
+  faqs[index].open = !faqs[index].open;
 }
 </script>
 
@@ -81,7 +81,6 @@ function toggle(index) {
   justify-content: space-between;
   align-items: center;
   font-family: $font-cormorant;
-
 }
 
 .faq-question .arrow {
@@ -99,7 +98,5 @@ function toggle(index) {
   font-size: $font-size-md;
   color: #333;
   text-align: left;
-
-
 }
 </style>
