@@ -27,6 +27,10 @@ const props = defineProps({
         {{ t(currentLocale, "rsvp.final.notAttendingText") }}
       </p>
 
+      <a class="final-step__back-button" href="/">{{
+        t(currentLocale, "rsvp.buttonBack")
+      }}</a>
+
       <figure class="final-step__festin">
         <img class="final-step__festin__image" :src="festin.src" alt="" />
       </figure>
@@ -76,6 +80,18 @@ const props = defineProps({
       height: auto;
       margin-bottom: 2rem;
     }
+  }
+
+  &__back-button {
+    margin-top: 1rem;
+    background-color: $color-red;
+    color: $color-white;
+    font-family: $font-cormorant;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    border-radius: 5rem;
+    font-size: $font-size-md;
+    text-decoration: none;
   }
 
   @media (min-width: 524px) {

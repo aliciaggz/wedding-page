@@ -64,9 +64,7 @@ const validationErrors = computed(() => {
 
   // Validación Email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!form.email.trim()) {
-    errors.email = "required";
-  } else if (!emailRegex.test(form.email)) {
+  if (form.email != "" && !emailRegex.test(form.email)) {
     errors.email = "format";
   }
 
@@ -167,12 +165,6 @@ async function handleSubmit() {
             :placeholder="t(currentLocale, 'rsvp.details.email')"
             type="email"
           />
-          <span
-            v-if="submitted && validationErrors.email === 'required'"
-            class="error-text"
-          >
-            {{ t(currentLocale, "errors.required") }}
-          </span>
           <span
             v-if="submitted && validationErrors.email === 'format'"
             class="error-text"

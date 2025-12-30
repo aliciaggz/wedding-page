@@ -41,7 +41,7 @@ const tips = [
 
 ---
 
-<div class="tips" id="travel-tips">
+{locale === "en" ? <div class="tips" id="travel-tips">
   <h2 class="title-cormorant-h2">{t(locale, "travel.tips.title")}</h2>
   <h3 class="subtitle-dancing-h3">{t(locale, "travel.tips.subtitle")}</h3>
   
@@ -68,9 +68,7 @@ const tips = [
       );
     })}
   </div>
-
-
-</div>
+</div>: ""}
 <style lang="scss">
 .tips {
   display: flex;

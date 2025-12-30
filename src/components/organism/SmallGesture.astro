@@ -20,7 +20,7 @@ const locale = getLocale(lang);
     </div>
     <div class="small-gesture__gifts__wrapper">
       <h4 class="small-gesture__gifts__title">{t(locale, "gesture.pounds")}</h4>
-      <p class="small-gesture__gifts__number">04-00-04 ----- 65545864</p>
+      <p class="small-gesture__gifts__number">04-00-04 <br/> 65545864</p>
     </div>
   </div>
 </div>
@@ -72,7 +72,8 @@ const locale = getLocale(lang);
       font-family: $font-lato;
       font-size: $font-size-md;
       font-weight: 300;
-      color: $color-text;
+      color: $color-text !important;
+      text-decoration: none !important;
     }
   }
 
