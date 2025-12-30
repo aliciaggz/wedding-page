@@ -5,16 +5,7 @@ import Time from '@/assets/time.svg';
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
-/*
-Props:
- - icon: componente SVG (ej: import Icon from '@/assets/hotel.svg')
- - hotelName: string
- - km: string|number
- - min: string|number
- - discount?: number (5 o 10)
- - description?: string | string[]
- - onCheck?: (no usado en Astro, el botón hace enlace/submit)
-*/
+
 const { icon: Icon, hotelName, km, min, discount = null, description = null, link} = Astro.props;
 
 ---
@@ -81,7 +72,7 @@ const { icon: Icon, hotelName, km, min, discount = null, description = null, lin
   border-radius: 1rem;
   border: 1px solid $color-red;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   padding: 2rem;
 
@@ -98,7 +89,7 @@ const { icon: Icon, hotelName, km, min, discount = null, description = null, lin
     height: 48px;
   }
 
-  &__title{
+  &__title {
     font-family: $font-lato;
     text-transform: uppercase;
     font-weight: 300;
@@ -151,12 +142,9 @@ const { icon: Icon, hotelName, km, min, discount = null, description = null, lin
     border-radius: 2rem;
     // font-weight: 700;
     font-size: .9rem;
-    border: 1px solid $color-red; /* o usa variantes */
+    border: 1px solid $color-red;
     color: $color-red;
   }
-
-  // &__discount--5 { background: darken($color-red, 5%); }
-  // &__discount--10 { background: darken($color-red, 10%); }
 
   &__text {
     display: flex;
