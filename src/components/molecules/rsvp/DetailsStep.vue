@@ -208,7 +208,7 @@ async function handleSubmit() {
             <p class="details-step__question">
               {{ t(currentLocale, "rsvp.details.question.bus") }}
             </p>
-            <div class="details-step__radio-options">
+            <div class="details-step__radio-options--bus">
               <label class="details-step__radio-label">
                 <input type="radio" value="yes" v-model="form.bus" />
                 <span>{{ t(currentLocale, "rsvp.details.answer.yes") }}</span>
@@ -216,6 +216,18 @@ async function handleSubmit() {
               <label class="details-step__radio-label">
                 <input type="radio" value="no" v-model="form.bus" />
                 <span>{{ t(currentLocale, "rsvp.details.answer.no") }}</span>
+              </label>
+              <label class="details-step__radio-label">
+                <input type="radio" value="only_going" v-model="form.bus" />
+                <span>{{
+                  t(currentLocale, "rsvp.details.answer.onlyGoing")
+                }}</span>
+              </label>
+              <label class="details-step__radio-label">
+                <input type="radio" value="only_returning" v-model="form.bus" />
+                <span>{{
+                  t(currentLocale, "rsvp.details.answer.onlyReturning")
+                }}</span>
               </label>
             </div>
             <span v-if="submitted && validationErrors.bus" class="error-text">
@@ -472,15 +484,21 @@ async function handleSubmit() {
 
   &__question {
     font-family: $font-cormorant;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     display: block;
     font-size: $font-size-md;
   }
 
   &__radio-options {
     display: flex;
-    gap: 2rem; // Separación entre Sí y No
-    justify-content: flex-start; // Alineados a la izquierda
+    gap: 2rem;
+    justify-content: flex-start;
+
+    &--bus {
+      display: flex;
+      gap: 1.5rem;
+      flex-direction: column;
+    }
   }
 
   &__radio-label {

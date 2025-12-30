@@ -3,8 +3,8 @@
     "title": "¡Nos casamos!",
     "names": "Maria y Alex",
     "date": "30.05.26",
-    "intro": "¡Estamos muy emocionados de celebrar nuestro día especial con vosotros en la hermosa Murcia, España! Vuestra presencia significaría mucho para nosotros.",
-    "intro2": "Estamos deseando celebrar nuestro amor rodeados de nuestra querida familia y amigos de todo el mundo.",
+    "intro": "Estamos deseando celebrar nuestra boda en Murcia con familiares y amigos de todas partes del mundo.",
+    "intro2": "Vuestra presencia significa mucho para nosotros",
     "travel&stay": {
       "title": "Viaje y Alojamiento",
       "subtitle": "tu guía de viaje",
@@ -13,12 +13,12 @@
     }
   },
   "schedule": {
-    "title": "itinerario",
+    "title": "programa del día",
     "subtitle": "what’s Happening",
     "buttonLabel": "añadir al calendario",
     "timeline": {
       "ceremony": {
-        "time": "30TH MAY 2026",
+        "time": "30 MAY0 2026",
         "title": "DÍA DE LA BODA"
       },
       "arrival": {
@@ -34,12 +34,12 @@
       "food": {
         "time": "15:00",
         "title": "COMIDA",
-        "text": "Disfrutad de bebidas, canapés, conversación y música en directo"
+        "text": "Bebe y saborea la comida entre risas y música."
       },
       "party": {
         "time": "18:00",
         "title": "FIESTA",
-        "text": "Bailamos, brindamos y celebramos."
+        "text": "Canta, brinda y dalo todo en la pista de baile."
       },
       "end": {
         "time": "23:00",
@@ -242,7 +242,7 @@
       "name": "Nombre",
       "lastname": "Apellidos",
       "email": "Email",
-      "partnerName": "Nombre del acompañante",
+      "partnerName": "Nombre de tus acompañantes",
       "question": {
         "attending": "¿Podrás asistir a nuestra boda?",
         "bus": "¿Necesitarás servicio de autobús?",
@@ -254,7 +254,9 @@
         "oc": "Por supuesto que sí",
         "not": "Lamentablemente no",
         "yes": "Sí",
-        "no": "No"
+        "no": "No",
+        "onlyGoing": "Solo ida",
+        "onlyReturning": "Solo vuelta"
       }
     },
     "final": {

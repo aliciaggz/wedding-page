@@ -236,7 +236,7 @@
       "name": "Name",
       "lastname": "Last Name",
       "email": "Email",
-      "partnerName": "Partner's Name",
+      "partnerName": "Name of guests in your party",
       "question": {
         "attending": "Will you be attending our wedding?",
         "bus": "Will you need the bus service?",
@@ -248,7 +248,9 @@
         "oc": "Of course!",
         "not": "Regretfully, no",
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "onlyGoing": "Only on the way there",
+        "onlyReturning": "Only to get back"
       }
     },
     "final": {
