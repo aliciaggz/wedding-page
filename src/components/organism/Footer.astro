@@ -2,6 +2,15 @@
 import Button from '@/components/atoms/Button.vue';
 import { getLocale, t , getLangFromUrl } from '../../utils/i18n';
 import PeopleDancing from '@/assets/dancing.svg';
+import Carousel from './Carousel.vue';
+
+const imagesObj = import.meta.glob('/src/assets/coupleShoot/*.{jpeg,jpg,png,gif,webp}', { eager: true });
+
+// 2. Convertimos ese objeto en un array simple para pasarlo al componente de Vue
+const misImagenes = Object.values(imagesObj).map((img: any) => ({
+  src: img.default.src,
+  alt: "Imagen de mi galería"
+}));
 
 const lang = getLangFromUrl(Astro.url);
 const locale = getLocale(lang);
@@ -12,9 +21,18 @@ const locale = getLocale(lang);
   <p class="footer__text">{t(locale, "footer.text")}</p>
   <Button  extraClass={`footer__button ${locale === 'es' ? 'footer__button--es' : 'footer__button--en'}`}
   href=`/${locale}/rsvp` label={t(locale, "rsvp.title")}/>
+  <div class="container">
+   <Carousel images={misImagenes} client:load/>
+   </div>
 </footer>
 
 <style lang="scss" scoped>
+.container {
+    width: 100vw;
+    margin: 0 auto;
+    // padding: 2rem;
+  }
+
 .footer {
   display: flex;
   flex-direction: column;

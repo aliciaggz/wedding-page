@@ -113,19 +113,19 @@
       },
       "hotels": {
         "hotel1": {
-          "text": "Hay algunas habitaciones reservadas para la boda. Si te alojas aquí, realiza la reserva a través de la web del hotel e indica como referencia: “Boda de María y Alex – 30 de mayo de 2025”."
+          "text": "Hay algunas habitaciones reservadas para la boda. Si te alojas aquí, realiza la reserva a través de la web del hotel e indica como referencia: “Enlace de María y Alex - 30 de mayo de 2025”."
         },
         "hotel2": {
-          "text": "Si prefieres hacer la reserva por correo electrónico escribiendo a reservas@hotelrincondepepe.com, indica los siguientes datos:",
+          "text": "Tenéis un 10% de descuento si reserváis por correo. Tendréis que poneros en contacto con reservas@hotelrincondepepe.com y mandarle el código de descuento y los siguientes datos:",
           "list": {
             "name": "Nombre y apellidos",
-            "room": "Tipo de habitación que deseas",
+            "room": "Habitación doble / individual / estándar o superior",
             "phone": "Número de teléfono",
             "card": "Número de tarjeta de crédito"
           }
         },
         "hotel3": {
-          "text": "Si realizas la reserva a través de su página web, se aplicará el descuento."
+          "text": "Tenéis un 5% de descuento si reserváis desde la web del hotel y utilizáis el código BODAMARIAYALEX en el apartado Código de la pagina web"
         }
       }
     },
