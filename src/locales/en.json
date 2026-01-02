@@ -211,8 +211,8 @@
         "answer": "Please RSVP by April 9th, 2026."
       },
       "q3": {
-        "question": "What is the weather like in the area?",
-        "answer": "Late May in Murcia is the turning point from spring into full blown Summer. Expect it to be warm! Daytime temperatures tend to be comfortably warm, averaging around 20-25°C, with cooler nights around 12-16°C. May is a pleasant month with ample sunshine and low humidity. Evenings may be slightly cooler, so do bring something long sleeved, but you can leave your woolly jumpers at home!"
+        "question": "Can I bring a plus one?",
+        "answer": "We have set up the RSVP so that one person per party can fill it in. In order to keep our wedding personal and intimate, invitations are extended to established couples only, so we can celebrate our special day with those we know and love."
       },
       "q4": {
         "question": "Can small children come?",
@@ -224,7 +224,7 @@
       },
       "q6": {
         "question": "Where will the bus depart from to go to the venue?",
-        "answer": "The bus will wait at Hotel Siete Coronas. We will confirm the departure time closer to the date."
+        "answer": "The bus will depart from/ return to Hotel Siete Coronas. We will confirm the departure time closer to the date"
       }
     }
   },
