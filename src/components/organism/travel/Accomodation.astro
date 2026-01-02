@@ -15,7 +15,7 @@ const locale = getLocale(lang);
   <!-- <h3 class="subtitle-dancing-h3">{t(locale, "travel.accommodation.subtitle")}</h3> -->
   <div class="accomodation__text">
     <p>{t(locale, "travel.accommodation.paragraph1")}</p>
-    <p>{t(locale, "travel.accommodation.paragraph2")}</p>
+    <p set:html={t(locale, "travel.accommodation.paragraph2")}></p>
   </div>
   <HotelList/>
 

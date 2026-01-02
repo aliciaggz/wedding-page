@@ -106,7 +106,7 @@
       "title": "alojamiento",
       "subtitle": "nuestro alojamiento recomendado para tu comodidad",
       "paragraph1": "Tanto si os quedáis en un hotel como si compartís un Airbnb con amigos, os recomendamos alojaros cerca del centro de la ciudad si es posible. Habrá un autobús de ida y vuelta a la boda que saldrá desde un punto céntrico, así que estar cerca os facilitará mucho volver después de unas copas. El sitio concreto de ida y vuelta será confirmado más adelante.",
-      "paragraph2": "Si sois españoles, la Región de Murcia cuenta con un bono turístico que cubre el 50% del coste de los servicios de alojamiento en algunos hoteles de la ciudad. Para más información, visitad la página de turismo de la región.",
+      "paragraph2": "Si sois españoles, la Región de Murcia cuenta con un bono turístico que cubre el 50% del coste de los servicios de alojamiento en algunos hoteles de la ciudad. Para más información, visitad <a class='link' href='https://www.turismoregiondemurcia.es/es/bono_turistico/'>la página de turismo de la región</a>.",
       "hotelCard": {
         "discount": "descuento",
         "button": "Consultar disponibilidad"
@@ -148,8 +148,8 @@
       },
       "public": {
         "title": "transporte público",
-        "text1": "Es muy bueno si necesitas llegar al otro lado de la ciudad.",
-        "text2": "Si necesitas salir de la ciudad, el transporte público es menos frecuente y no tan bueno."
+        "text1": "Perfecto si tienes que ir a la otra punta de la ciudad, aunque menos frecuente si quieres visitar otros puntos de la región.",
+        "text2": "Puedes consultar las distintas rutas <a class='link' href='https://www.interbusmurcia.es/consultar-rutas-y-horarios-invierno-2023-2024/'>aquí</a>"
       }
     },
     "weather": {

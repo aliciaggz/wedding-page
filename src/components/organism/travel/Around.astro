@@ -58,7 +58,7 @@ const transportOptions = [
 
           <div class="around__transport-item__content">
             <p>{item.text1}</p>
-            <p>{item.text2}</p>
+            <p set:html={item.text2}></p>
           </div>
         </div>
       );
