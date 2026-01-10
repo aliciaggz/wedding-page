@@ -8,7 +8,7 @@ import { t } from "@/utils/i18n.js";
 const emits = defineEmits(["continue"]);
 
 const currentLocale = computed<"es" | "en">(() => locale.value as "es" | "en");
-const PASSWORD = "1234";
+const PASSWORD = "kyoto24";
 const submitted = ref(false);
 
 // estado local de los inputs
