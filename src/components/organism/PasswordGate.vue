@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive, computed, ref } from "vue";
 import RsvpStepLayout from "@/components/atoms/RsvpStepLayout.vue";
-import girldancing from "@/assets/girl-dancing.svg";
+import coupledancing from "@/assets/couple-dancing.svg";
 import { locale } from "@/stores/localeStore.js";
 import { t } from "@/utils/i18n.js";
 
@@ -31,7 +31,7 @@ function next() {
 </script>
 
 <template>
-  <RsvpStepLayout :image="girldancing" image-alt="Muñecos bailando">
+  <RsvpStepLayout :image="coupledancing" image-alt="Muñecos bailando">
     <div class="password-step">
       <h2 class="password-step__title">Maria & Alex</h2>
       <h3 class="password-step__subtitle">30.05.2026</h3>

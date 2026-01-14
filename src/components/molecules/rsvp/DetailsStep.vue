@@ -4,7 +4,7 @@ import type { FormData } from "@/types/types.ts";
 import ModalError from "@/components/molecules/ModalError.vue";
 import Loader from "@/components/atoms/Loader.vue";
 import RsvpStepLayout from "@/components/atoms/RsvpStepLayout.vue";
-import coupledancing from "@/assets/couple-dancing.svg";
+import girldancing from "@/assets/girl-dancing.svg";
 import { locale } from "@/stores/localeStore.js";
 import { t } from "@/utils/i18n.js";
 
@@ -114,11 +114,7 @@ async function handleSubmit() {
 </script>
 
 <template>
-  <RsvpStepLayout
-    :image="coupledancing"
-    image-alt="Muñecos bailando"
-    novalidate
-  >
+  <RsvpStepLayout :image="girldancing" image-alt="Muñecos bailando" novalidate>
     <div class="details-step">
       <h2 class="details-step__title">Maria & Alex</h2>
       <h3 class="details-step__subtitle">30.05.2026</h3>
@@ -128,48 +124,43 @@ async function handleSubmit() {
 
       <form class="details-step__form" @submit.prevent="handleSubmit">
         <div class="details-step__field-wrapper">
+          <label v-if="!form.name" for="name" class="details-step__label">
+            {{ t(currentLocale, "rsvp.details.name") }}
+          </label>
+
           <input
+            id="name"
             class="details-step__input"
             :class="{ 'has-error': submitted && validationErrors.name }"
-            :placeholder="t(currentLocale, 'rsvp.details.name')"
-            id="name"
             v-model="form.name"
             type="text"
           />
+
           <span v-if="submitted && validationErrors.name" class="error-text">
-            {{ t(currentLocale, "errors.required") || "Campo requerido" }}
+            {{ t(currentLocale, "errors.required") }}
           </span>
         </div>
+
         <div class="details-step__field-wrapper">
+          <label
+            v-if="!form.lastname"
+            for="lastname"
+            class="details-step__label"
+          >
+            {{ t(currentLocale, "rsvp.details.lastname") }}
+          </label>
           <input
+            id="lastname"
             class="details-step__input"
             :class="{ 'has-error': submitted && validationErrors.lastname }"
-            id="lastname"
             v-model="form.lastname"
-            :placeholder="t(currentLocale, 'rsvp.details.lastname')"
             type="text"
           />
           <span
             v-if="submitted && validationErrors.lastname"
             class="error-text"
           >
-            {{ t(currentLocale, "errors.required") || "Campo requerido" }}
-          </span>
-        </div>
-        <div class="details-step__field-wrapper">
-          <input
-            class="details-step__input"
-            :class="{ 'has-error': submitted && validationErrors.email }"
-            id="email"
-            v-model="form.email"
-            :placeholder="t(currentLocale, 'rsvp.details.email')"
-            type="email"
-          />
-          <span
-            v-if="submitted && validationErrors.email === 'format'"
-            class="error-text"
-          >
-            {{ t(currentLocale, "errors.email") }}
+            {{ t(currentLocale, "errors.required") }}
           </span>
         </div>
 
@@ -270,40 +261,62 @@ async function handleSubmit() {
             v-if="form.partnerJoining === 'yes'"
             class="details-step__field-wrapper details-step__subgroup"
           >
+            <label
+              v-if="!form.partnerName"
+              for="partnerName"
+              class="details-step__label"
+            >
+              {{ t(currentLocale, "rsvp.details.partnerName") }}
+            </label>
+
             <input
+              id="partnerName"
               class="details-step__input"
               :class="{
                 'has-error': submitted && validationErrors.partnerName,
               }"
-              :placeholder="t(currentLocale, 'rsvp.details.partnerName')"
-              id="partnerName"
               v-model="form.partnerName"
               type="text"
             />
+
             <span
               v-if="submitted && validationErrors.partnerName"
               class="error-text"
             >
-              {{ t(currentLocale, "errors.required") || "Campo requerido" }}
+              {{ t(currentLocale, "errors.required") }}
             </span>
           </div>
         </div>
 
         <div class="details-step__field-wrapper">
+          <label
+            v-if="!form.allergies"
+            for="allergies"
+            class="details-step__label"
+          >
+            {{ t(currentLocale, "rsvp.details.question.diet") }}
+          </label>
+
           <input
-            class="details-step__input"
-            :placeholder="t(currentLocale, 'rsvp.details.question.diet')"
             id="allergies"
+            class="details-step__input"
             v-model="form.allergies"
             type="text"
           />
         </div>
 
         <div class="details-step__field-wrapper">
+          <label
+            v-if="!form.comments"
+            for="comments"
+            class="details-step__label"
+          >
+            {{ t(currentLocale, "rsvp.details.question.comment") }}
+          </label>
+
           <textarea
-            class="details-step__input"
-            :placeholder="t(currentLocale, 'rsvp.details.question.comment')"
             id="comments"
+            class="details-step__input"
             v-model="form.comments"
           ></textarea>
         </div>
@@ -387,6 +400,18 @@ async function handleSubmit() {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+  }
+
+  &__label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    pointer-events: none;
+    color: #999;
+    font-family: $font-cormorant;
+    font-size: $font-size-md;
+    transition: opacity 0.2s;
   }
 
   &__input {
