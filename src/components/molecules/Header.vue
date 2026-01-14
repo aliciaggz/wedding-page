@@ -1,6 +1,10 @@
 <script setup>
-import Menu from '@/components/molecules/Menu.vue'
-import LanguagePicker from '@/components/atoms/LanguagePicker.vue'
+import Menu from "@/components/molecules/Menu.vue";
+import LanguagePicker from "@/components/atoms/LanguagePicker.vue";
+import { locale } from "@/stores/localeStore.js";
+import { computed } from "vue";
+
+const currentLocale = computed(() => locale.value);
 
 defineProps({
   languages: {
@@ -14,15 +18,20 @@ defineProps({
   },
   currentPath: {
     type: String,
-    default: '/'
-  }
-})
+    default: "/",
+  },
+});
 </script>
 <template>
   <header class="header">
     <div class="header__content">
-      <LanguagePicker :currentPath="currentPath" :languages="languages" :lang="lang" class="header__lang-picker" />
-      <a href="/" class="header__link">
+      <LanguagePicker
+        :currentPath="currentPath"
+        :languages="languages"
+        :lang="lang"
+        class="header__lang-picker"
+      />
+      <a :href="`/${currentLocale}/`" class="header__link">
         <img :src="logo" alt="Logo" class="header__logo" />
       </a>
       <Menu />
@@ -34,7 +43,7 @@ defineProps({
   width: 100%;
   padding-top: env(safe-area-inset-top);
 
-  // OJO: Como tienes height: 10vh, verifica que 
+  // OJO: Como tienes height: 10vh, verifica que
   // esto no descuadre el alto. Quizás prefieras usar min-height.
   height: auto;
   min-height: 10vh;
@@ -44,7 +53,6 @@ defineProps({
   top: 0;
   left: 0;
   z-index: 1001;
-
 
   &__content {
     width: 100%;
@@ -64,7 +72,10 @@ defineProps({
     position: absolute; // posición absoluta dentro del header
     left: 50%; // centro horizontal del header
     top: 100%; // centro vertical
-    transform: translate(-50%, -50%); // ajusta para que el centro del logo quede en el centro del header
+    transform: translate(
+      -50%,
+      -50%
+    ); // ajusta para que el centro del logo quede en el centro del header
     width: 6rem;
     height: auto;
     z-index: 1002; // asegúrate que el logo esté por encima también

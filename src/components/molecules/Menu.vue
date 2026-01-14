@@ -72,7 +72,7 @@ watch(open, (isOpen) => {
     <nav class="menu__desktop" v-show="isDesktop">
       <ul class="menu__nav-list">
         <li>
-          <a class="menu__nav-list--link" href="/">{{
+          <a class="menu__nav-list--link" :href="`/${currentLocale}/`">{{
             t(currentLocale, "sidebar.navigation.home")
           }}</a>
         </li>
@@ -82,14 +82,16 @@ watch(open, (isOpen) => {
           >
         </li>
         <li>
-          <a class="menu__nav-list--link" href="/#schedule">{{
-            t(currentLocale, "sidebar.navigation.schedule")
-          }}</a>
+          <a
+            class="menu__nav-list--link"
+            :href="`/${currentLocale}/#schedule`"
+            >{{ t(currentLocale, "sidebar.navigation.schedule") }}</a
+          >
         </li>
         <li v-if="currentLocale === 'en'">
           <Button
             extraClass="menu__nav-list__button"
-            :href="`/${locale}/rsvp`"
+            :href="`/${currentLocale}/rsvp`"
             color="white"
             :label="t(locale, 'rsvp.title')"
           />

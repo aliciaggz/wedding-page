@@ -15,7 +15,9 @@ defineProps({
     <nav class="sidebar__menu">
       <ul>
         <li>
-          <a href="/">{{ t(currentLocale, "sidebar.navigation.home") }}</a>
+          <a :href="`/${currentLocale}/`">{{
+            t(currentLocale, "sidebar.navigation.home")
+          }}</a>
         </li>
         <li>
           <a :href="`/${currentLocale}/travel`">{{
@@ -23,7 +25,7 @@ defineProps({
           }}</a>
         </li>
         <li>
-          <a href="/#schedule">{{
+          <a :href="`/${currentLocale}/#schedule`">{{
             t(currentLocale, "sidebar.navigation.schedule")
           }}</a>
         </li>
@@ -32,9 +34,9 @@ defineProps({
         :extraClass="`sidebar__button ${
           locale === 'es' ? 'sidebar__button--es' : 'sidebar__button--en'
         }`"
-        :href="`/${locale}/rsvp`"
+        :href="`/${currentLocale}/rsvp`"
         color="white"
-        :label="t(locale, 'rsvp.title')"
+        :label="t(currentLocale, 'rsvp.title')"
       />
     </nav>
   </aside>
