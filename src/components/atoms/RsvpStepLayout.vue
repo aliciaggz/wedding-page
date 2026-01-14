@@ -2,13 +2,13 @@
 defineProps({
   image: {
     type: Object,
-    required: true
+    required: true,
   },
   imageAlt: {
     type: String,
-    default: 'Ilustración de boda'
-  }
-})
+    default: "Ilustración de boda",
+  },
+});
 </script>
 
 <template>
@@ -46,6 +46,7 @@ defineProps({
 
   &__content {
     width: 100%;
+    max-width: 40rem;
   }
 }
 </style>
